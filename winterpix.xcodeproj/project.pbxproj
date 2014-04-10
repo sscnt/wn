@@ -21,6 +21,7 @@
 		58D12A4718F6BFAC006CCE9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D12A2918F6BFAC006CCE9B /* UIKit.framework */; };
 		58D12A4F18F6BFAC006CCE9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58D12A4D18F6BFAC006CCE9B /* InfoPlist.strings */; };
 		58D12A5118F6BFAC006CCE9B /* winterpixTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D12A5018F6BFAC006CCE9B /* winterpixTests.m */; };
+		58FF4E6418F6F084000E74C8 /* bg-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58FF4E6218F6F084000E74C8 /* bg-568h@2x.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		58D12A4C18F6BFAC006CCE9B /* winterpixTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "winterpixTests-Info.plist"; sourceTree = "<group>"; };
 		58D12A4E18F6BFAC006CCE9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		58D12A5018F6BFAC006CCE9B /* winterpixTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = winterpixTests.m; sourceTree = "<group>"; };
+		58FF4E6218F6F084000E74C8 /* bg-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-568h@2x.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		58D12A2B18F6BFAC006CCE9B /* winterpix */ = {
 			isa = PBXGroup;
 			children = (
+				58FF4E6118F6F06C000E74C8 /* Images */,
 				58D12A3418F6BFAC006CCE9B /* AppDelegate.h */,
 				58D12A3518F6BFAC006CCE9B /* AppDelegate.m */,
 				58D12A3718F6BFAC006CCE9B /* Main.storyboard */,
@@ -150,6 +153,14 @@
 				58D12A4D18F6BFAC006CCE9B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		58FF4E6118F6F06C000E74C8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				58FF4E6218F6F084000E74C8 /* bg-568h@2x.jpg */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +210,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = SSC;
 				TargetAttributes = {
+					58D12A2118F6BFAC006CCE9B = {
+						DevelopmentTeam = 7FY9ETDU35;
+					};
 					58D12A4218F6BFAC006CCE9B = {
 						TestTargetID = 58D12A2118F6BFAC006CCE9B;
 					};
@@ -228,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58FF4E6418F6F084000E74C8 /* bg-568h@2x.jpg in Resources */,
 				58D12A3E18F6BFAC006CCE9B /* Images.xcassets in Resources */,
 				58D12A3018F6BFAC006CCE9B /* InfoPlist.strings in Resources */,
 				58D12A3918F6BFAC006CCE9B /* Main.storyboard in Resources */,
@@ -376,10 +391,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "winterpix/winterpix-Prefix.pch";
 				INFOPLIST_FILE = "winterpix/winterpix-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -389,10 +407,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "winterpix/winterpix-Prefix.pch";
 				INFOPLIST_FILE = "winterpix/winterpix-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -456,6 +477,7 @@
 				58D12A5618F6BFAD006CCE9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		58D12A5718F6BFAD006CCE9B /* Build configuration list for PBXNativeTarget "winterpixTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +486,7 @@
 				58D12A5918F6BFAD006CCE9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
