@@ -6,18 +6,20 @@
 //  Copyright (c) 2014年 SSC. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "RootViewController.h"
 
-@interface ViewController ()
+@interface RootViewController ()
 
 @end
 
-@implementation ViewController
+@implementation RootViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [self.navigationBar setHidden:YES];
+    HomeViewController* controller = [[HomeViewController alloc] init];
+    [self pushViewController:controller animated:NO];
 }
 
 - (void)didReceiveMemoryWarning

@@ -17,7 +17,7 @@
                BlueprintIdentifier = "58D12A2118F6BFAC006CCE9B"
                BuildableName = "winterpix.app"
                BlueprintName = "winterpix"
-               ReferencedContainer = "container:winterpix.xcodeproj">
+               ReferencedContainer = "container:Winterpix.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "58D12A4218F6BFAC006CCE9B"
                BuildableName = "winterpixTests.xctest"
                BlueprintName = "winterpixTests"
-               ReferencedContainer = "container:winterpix.xcodeproj">
+               ReferencedContainer = "container:Winterpix.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "58D12A2118F6BFAC006CCE9B"
             BuildableName = "winterpix.app"
             BlueprintName = "winterpix"
-            ReferencedContainer = "container:winterpix.xcodeproj">
+            ReferencedContainer = "container:Winterpix.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "58D12A2118F6BFAC006CCE9B"
             BuildableName = "winterpix.app"
             BlueprintName = "winterpix"
-            ReferencedContainer = "container:winterpix.xcodeproj">
+            ReferencedContainer = "container:Winterpix.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -82,7 +82,7 @@
             BlueprintIdentifier = "58D12A2118F6BFAC006CCE9B"
             BuildableName = "winterpix.app"
             BlueprintName = "winterpix"
-            ReferencedContainer = "container:winterpix.xcodeproj">
+            ReferencedContainer = "container:Winterpix.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

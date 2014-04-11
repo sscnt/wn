@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeViewController.h"
 
-@interface ViewController : UIViewController
+@interface RootViewController : UINavigationController
 
 @end

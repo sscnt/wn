@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5800C8C618F7E9EC00968165 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5800C8C518F7E9EC00968165 /* HomeViewController.m */; };
+		5800C8CB18F7EA7000968165 /* UIHomeBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5800C8CA18F7EA7000968165 /* UIHomeBgView.m */; };
+		5800C8D518F7EB3C00968165 /* UIDevice+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5800C8CE18F7EB3C00968165 /* UIDevice+extend.m */; };
+		5800C8D618F7EB3C00968165 /* UIScreen+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5800C8D018F7EB3C00968165 /* UIScreen+extend.m */; };
+		5800C8D718F7EB3C00968165 /* UIView+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5800C8D218F7EB3C00968165 /* UIView+extend.m */; };
+		5800C8D818F7EB3C00968165 /* UIScrollView+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5800C8D418F7EB3C00968165 /* UIScrollView+extend.m */; };
 		58D12A2618F6BFAC006CCE9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D12A2518F6BFAC006CCE9B /* Foundation.framework */; };
 		58D12A2818F6BFAC006CCE9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D12A2718F6BFAC006CCE9B /* CoreGraphics.framework */; };
 		58D12A2A18F6BFAC006CCE9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D12A2918F6BFAC006CCE9B /* UIKit.framework */; };
@@ -14,14 +20,15 @@
 		58D12A3218F6BFAC006CCE9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D12A3118F6BFAC006CCE9B /* main.m */; };
 		58D12A3618F6BFAC006CCE9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D12A3518F6BFAC006CCE9B /* AppDelegate.m */; };
 		58D12A3918F6BFAC006CCE9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58D12A3718F6BFAC006CCE9B /* Main.storyboard */; };
-		58D12A3C18F6BFAC006CCE9B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D12A3B18F6BFAC006CCE9B /* ViewController.m */; };
+		58D12A3C18F6BFAC006CCE9B /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D12A3B18F6BFAC006CCE9B /* RootViewController.m */; };
 		58D12A3E18F6BFAC006CCE9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58D12A3D18F6BFAC006CCE9B /* Images.xcassets */; };
 		58D12A4518F6BFAC006CCE9B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D12A4418F6BFAC006CCE9B /* XCTest.framework */; };
 		58D12A4618F6BFAC006CCE9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D12A2518F6BFAC006CCE9B /* Foundation.framework */; };
 		58D12A4718F6BFAC006CCE9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D12A2918F6BFAC006CCE9B /* UIKit.framework */; };
 		58D12A4F18F6BFAC006CCE9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58D12A4D18F6BFAC006CCE9B /* InfoPlist.strings */; };
 		58D12A5118F6BFAC006CCE9B /* winterpixTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D12A5018F6BFAC006CCE9B /* winterpixTests.m */; };
-		58FF4E6418F6F084000E74C8 /* bg-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58FF4E6218F6F084000E74C8 /* bg-568h@2x.jpg */; };
+		58F1EA1018F7EF5500013688 /* bg-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F1EA0F18F7EF5500013688 /* bg-568h@2x.png */; };
+		58F1EA1218F7EF5C00013688 /* splash-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F1EA1118F7EF5C00013688 /* splash-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5800C8C418F7E9EC00968165 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		5800C8C518F7E9EC00968165 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		5800C8C918F7EA7000968165 /* UIHomeBgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHomeBgView.h; sourceTree = "<group>"; };
+		5800C8CA18F7EA7000968165 /* UIHomeBgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHomeBgView.m; sourceTree = "<group>"; };
+		5800C8CD18F7EB3C00968165 /* UIDevice+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+extend.h"; sourceTree = "<group>"; };
+		5800C8CE18F7EB3C00968165 /* UIDevice+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+extend.m"; sourceTree = "<group>"; };
+		5800C8CF18F7EB3C00968165 /* UIScreen+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+extend.h"; sourceTree = "<group>"; };
+		5800C8D018F7EB3C00968165 /* UIScreen+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+extend.m"; sourceTree = "<group>"; };
+		5800C8D118F7EB3C00968165 /* UIView+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+extend.h"; sourceTree = "<group>"; };
+		5800C8D218F7EB3C00968165 /* UIView+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+extend.m"; sourceTree = "<group>"; };
+		5800C8D318F7EB3C00968165 /* UIScrollView+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+extend.h"; sourceTree = "<group>"; };
+		5800C8D418F7EB3C00968165 /* UIScrollView+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+extend.m"; sourceTree = "<group>"; };
+		5800C8D918F7EB6100968165 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5800C8DA18F7EB6100968165 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		58D12A2218F6BFAC006CCE9B /* winterpix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = winterpix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D12A2518F6BFAC006CCE9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58D12A2718F6BFAC006CCE9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -46,15 +67,16 @@
 		58D12A3418F6BFAC006CCE9B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		58D12A3518F6BFAC006CCE9B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		58D12A3818F6BFAC006CCE9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		58D12A3A18F6BFAC006CCE9B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		58D12A3B18F6BFAC006CCE9B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		58D12A3A18F6BFAC006CCE9B /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		58D12A3B18F6BFAC006CCE9B /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		58D12A3D18F6BFAC006CCE9B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		58D12A4318F6BFAC006CCE9B /* winterpixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = winterpixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D12A4418F6BFAC006CCE9B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		58D12A4C18F6BFAC006CCE9B /* winterpixTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "winterpixTests-Info.plist"; sourceTree = "<group>"; };
 		58D12A4E18F6BFAC006CCE9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		58D12A5018F6BFAC006CCE9B /* winterpixTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = winterpixTests.m; sourceTree = "<group>"; };
-		58FF4E6218F6F084000E74C8 /* bg-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-568h@2x.jpg"; sourceTree = "<group>"; };
+		58F1EA0F18F7EF5500013688 /* bg-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-568h@2x.png"; sourceTree = "<group>"; };
+		58F1EA1118F7EF5C00013688 /* splash-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +103,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5800C8C218F7E99100968165 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				58D12A3A18F6BFAC006CCE9B /* RootViewController.h */,
+				58D12A3B18F6BFAC006CCE9B /* RootViewController.m */,
+				5800C8C418F7E9EC00968165 /* HomeViewController.h */,
+				5800C8C518F7E9EC00968165 /* HomeViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		5800C8C718F7EA5200968165 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5800C8C818F7EA5800968165 /* Home */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		5800C8C818F7EA5800968165 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5800C8C918F7EA7000968165 /* UIHomeBgView.h */,
+				5800C8CA18F7EA7000968165 /* UIHomeBgView.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		5800C8CC18F7EB1900968165 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5800C8CD18F7EB3C00968165 /* UIDevice+extend.h */,
+				5800C8CE18F7EB3C00968165 /* UIDevice+extend.m */,
+				5800C8CF18F7EB3C00968165 /* UIScreen+extend.h */,
+				5800C8D018F7EB3C00968165 /* UIScreen+extend.m */,
+				5800C8D118F7EB3C00968165 /* UIView+extend.h */,
+				5800C8D218F7EB3C00968165 /* UIView+extend.m */,
+				5800C8D318F7EB3C00968165 /* UIScrollView+extend.h */,
+				5800C8D418F7EB3C00968165 /* UIScrollView+extend.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		58D12A1918F6BFAC006CCE9B = {
 			isa = PBXGroup;
 			children = (
@@ -114,12 +179,13 @@
 		58D12A2B18F6BFAC006CCE9B /* winterpix */ = {
 			isa = PBXGroup;
 			children = (
+				5800C8CC18F7EB1900968165 /* Categories */,
+				5800C8C718F7EA5200968165 /* View */,
+				5800C8C218F7E99100968165 /* ViewController */,
 				58FF4E6118F6F06C000E74C8 /* Images */,
 				58D12A3418F6BFAC006CCE9B /* AppDelegate.h */,
 				58D12A3518F6BFAC006CCE9B /* AppDelegate.m */,
 				58D12A3718F6BFAC006CCE9B /* Main.storyboard */,
-				58D12A3A18F6BFAC006CCE9B /* ViewController.h */,
-				58D12A3B18F6BFAC006CCE9B /* ViewController.m */,
 				58D12A3D18F6BFAC006CCE9B /* Images.xcassets */,
 				58D12A2C18F6BFAC006CCE9B /* Supporting Files */,
 			);
@@ -158,7 +224,8 @@
 		58FF4E6118F6F06C000E74C8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				58FF4E6218F6F084000E74C8 /* bg-568h@2x.jpg */,
+				58F1EA1118F7EF5C00013688 /* splash-568h@2x.png */,
+				58F1EA0F18F7EF5500013688 /* bg-568h@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -218,13 +285,14 @@
 					};
 				};
 			};
-			buildConfigurationList = 58D12A1D18F6BFAC006CCE9B /* Build configuration list for PBXProject "winterpix" */;
+			buildConfigurationList = 58D12A1D18F6BFAC006CCE9B /* Build configuration list for PBXProject "Winterpix" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 58D12A1918F6BFAC006CCE9B;
 			productRefGroup = 58D12A2318F6BFAC006CCE9B /* Products */;
@@ -242,7 +310,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58FF4E6418F6F084000E74C8 /* bg-568h@2x.jpg in Resources */,
+				58F1EA1218F7EF5C00013688 /* splash-568h@2x.png in Resources */,
+				58F1EA1018F7EF5500013688 /* bg-568h@2x.png in Resources */,
 				58D12A3E18F6BFAC006CCE9B /* Images.xcassets in Resources */,
 				58D12A3018F6BFAC006CCE9B /* InfoPlist.strings in Resources */,
 				58D12A3918F6BFAC006CCE9B /* Main.storyboard in Resources */,
@@ -264,9 +333,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58D12A3C18F6BFAC006CCE9B /* ViewController.m in Sources */,
+				58D12A3C18F6BFAC006CCE9B /* RootViewController.m in Sources */,
+				5800C8D618F7EB3C00968165 /* UIScreen+extend.m in Sources */,
+				5800C8D518F7EB3C00968165 /* UIDevice+extend.m in Sources */,
+				5800C8D818F7EB3C00968165 /* UIScrollView+extend.m in Sources */,
 				58D12A3618F6BFAC006CCE9B /* AppDelegate.m in Sources */,
 				58D12A3218F6BFAC006CCE9B /* main.m in Sources */,
+				5800C8CB18F7EA7000968165 /* UIHomeBgView.m in Sources */,
+				5800C8D718F7EB3C00968165 /* UIView+extend.m in Sources */,
+				5800C8C618F7E9EC00968165 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +368,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				58D12A2F18F6BFAC006CCE9B /* en */,
+				5800C8D918F7EB6100968165 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -309,6 +385,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				58D12A4E18F6BFAC006CCE9B /* en */,
+				5800C8DA18F7EB6100968165 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -461,7 +538,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		58D12A1D18F6BFAC006CCE9B /* Build configuration list for PBXProject "winterpix" */ = {
+		58D12A1D18F6BFAC006CCE9B /* Build configuration list for PBXProject "Winterpix" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58D12A5218F6BFAD006CCE9B /* Debug */,
