@@ -99,10 +99,44 @@
     NSString *pattern = @"iPhone([0-9]+),";
     NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
     NSTextCheckingResult *match = [regexp firstMatchInString:name options:0 range:NSMakeRange(0, name.length)];
-
+    
     if(match.numberOfRanges == 2){
         int version = [[name substringWithRange:[match rangeAtIndex:1]] intValue];
         if(version >= 6.0){
+            return NO;
+        }
+    }
+    return YES;
+}
+
++ (BOOL)underIPhone5
+{
+    NSError *error = nil;
+    NSString* name = [UIDevice machineName];
+    NSString *pattern = @"iPhone([0-9]+),";
+    NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
+    NSTextCheckingResult *match = [regexp firstMatchInString:name options:0 range:NSMakeRange(0, name.length)];
+    
+    if(match.numberOfRanges == 2){
+        int version = [[name substringWithRange:[match rangeAtIndex:1]] intValue];
+        if(version >= 5.0){
+            return NO;
+        }
+    }
+    return YES;
+}
+
++ (BOOL)isIPhone5
+{
+    NSError *error = nil;
+    NSString* name = [UIDevice machineName];
+    NSString *pattern = @"iPhone([0-9]+),";
+    NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
+    NSTextCheckingResult *match = [regexp firstMatchInString:name options:0 range:NSMakeRange(0, name.length)];
+    
+    if(match.numberOfRanges == 2){
+        int version = [[name substringWithRange:[match rangeAtIndex:1]] intValue];
+        if(version == 5.0){
             return NO;
         }
     }

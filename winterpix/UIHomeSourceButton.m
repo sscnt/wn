@@ -21,6 +21,7 @@
 
 - (void)setIconType:(UIHomeSourceButtonIconType)iconType
 {
+    _iconType = iconType;
     UIImage* iconImage;
     switch (iconType) {
         case UIHomeSourceButtonIconTypeCamera:

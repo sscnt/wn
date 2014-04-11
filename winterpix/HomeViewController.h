@@ -7,15 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 #import "UIHomeBgView.h"
 #import "UIHomeSourceButton.h"
+#import "EditorViewController.h"
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 {
     UIHomeBgView* _bgView;
     UIHomeBgView* _splashView;
     UIHomeSourceButton* _photosButton;
     UIHomeSourceButton* _cameraButton;
 }
+
+- (void)didPressButton:(UIHomeSourceButton*)sender;
+
+- (void)didPressCameraButton;
+- (void)didPressPhotosButton;
+
+- (void)showErrorAlertWithMessage:(NSString*)message;
+
+- (void)goToEffectsViewControllerWithImage:(UIImage*)image;
 
 @end

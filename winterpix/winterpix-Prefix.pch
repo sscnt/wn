@@ -38,7 +38,13 @@
 #define LOG_RECT(p)
 #endif
 
+
+#define MAX_IMAGE_LENGTH_FOR_IPHONE_5 2400
+#define MAX_IMAGE_LENGTH_FOR_IPHONE_4S 1600
+
 #import "UIDevice+extend.h"
 #import "UIScreen+extend.h"
 #import "UIView+extend.h"
 #import "UIScrollView+extend.h"
+#import "CurrentImage.h"
+#import "UIImage+extend.h"

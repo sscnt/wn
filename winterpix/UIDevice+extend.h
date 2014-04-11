@@ -27,6 +27,8 @@ enum {
 + (BOOL)underIOS7;
 + (BOOL)isiPad;
 + (BOOL)underIPhone5s;
++ (BOOL)isIPhone5;
++ (BOOL)underIPhone5;
 + (BOOL)canOpenInstagram;
 + (BOOL)canOpenTwitter;
 + (BOOL)isCurrentLanguageJapanese;
