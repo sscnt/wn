@@ -38,6 +38,16 @@
     _bgView.bgImage = imageBg;
     [self.view addSubview:_bgView];
     
+    //// Button
+    CGFloat buttonDiam = 100.0f;
+    _photosButton = [[UIHomeSourceButton alloc] initWithFrame:CGRectMake(40.0f, [UIScreen height] - 176.0f, buttonDiam, buttonDiam)];
+    _photosButton.iconType = UIHomeSourceButtonIconTypePhotos;
+    [self.view addSubview:_photosButton];
+    _cameraButton = [[UIHomeSourceButton alloc] initWithFrame:CGRectMake([_photosButton right] + 40.0f, [UIScreen height] - 176.0f, buttonDiam, buttonDiam)];
+    _cameraButton.iconType = UIHomeSourceButtonIconTypeCamera;
+    [self.view addSubview:_cameraButton];
+    
+    
     //// Splash Image
     if ([UIDevice resolution] == UIDeviceResolution_iPhoneRetina4) {
         imageBg = [UIImage imageNamed:@"Default.png"];
@@ -46,7 +56,8 @@
     }
     _splashView = [[UIHomeBgView alloc] initWithFrame:self.view.bounds];
     _splashView.bgImage = imageBg;
-    [self.view addSubview:_splashView];
+    [self.view addSubview:_splashView];;
+    
     
     //// Animate
     __block UIHomeBgView* _s = _splashView;

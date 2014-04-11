@@ -29,6 +29,9 @@
 		58D12A5118F6BFAC006CCE9B /* winterpixTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D12A5018F6BFAC006CCE9B /* winterpixTests.m */; };
 		58F1EA1018F7EF5500013688 /* bg-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F1EA0F18F7EF5500013688 /* bg-568h@2x.png */; };
 		58F1EA1218F7EF5C00013688 /* splash-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F1EA1118F7EF5C00013688 /* splash-568h@2x.png */; };
+		58F1EA1618F7F3E900013688 /* UIHomeSourceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F1EA1518F7F3E900013688 /* UIHomeSourceButton.m */; };
+		58F6FF2B18F82D030077D0DD /* home-photos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F6FF2A18F82D030077D0DD /* home-photos@2x.png */; };
+		58F6FF2D18F82EBA0077D0DD /* home-camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F6FF2C18F82EBA0077D0DD /* home-camera@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,10 @@
 		58D12A5018F6BFAC006CCE9B /* winterpixTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = winterpixTests.m; sourceTree = "<group>"; };
 		58F1EA0F18F7EF5500013688 /* bg-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-568h@2x.png"; sourceTree = "<group>"; };
 		58F1EA1118F7EF5C00013688 /* splash-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash-568h@2x.png"; sourceTree = "<group>"; };
+		58F1EA1418F7F3E900013688 /* UIHomeSourceButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHomeSourceButton.h; sourceTree = "<group>"; };
+		58F1EA1518F7F3E900013688 /* UIHomeSourceButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHomeSourceButton.m; sourceTree = "<group>"; };
+		58F6FF2A18F82D030077D0DD /* home-photos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-photos@2x.png"; sourceTree = "<group>"; };
+		58F6FF2C18F82EBA0077D0DD /* home-camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-camera@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +134,8 @@
 			children = (
 				5800C8C918F7EA7000968165 /* UIHomeBgView.h */,
 				5800C8CA18F7EA7000968165 /* UIHomeBgView.m */,
+				58F1EA1418F7F3E900013688 /* UIHomeSourceButton.h */,
+				58F1EA1518F7F3E900013688 /* UIHomeSourceButton.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -224,6 +233,8 @@
 		58FF4E6118F6F06C000E74C8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				58F6FF2C18F82EBA0077D0DD /* home-camera@2x.png */,
+				58F6FF2A18F82D030077D0DD /* home-photos@2x.png */,
 				58F1EA1118F7EF5C00013688 /* splash-568h@2x.png */,
 				58F1EA0F18F7EF5500013688 /* bg-568h@2x.png */,
 			);
@@ -313,7 +324,9 @@
 				58F1EA1218F7EF5C00013688 /* splash-568h@2x.png in Resources */,
 				58F1EA1018F7EF5500013688 /* bg-568h@2x.png in Resources */,
 				58D12A3E18F6BFAC006CCE9B /* Images.xcassets in Resources */,
+				58F6FF2B18F82D030077D0DD /* home-photos@2x.png in Resources */,
 				58D12A3018F6BFAC006CCE9B /* InfoPlist.strings in Resources */,
+				58F6FF2D18F82EBA0077D0DD /* home-camera@2x.png in Resources */,
 				58D12A3918F6BFAC006CCE9B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +355,7 @@
 				5800C8CB18F7EA7000968165 /* UIHomeBgView.m in Sources */,
 				5800C8D718F7EB3C00968165 /* UIView+extend.m in Sources */,
 				5800C8C618F7E9EC00968165 /* HomeViewController.m in Sources */,
+				58F1EA1618F7F3E900013688 /* UIHomeSourceButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
