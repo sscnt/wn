@@ -10,6 +10,7 @@
 #import <Social/Social.h>
 #import "GPUImageEffects.h"
 #import "GPUEffectColdWinter.h"
+#import "GPUEffectAutumnToWinter.h"
 
 
 @interface EditorViewController : UIViewController

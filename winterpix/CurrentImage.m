@@ -15,7 +15,7 @@ NSString* const pathForOriginalImage = @"tmp/original_image";
 NSString* const pathForEditorImage = @"tmp/editor_image";
 NSString* const pathForLastSavedImage = @"tmp/last_saved_image";
 
-+ (CurrentImage*)sharedManager {
++ (CurrentImage*)instance {
 	@synchronized(self) {
 		if (sharedCurrentImage == nil) {
 			sharedCurrentImage = [[self alloc] init];
@@ -93,7 +93,7 @@ NSString* const pathForLastSavedImage = @"tmp/last_saved_image";
 
 + (CGSize)originalImageSize
 {
-    return [self sharedManager].originalImageSize;
+    return [self instance].originalImageSize;
 }
 
 + (BOOL)lastSavedImageExists

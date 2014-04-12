@@ -264,7 +264,7 @@
         }
     }
     
-    [CurrentImage sharedManager].originalImageSize = image.size;
+    [CurrentImage instance].originalImageSize = image.size;
 
     
     //// Present

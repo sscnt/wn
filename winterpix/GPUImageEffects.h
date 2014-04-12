@@ -22,6 +22,7 @@
 #import "GPUImageHueBlendAltFIlter.h"
 #import "GPUImageSaturationBlendAltFilter.h"
 #import "GPUImageLinearLightBlendFilter.h"
+#import "GPUImageReplaceColorFilter.h"
 
 
 typedef NS_ENUM(NSInteger, EffectId){

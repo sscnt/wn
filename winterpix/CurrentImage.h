@@ -12,7 +12,7 @@
 
 @property (nonatomic, assign) CGSize originalImageSize;
 
-+ (CurrentImage*)sharedManager;
++ (CurrentImage*)instance;
 + (BOOL)lastSavedImageExists;
 + (UIImage*)imageAtPath:(NSString*)path;
 + (UIImage*)resizedImageForEditor;

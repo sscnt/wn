@@ -30,9 +30,21 @@
 - (void)test
 {
     UIImage* image = [CurrentImage originalImage];
-    GPUEffectColdWinter* effect = [[GPUEffectColdWinter alloc] init];
-    effect.imageToProcess = image;
-    image = [effect process];
+    
+    
+    @autoreleasepool {
+        GPUEffectColdWinter* effect = [[GPUEffectColdWinter alloc] init];
+        effect.imageToProcess = image;
+        image = [effect process];
+    }
+    
+    @autoreleasepool {
+        GPUEffectAutumnToWinter* effect = [[GPUEffectAutumnToWinter alloc] init];
+        effect.imageToProcess = image;
+        image = [effect process];
+        
+    }
+    
     UIImageView* view = [[UIImageView alloc] initWithImage:image];
     view.frame = CGRectMake(0.0f, 0.0f, [UIScreen width], [UIScreen width] / image.size.width * image.size.height);
     [self.view addSubview:view];
