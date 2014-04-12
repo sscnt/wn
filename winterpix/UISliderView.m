@@ -29,7 +29,7 @@
         if([currentLanguage compare:@"ja"] == NSOrderedSame) {
             _titleLabel.font = [UIFont fontWithName:@"mplus-1c-bold" size:15.0f];
         } else {
-            _titleLabel.font = [UIFont fontWithName:@"Aller-Bold" size:16.0f];
+            _titleLabel.font = [UIFont fontWithName:@"SheepSansBold" size:16.0f];
         }
         [self addSubview:_titleLabel];
         

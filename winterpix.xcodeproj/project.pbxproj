@@ -40,6 +40,15 @@
 		58F2974618F9117A0043BF93 /* UISliderThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F2974418F9117A0043BF93 /* UISliderThumbView.m */; };
 		58F2974918F9118C0043BF93 /* UIEditorSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F2974818F9118C0043BF93 /* UIEditorSliderView.m */; };
 		58F2974C18F911B40043BF93 /* UISliderContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F2974B18F911B40043BF93 /* UISliderContainer.m */; };
+		58F6BB4718F933BC000096AC /* UIEditorPreviewImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6BB4618F933BC000096AC /* UIEditorPreviewImageView.m */; };
+		58F6BB4D18F93EE7000096AC /* UIRenderImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6BB4C18F93EE7000096AC /* UIRenderImageView.m */; };
+		58F6BB5018F9402C000096AC /* opacity-button-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F6BB4E18F9402C000096AC /* opacity-button-60@2x.png */; };
+		58F6BB5118F9402C000096AC /* opacity-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F6BB4F18F9402C000096AC /* opacity-60@2x.png */; };
+		58F6BB5318F94049000096AC /* kelvin-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F6BB5218F94049000096AC /* kelvin-60@2x.png */; };
+		58F6BB5718F9405D000096AC /* photos-36-85@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F6BB5418F9405D000096AC /* photos-36-85@2x.png */; };
+		58F6BB5818F9405D000096AC /* camera-36-85@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F6BB5518F9405D000096AC /* camera-36-85@2x.png */; };
+		58F6BB5918F9405D000096AC /* twitter-36-85@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F6BB5618F9405D000096AC /* twitter-36-85@2x.png */; };
+		58F6BB5B18F94067000096AC /* save-cloud-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F6BB5A18F94067000096AC /* save-cloud-60@2x.png */; };
 		58F6FF2B18F82D030077D0DD /* home-photos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F6FF2A18F82D030077D0DD /* home-photos@2x.png */; };
 		58F6FF2D18F82EBA0077D0DD /* home-camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F6FF2C18F82EBA0077D0DD /* home-camera@2x.png */; };
 		58F6FF3218F831B40077D0DD /* CurrentImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6FF3118F831B40077D0DD /* CurrentImage.m */; };
@@ -174,6 +183,17 @@
 		58F2974818F9118C0043BF93 /* UIEditorSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEditorSliderView.m; sourceTree = "<group>"; };
 		58F2974A18F911B40043BF93 /* UISliderContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISliderContainer.h; sourceTree = "<group>"; };
 		58F2974B18F911B40043BF93 /* UISliderContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISliderContainer.m; sourceTree = "<group>"; };
+		58F6BB4518F933BC000096AC /* UIEditorPreviewImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEditorPreviewImageView.h; sourceTree = "<group>"; };
+		58F6BB4618F933BC000096AC /* UIEditorPreviewImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEditorPreviewImageView.m; sourceTree = "<group>"; };
+		58F6BB4B18F93EE7000096AC /* UIRenderImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIRenderImageView.h; sourceTree = "<group>"; };
+		58F6BB4C18F93EE7000096AC /* UIRenderImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIRenderImageView.m; sourceTree = "<group>"; };
+		58F6BB4E18F9402C000096AC /* opacity-button-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "opacity-button-60@2x.png"; sourceTree = "<group>"; };
+		58F6BB4F18F9402C000096AC /* opacity-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "opacity-60@2x.png"; sourceTree = "<group>"; };
+		58F6BB5218F94049000096AC /* kelvin-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kelvin-60@2x.png"; sourceTree = "<group>"; };
+		58F6BB5418F9405D000096AC /* photos-36-85@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photos-36-85@2x.png"; sourceTree = "<group>"; };
+		58F6BB5518F9405D000096AC /* camera-36-85@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-36-85@2x.png"; sourceTree = "<group>"; };
+		58F6BB5618F9405D000096AC /* twitter-36-85@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-36-85@2x.png"; sourceTree = "<group>"; };
+		58F6BB5A18F94067000096AC /* save-cloud-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save-cloud-60@2x.png"; sourceTree = "<group>"; };
 		58F6FF2A18F82D030077D0DD /* home-photos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-photos@2x.png"; sourceTree = "<group>"; };
 		58F6FF2C18F82EBA0077D0DD /* home-camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-camera@2x.png"; sourceTree = "<group>"; };
 		58F6FF3018F831B40077D0DD /* CurrentImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentImage.h; sourceTree = "<group>"; };
@@ -309,6 +329,8 @@
 		5800C8C718F7EA5200968165 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				58F6BB4B18F93EE7000096AC /* UIRenderImageView.h */,
+				58F6BB4C18F93EE7000096AC /* UIRenderImageView.m */,
 				58F2974018F9116B0043BF93 /* Slider */,
 				58F6FF4418F83D610077D0DD /* Editor */,
 				5800C8C818F7EA5800968165 /* Home */,
@@ -490,6 +512,8 @@
 		58F6FF4418F83D610077D0DD /* Editor */ = {
 			isa = PBXGroup;
 			children = (
+				58F6BB4518F933BC000096AC /* UIEditorPreviewImageView.h */,
+				58F6BB4618F933BC000096AC /* UIEditorPreviewImageView.m */,
 				58F2974A18F911B40043BF93 /* UISliderContainer.h */,
 				58F2974B18F911B40043BF93 /* UISliderContainer.m */,
 				58F2974718F9118B0043BF93 /* UIEditorSliderView.h */,
@@ -679,10 +703,17 @@
 		58FF4E6118F6F06C000E74C8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				58F6BB5218F94049000096AC /* kelvin-60@2x.png */,
+				58F6BB4E18F9402C000096AC /* opacity-button-60@2x.png */,
+				58F6BB4F18F9402C000096AC /* opacity-60@2x.png */,
 				58F6FF2C18F82EBA0077D0DD /* home-camera@2x.png */,
 				58F6FF2A18F82D030077D0DD /* home-photos@2x.png */,
 				58F1EA1118F7EF5C00013688 /* splash-568h@2x.png */,
 				58F1EA0F18F7EF5500013688 /* bg-568h@2x.png */,
+				58F6BB5A18F94067000096AC /* save-cloud-60@2x.png */,
+				58F6BB5418F9405D000096AC /* photos-36-85@2x.png */,
+				58F6BB5518F9405D000096AC /* camera-36-85@2x.png */,
+				58F6BB5618F9405D000096AC /* twitter-36-85@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -790,17 +821,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58F6BB5718F9405D000096AC /* photos-36-85@2x.png in Resources */,
 				58F6FF4318F83C820077D0DD /* sheepsansbold.ttf in Resources */,
+				58F6BB5118F9402C000096AC /* opacity-60@2x.png in Resources */,
 				58F1EA1218F7EF5C00013688 /* splash-568h@2x.png in Resources */,
 				58F1EA1018F7EF5500013688 /* bg-568h@2x.png in Resources */,
 				58F6FFC918F843980077D0DD /* cw2.acv in Resources */,
 				58F6FFC818F843980077D0DD /* cw1.acv in Resources */,
 				58D12A3E18F6BFAC006CCE9B /* Images.xcassets in Resources */,
+				58F6BB5018F9402C000096AC /* opacity-button-60@2x.png in Resources */,
 				58F6FF2B18F82D030077D0DD /* home-photos@2x.png in Resources */,
+				58F6BB5318F94049000096AC /* kelvin-60@2x.png in Resources */,
+				58F6BB5B18F94067000096AC /* save-cloud-60@2x.png in Resources */,
 				58D12A3018F6BFAC006CCE9B /* InfoPlist.strings in Resources */,
 				58F6FF3518F8358A0077D0DD /* Localizable.strings in Resources */,
 				58F6FF2D18F82EBA0077D0DD /* home-camera@2x.png in Resources */,
 				58F6FF4118F83C5B0077D0DD /* mplus-1c-bold.ttf in Resources */,
+				58F6BB5918F9405D000096AC /* twitter-36-85@2x.png in Resources */,
+				58F6BB5818F9405D000096AC /* camera-36-85@2x.png in Resources */,
 				58D12A3918F6BFAC006CCE9B /* Main.storyboard in Resources */,
 				58F6FFCA18F843980077D0DD /* cw3.acv in Resources */,
 			);
@@ -821,6 +859,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58F6BB4718F933BC000096AC /* UIEditorPreviewImageView.m in Sources */,
 				58F6FFAB18F841220077D0DD /* GPUImageChannelMixerFilter.m in Sources */,
 				58F6FF3E18F8399D0077D0DD /* UIImage+extend.m in Sources */,
 				58F2974C18F911B40043BF93 /* UISliderContainer.m in Sources */,
@@ -862,6 +901,7 @@
 				58F6FF9118F840C30077D0DD /* GPUAdjustmentsBrightness.m in Sources */,
 				58F6FFBF18F8419C0077D0DD /* GPUImagePhotoFilter.m in Sources */,
 				58F6FF9418F840C30077D0DD /* GPUImageLinearDodgeBlendFilter.m in Sources */,
+				58F6BB4D18F93EE7000096AC /* UIRenderImageView.m in Sources */,
 				5800C8D718F7EB3C00968165 /* UIView+extend.m in Sources */,
 				58F6FF8E18F840C30077D0DD /* GPUAdjustmentsWhiteBalance.m in Sources */,
 				58F2973E18F910DC0043BF93 /* UISaveButton.m in Sources */,

@@ -39,7 +39,7 @@
                 
             }
         } else {
-            _titleLabel.font = [UIFont fontWithName:@"Aller-Bold" size:18.0f];
+            _titleLabel.font = [UIFont fontWithName:@"SheepSansBold" size:18.0f];
         }
         [self addSubview:_titleLabel];
         [self setOpacity:0.80f];
