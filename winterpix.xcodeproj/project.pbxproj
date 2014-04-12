@@ -79,6 +79,7 @@
 		58F6FFCA18F843980077D0DD /* cw3.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F6FFC718F843980077D0DD /* cw3.acv */; };
 		58F6FFCC18F8447D0077D0DD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F6FFCB18F8447D0077D0DD /* Social.framework */; };
 		58F6FFCF18F8542C0077D0DD /* GPUImageLinearLightBlendFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6FFCE18F8542C0077D0DD /* GPUImageLinearLightBlendFilter.m */; };
+		58FDF7DD18F8DDA400C5A338 /* GPUEffectAutumnToWinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FDF7DC18F8DDA400C5A338 /* GPUEffectAutumnToWinter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -226,6 +227,8 @@
 		58F6FFCB18F8447D0077D0DD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		58F6FFCD18F8542C0077D0DD /* GPUImageLinearLightBlendFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageLinearLightBlendFilter.h; sourceTree = "<group>"; };
 		58F6FFCE18F8542C0077D0DD /* GPUImageLinearLightBlendFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageLinearLightBlendFilter.m; sourceTree = "<group>"; };
+		58FDF7DB18F8DDA400C5A338 /* GPUEffectAutumnToWinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUEffectAutumnToWinter.h; sourceTree = "<group>"; };
+		58FDF7DC18F8DDA400C5A338 /* GPUEffectAutumnToWinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUEffectAutumnToWinter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -572,6 +575,7 @@
 		58F6FFC018F842BD0077D0DD /* Cold Winter */ = {
 			isa = PBXGroup;
 			children = (
+				58FDF7D718F8DD7500C5A338 /* Autumn to Winter */,
 				58F6FFC418F843020077D0DD /* Curves */,
 				58F6FFC118F842FD0077D0DD /* GPUEffectColdWinter.h */,
 				58F6FFC218F842FD0077D0DD /* GPUEffectColdWinter.m */,
@@ -587,6 +591,15 @@
 				58F6FFC718F843980077D0DD /* cw3.acv */,
 			);
 			name = Curves;
+			sourceTree = "<group>";
+		};
+		58FDF7D718F8DD7500C5A338 /* Autumn to Winter */ = {
+			isa = PBXGroup;
+			children = (
+				58FDF7DB18F8DDA400C5A338 /* GPUEffectAutumnToWinter.h */,
+				58FDF7DC18F8DDA400C5A338 /* GPUEffectAutumnToWinter.m */,
+			);
+			name = "Autumn to Winter";
 			sourceTree = "<group>";
 		};
 		58FF4E6118F6F06C000E74C8 /* Images */ = {
@@ -737,6 +750,7 @@
 				58F6FFAB18F841220077D0DD /* GPUImageChannelMixerFilter.m in Sources */,
 				58F6FF3E18F8399D0077D0DD /* UIImage+extend.m in Sources */,
 				58F6FF9518F840C30077D0DD /* GPUPhotoFilter.m in Sources */,
+				58FDF7DD18F8DDA400C5A338 /* GPUEffectAutumnToWinter.m in Sources */,
 				58F6FFA118F840C30077D0DD /* GPUImageSaturationBlendAltFilter.m in Sources */,
 				58F6FF9C18F840C30077D0DD /* GPUImageClarityFilter.m in Sources */,
 				58F6FFA718F8410F0077D0DD /* GPUImageGradientColorGenerator.m in Sources */,

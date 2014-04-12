@@ -25,7 +25,8 @@
 
 
 typedef NS_ENUM(NSInteger, EffectId){
-    EffectIdColdWinter = 1
+    EffectIdColdWinter = 1,
+    EffectIdAutumnToWinter
 };
 
 typedef NS_ENUM(NSInteger, MergeBlendingMode){

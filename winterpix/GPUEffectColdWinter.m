@@ -16,6 +16,7 @@
     if(self){
         self.defaultOpacity = 1.0f;
         self.faceOpacity = 1.0f;
+        self.effectId = EffectIdColdWinter;
     }
     return self;
 }
@@ -24,7 +25,6 @@
 - (UIImage*)process
 {
     
-    self.effectId = EffectIdColdWinter;
     
     UIImage* resultImage = self.imageToProcess;
     
