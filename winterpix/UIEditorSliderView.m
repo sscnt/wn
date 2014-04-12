@@ -85,40 +85,16 @@
         case EditorSliderIconTypeOpacity:
             _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"opacity-60.png"]];
             break;
-        case EditorSliderIconTypeHaze:
+        case EditorSliderIconTypeSnowfall:
             _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"haze-60.png"]];
             break;
-        case EditorSliderIconTypeKelvin:
+        case EditorSliderIconTypeTemp:
             _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"kelvin-60.png"]];
             break;
-        case EditorSliderIconTypeLevels:
+        case EditorSliderIconTypeSnowRadius:
             _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"levels-60.png"]];
             break;
-        case EditorSliderIconTypeBrightness:
-            _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"brightness-60.png"]];
-            break;
-        case EditorSliderIconTypeClarity:
-            _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"clarity-60.png"]];
-            break;
-        case EditorSliderIconTypeContrast:
-            _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"contrast-60.png"]];
-            marginTop = -0.5f;
-            break;
-        case EditorSliderIconTypeVignette:
-            _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"vignette-60.png"]];
-            break;
-        case EditorSliderIconTypeSaturation:
-            _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"saturation-60.png"]];
-            break;
-        case EditorSliderIconTypeVibrance:
-            _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"vibrance-60.png"]];
-            break;
-        case EditorSliderIconTypeFocusDistance:
-            _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"focus-distance-60.png"]];
-            break;
-        case EditorSliderIconTypeFocusStrength:
-            _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"focus-60.png"]];
-            break;
+
     }
     _iconButton.center = CGPointMake(23.0f + marginLeft, self.bounds.size.height / 2.0f + marginTop);
     _iconImageView.center = CGPointMake(_iconButton.bounds.size.width / 2.0f, _iconButton.bounds.size.height / 2.0f);

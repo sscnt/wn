@@ -284,8 +284,7 @@
             //// Save to home dir
             if([CurrentImage saveOriginalImage:originalImage]){
                 //// for editor image
-                CGFloat width = [UIScreen screenSize].width * [[UIScreen mainScreen] scale];
-                UIImage* imageForEditor = [originalImage resizedImage:CGSizeMake(width, originalImage.size.height * width / originalImage.size.width) interpolationQuality:kCGInterpolationHigh];
+                UIImage* imageForEditor = [originalImage resizedImage:[CurrentImage editorImageSize] interpolationQuality:kCGInterpolationHigh];
                 if([CurrentImage saveResizedEditorImage:imageForEditor]){
                     //// Detect faces
                     NSDictionary *options = [NSDictionary dictionaryWithObject:CIDetectorAccuracyHigh forKey:CIDetectorAccuracy];
@@ -296,13 +295,11 @@
                     
                     if([array count] > 0){
                         LOG(@"Face detected!");
-                        controller.faceDetected = YES;
+                        [Processor instance].faceDetected = YES;
                     }
                     errorCode = 0;
                 }
             }
-            
-            
         }
         dispatch_async(q_main, ^{
             if (errorCode == 0) {
@@ -313,9 +310,6 @@
             }
         });
     });
-    
-    
-
 }
 
 

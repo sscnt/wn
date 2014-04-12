@@ -18,13 +18,17 @@
 + (UIImage*)resizedImageForEditor;
 + (UIImage*)originalImage;
 + (UIImage*)lastSavedImage;
++ (UIImage*)dialogBgImage;
 + (BOOL)saveOriginalImage:(UIImage*)image;
 + (BOOL)saveResizedEditorImage:(UIImage*)image;
 + (BOOL)saveLastSavedImage:(UIImage*)image;
++ (BOOL)saveDialogBgImage:(UIImage*)image;
 + (CGSize)originalImageSize;
++ (CGSize)editorImageSize;
 + (BOOL)deleteImageAtPath:(NSString*)path;
 + (BOOL)deleteLastSavedImage;
 + (BOOL)deleteOriginalImage;
++ (BOOL)deleteDialogBgImage;
 + (BOOL)deleteResizedForEditorImage;
 + (void)clean;
 

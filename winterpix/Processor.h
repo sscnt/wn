@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GPUEffectAutumnToWinter.h"
+#import "GPUEffectColdWinter.h"
 
 @protocol ProcessorDelegate <NSObject>
 @optional
@@ -16,11 +18,15 @@
 
 @interface Processor : NSObject
 
+@property (nonatomic, assign) BOOL faceDetected;
 @property (nonatomic, assign) float opacity;
 @property (nonatomic, assign) float temp;
 @property (nonatomic, assign) float snowfall;
 @property (nonatomic, assign) float snowRadius;
 
 + (Processor*)instance;
+
++ (UIImage*)executeWithImage:(UIImage*)image;
++ (UIImage*)executeWithCurrentOriginalImage;
 
 @end

@@ -10,4 +10,6 @@
 
 @interface UIRenderImageView : UIView
 
+@property (nonatomic, strong) UIImage* image;
+
 @end

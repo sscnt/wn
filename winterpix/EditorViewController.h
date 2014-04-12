@@ -18,6 +18,8 @@
 #import "UIEditorSliderView.h"
 #import "UISliderContainer.h"
 #import "UIEditorPreviewImageView.h"
+#import "UIEditorDialogBgImageView.h"
+#import "UISaveDialogView.h"
 
 typedef NS_ENUM(NSInteger, AdjustmentViewId){
     AdjustmentViewIdOpacity = 1,
@@ -31,7 +33,8 @@ typedef NS_ENUM(NSInteger, DialogState){
     DialogStateDidHide,
 };
 
-@interface EditorViewController : UIViewController{
+@interface EditorViewController : UIViewController <UIEditorSliderViewDelegate, UIEditorPreviewDelegate, UIEditorDialogBgImageViewDelegate, UISaveDialogViewDelegate, UIDocumentInteractionControllerDelegate>
+{
     UIEditorSliderView* _sliderOpacity;
     UIEditorSliderView* _sliderTemp;
     UIEditorSliderView* _sliderSnowfall;
@@ -44,13 +47,31 @@ typedef NS_ENUM(NSInteger, DialogState){
 }
 
 
-@property (nonatomic, assign) BOOL faceDetected;
+@property (nonatomic, assign) DialogState dialogState;
+@property (nonatomic, assign) BOOL isSaving;
+@property (nonatomic, assign) BOOL isApplying;
+@property (nonatomic, assign) BOOL isSliding;
 @property (nonatomic, strong) UINavigationBarView* topNavigationBar;
 @property (nonatomic, strong) UINavigationBarView* bottomNavigationBar;
-@property (nonatomic, weak) UISliderContainer* adjustmentOpacity;
+@property (nonatomic, weak) UISliderContainer* adjustmentCurrent;
+@property (nonatomic, strong) UISliderContainer* adjustmentOpacity;
 @property (nonatomic, strong) UISliderContainer* adjustmentSnowfall;
 @property (nonatomic, strong) UIEditorPreviewImageView* previewImageView;
+@property (nonatomic, strong) UISaveDialogView* saveDialogView;
+@property (nonatomic, strong) UIEditorDialogBgImageView* dialogBgImageView;
 
 - (void)didFinishResizing;
+- (void)processForEditor;
+
+- (void)slideDownAdjustment:(UISliderContainer*)adjustment Completion:(void (^)(BOOL))completion;
+- (void)slideUpAdjustment:(UISliderContainer*)adjustment Completion:(void (^)(BOOL))completion;
+- (void)slideDownCurrentAdjustmentAndSlideUpAdjustment:(UISliderContainer *)adjustment;
+
+- (void)showSaveDialog;
+- (void)hideSaveDialog;
+
+- (void)didPressAdjustmentButton:(UINavigationBarButton*)button;
+- (void)didPressCloseButton;
+- (void)didPressSaveButton;
 
 @end

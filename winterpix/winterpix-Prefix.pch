@@ -46,5 +46,6 @@
 #import "UIScreen+extend.h"
 #import "UIView+extend.h"
 #import "UIScrollView+extend.h"
-#import "CurrentImage.h"
 #import "UIImage+extend.h"
+#import "CurrentImage.h"
+#import "Processor.h"

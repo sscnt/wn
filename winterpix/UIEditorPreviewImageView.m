@@ -14,6 +14,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        _isPreviewReady = NO;
+        [self setBackgroundColor:[UIColor colorWithWhite:33.0f/255.0f alpha:1.0f]];
+        
         _imageViewBlurred = [[UIRenderImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.frame.size.width, self.frame.size.height)];
         _imageViewBlurred.hidden = YES;
         [self addSubview:_imageViewBlurred];
@@ -23,8 +26,22 @@
         
         [self addTarget:self action:@selector(didTouchDown) forControlEvents:UIControlEventTouchDown];
         [self addTarget:self action:@selector(didTouchUp) forControlEvents:UIControlEventTouchUpInside];
+        
+        
+        //// Loading
+        _imageViewLoading = [[UIImageView alloc] initWithImage:[UIImage animatedGIFNamed:@"loading-48"]];
+        _imageViewLoading.center = CGPointMake(roundf(frame.size.width / 2.0), roundf(frame.size.height / 2.0));
+        [self addSubview:_imageViewLoading];
     }
     return self;
+}
+
+- (void)removeLoadingIndicator
+{
+    if (_imageViewLoading) {
+        [_imageViewLoading removeFromSuperview];
+        _imageViewLoading = nil;
+    }
 }
 
 - (void)toggleOriginalImage:(BOOL)show
@@ -84,12 +101,17 @@
 
 - (void)setImageOriginal:(UIImage *)imageOriginal
 {
-    _imageOriginal = imageOriginal;
+    _imageViewOriginal.image = imageOriginal;
 }
 
 - (void)setImageBlurred:(UIImage *)imageBlurred
 {
     _imageBlurred = imageBlurred;
+}
+
+- (void)renderImageOriginal
+{
+    [_imageViewOriginal setNeedsDisplay];
 }
 
 - (void)didTouchUp

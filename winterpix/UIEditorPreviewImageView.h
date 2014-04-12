@@ -31,6 +31,11 @@
 @property (nonatomic, weak) UIImage* imageBlurred;
 @property (nonatomic, assign) id<UIEditorPreviewDelegate> delegate;
 
+- (void)removeLoadingIndicator;
+
+- (void)renderImageOriginal;
+- (void)renderImageBlurred;
+
 - (void)toggleBlurredImage:(BOOL)show;
 - (void)toggleBlurredImage:(BOOL)show WithDuration:(CGFloat)duration;
 - (void)toggleOriginalImage:(BOOL)show;

@@ -13,6 +13,10 @@
 		5800C8D618F7EB3C00968165 /* UIScreen+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5800C8D018F7EB3C00968165 /* UIScreen+extend.m */; };
 		5800C8D718F7EB3C00968165 /* UIView+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5800C8D218F7EB3C00968165 /* UIView+extend.m */; };
 		5800C8D818F7EB3C00968165 /* UIScrollView+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5800C8D418F7EB3C00968165 /* UIScrollView+extend.m */; };
+		580EE93518F981F4006983DA /* UIEditorDialogBgImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 580EE93418F981F4006983DA /* UIEditorDialogBgImageView.m */; };
+		580EE93E18F98210006983DA /* UISaveDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 580EE93D18F98210006983DA /* UISaveDialogView.m */; };
+		580EE94218F98506006983DA /* UISaveToButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 580EE94118F98506006983DA /* UISaveToButton.m */; };
+		580EE94418F99948006983DA /* loading-48.gif in Resources */ = {isa = PBXBuildFile; fileRef = 580EE94318F99948006983DA /* loading-48.gif */; };
 		58D12A2618F6BFAC006CCE9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D12A2518F6BFAC006CCE9B /* Foundation.framework */; };
 		58D12A2818F6BFAC006CCE9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D12A2718F6BFAC006CCE9B /* CoreGraphics.framework */; };
 		58D12A2A18F6BFAC006CCE9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D12A2918F6BFAC006CCE9B /* UIKit.framework */; };
@@ -140,6 +144,13 @@
 		5800C8D418F7EB3C00968165 /* UIScrollView+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+extend.m"; sourceTree = "<group>"; };
 		5800C8D918F7EB6100968165 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5800C8DA18F7EB6100968165 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		580EE93318F981F4006983DA /* UIEditorDialogBgImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEditorDialogBgImageView.h; sourceTree = "<group>"; };
+		580EE93418F981F4006983DA /* UIEditorDialogBgImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEditorDialogBgImageView.m; sourceTree = "<group>"; };
+		580EE93C18F98210006983DA /* UISaveDialogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISaveDialogView.h; sourceTree = "<group>"; };
+		580EE93D18F98210006983DA /* UISaveDialogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISaveDialogView.m; sourceTree = "<group>"; };
+		580EE94018F98506006983DA /* UISaveToButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISaveToButton.h; sourceTree = "<group>"; };
+		580EE94118F98506006983DA /* UISaveToButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISaveToButton.m; sourceTree = "<group>"; };
+		580EE94318F99948006983DA /* loading-48.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "loading-48.gif"; sourceTree = "<group>"; };
 		58D12A2218F6BFAC006CCE9B /* winterpix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = winterpix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D12A2518F6BFAC006CCE9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58D12A2718F6BFAC006CCE9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -332,6 +343,7 @@
 				58F6BB4B18F93EE7000096AC /* UIRenderImageView.h */,
 				58F6BB4C18F93EE7000096AC /* UIRenderImageView.m */,
 				58F2974018F9116B0043BF93 /* Slider */,
+				580EE93F18F984D4006983DA /* Share */,
 				58F6FF4418F83D610077D0DD /* Editor */,
 				5800C8C818F7EA5800968165 /* Home */,
 			);
@@ -364,6 +376,15 @@
 				5800C8D418F7EB3C00968165 /* UIScrollView+extend.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		580EE93F18F984D4006983DA /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				580EE94018F98506006983DA /* UISaveToButton.h */,
+				580EE94118F98506006983DA /* UISaveToButton.m */,
+			);
+			name = Share;
 			sourceTree = "<group>";
 		};
 		58D12A1918F6BFAC006CCE9B = {
@@ -512,6 +533,10 @@
 		58F6FF4418F83D610077D0DD /* Editor */ = {
 			isa = PBXGroup;
 			children = (
+				580EE93C18F98210006983DA /* UISaveDialogView.h */,
+				580EE93D18F98210006983DA /* UISaveDialogView.m */,
+				580EE93318F981F4006983DA /* UIEditorDialogBgImageView.h */,
+				580EE93418F981F4006983DA /* UIEditorDialogBgImageView.m */,
 				58F6BB4518F933BC000096AC /* UIEditorPreviewImageView.h */,
 				58F6BB4618F933BC000096AC /* UIEditorPreviewImageView.m */,
 				58F2974A18F911B40043BF93 /* UISliderContainer.h */,
@@ -703,6 +728,7 @@
 		58FF4E6118F6F06C000E74C8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				580EE94318F99948006983DA /* loading-48.gif */,
 				58F6BB5218F94049000096AC /* kelvin-60@2x.png */,
 				58F6BB4E18F9402C000096AC /* opacity-button-60@2x.png */,
 				58F6BB4F18F9402C000096AC /* opacity-60@2x.png */,
@@ -841,6 +867,7 @@
 				58F6BB5818F9405D000096AC /* camera-36-85@2x.png in Resources */,
 				58D12A3918F6BFAC006CCE9B /* Main.storyboard in Resources */,
 				58F6FFCA18F843980077D0DD /* cw3.acv in Resources */,
+				580EE94418F99948006983DA /* loading-48.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -874,6 +901,7 @@
 				58F2974618F9117A0043BF93 /* UISliderThumbView.m in Sources */,
 				58F6FFCF18F8542C0077D0DD /* GPUImageLinearLightBlendFilter.m in Sources */,
 				58F2973D18F910DC0043BF93 /* UICloseButton.m in Sources */,
+				580EE93518F981F4006983DA /* UIEditorDialogBgImageView.m in Sources */,
 				58F6FFB318F841480077D0DD /* GPUImageColorBalanceFilter.m in Sources */,
 				58F6FFBB18F8417E0077D0DD /* GPUImageGradientMapFilter.m in Sources */,
 				58F6FF9818F840C30077D0DD /* GPUimageTumblinBrightnessFilter.m in Sources */,
@@ -881,12 +909,14 @@
 				5800C8D618F7EB3C00968165 /* UIScreen+extend.m in Sources */,
 				58F2973618F910B60043BF93 /* UINavigationBarView.m in Sources */,
 				58F2973718F910B60043BF93 /* UINavigationBarButton.m in Sources */,
+				580EE93E18F98210006983DA /* UISaveDialogView.m in Sources */,
 				5800C8D518F7EB3C00968165 /* UIDevice+extend.m in Sources */,
 				5800C8D818F7EB3C00968165 /* UIScrollView+extend.m in Sources */,
 				58D12A3618F6BFAC006CCE9B /* AppDelegate.m in Sources */,
 				58D12A3218F6BFAC006CCE9B /* main.m in Sources */,
 				58F6FFA018F840C30077D0DD /* GPUImageHueBlendAltFIlter.m in Sources */,
 				58F2974918F9118C0043BF93 /* UIEditorSliderView.m in Sources */,
+				580EE94218F98506006983DA /* UISaveToButton.m in Sources */,
 				58F6FF9718F840C30077D0DD /* GPUImageVignette2Filter.m in Sources */,
 				58F6FF9918F840C30077D0DD /* GPUImageTumblinLevelsFilter.m in Sources */,
 				58F6FF9218F840C30077D0DD /* GPUKelvinFilter.m in Sources */,

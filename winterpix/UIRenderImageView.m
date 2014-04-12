@@ -14,18 +14,17 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        _image = nil;
     }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    // Drawing code
+    if(_image){
+        [_image drawInRect:rect];
+        _image = nil;
+    }
 }
-*/
 
 @end

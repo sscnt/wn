@@ -21,17 +21,9 @@
 
 typedef NS_ENUM(NSInteger, EditorSliderIconType){
     EditorSliderIconTypeOpacity = 1,
-    EditorSliderIconTypeHaze,
-    EditorSliderIconTypeKelvin,
-    EditorSliderIconTypeLevels,
-    EditorSliderIconTypeBrightness,
-    EditorSliderIconTypeContrast,
-    EditorSliderIconTypeClarity,
-    EditorSliderIconTypeVignette,
-    EditorSliderIconTypeSaturation,
-    EditorSliderIconTypeVibrance,
-    EditorSliderIconTypeFocusDistance,
-    EditorSliderIconTypeFocusStrength
+    EditorSliderIconTypeTemp,
+    EditorSliderIconTypeSnowfall,
+    EditorSliderIconTypeSnowRadius
 };
 
 @interface UIEditorSliderView : UIView <UISliderViewDelegate>

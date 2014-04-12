@@ -14,6 +14,7 @@ static CurrentImage* sharedCurrentImage = nil;
 NSString* const pathForOriginalImage = @"tmp/original_image";
 NSString* const pathForEditorImage = @"tmp/editor_image";
 NSString* const pathForLastSavedImage = @"tmp/last_saved_image";
+NSString* const pathForDialogBgImage = @"tmp/dialog_bg_image";
 
 + (CurrentImage*)instance {
 	@synchronized(self) {
@@ -69,6 +70,11 @@ NSString* const pathForLastSavedImage = @"tmp/last_saved_image";
     NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForLastSavedImage];
     return [self imageAtPath:filePath];
 }
++ (UIImage*)dialogBgImage
+{
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForDialogBgImage];
+    return [self imageAtPath:filePath];
+}
 
 + (BOOL)saveOriginalImage:(UIImage*)image
 {
@@ -91,9 +97,29 @@ NSString* const pathForLastSavedImage = @"tmp/last_saved_image";
     return [imageData writeToFile:filePath atomically:YES];
 }
 
++ (BOOL)saveDialogBgImage:(UIImage *)image
+{
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.99f);
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForDialogBgImage];
+    return [imageData writeToFile:filePath atomically:YES];
+}
+
 + (CGSize)originalImageSize
 {
     return [self instance].originalImageSize;
+}
+
++ (CGSize)editorImageSize
+{
+    CGSize originalImageSize = [CurrentImage originalImageSize];
+    CGFloat width = [UIScreen screenSize].width;
+    CGFloat height = originalImageSize.height * width / originalImageSize.width;
+    CGFloat max_height = [UIScreen screenSize].height - 254.0f;
+    if (height > max_height) {
+        width *= max_height / height;
+        height = max_height;
+    }
+    return CGSizeMake(width * [[UIScreen mainScreen] scale], height * [[UIScreen mainScreen] scale]);
 }
 
 + (BOOL)lastSavedImageExists
@@ -138,11 +164,18 @@ NSString* const pathForLastSavedImage = @"tmp/last_saved_image";
     return [self deleteImageAtPath:filePath];
 }
 
++ (BOOL)deleteDialogBgImage
+{
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForDialogBgImage];
+    return [self deleteImageAtPath:filePath];
+}
+
 + (void)clean
 {
     [self deleteResizedForEditorImage];
     [self deleteOriginalImage];
-    [self deleteLastSavedImage];    
+    [self deleteLastSavedImage];
+    [self deleteDialogBgImage];
 }
 
 @end

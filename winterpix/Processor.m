@@ -35,6 +35,35 @@ static Processor* sharedProcessor = nil;
 	return self;  // シングルトン状態を保持するため何もせず self を返す
 }
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        _opacity = 1.0f;
+        _temp = 1.0f;
+        
+    }
+    return self;
+}
 
+#pragma mark execution
+
++ (UIImage *)executeWithCurrentOriginalImage
+{
+    return nil;
+}
+
++ (UIImage *)executeWithImage:(UIImage *)image
+{
+    GPUEffectColdWinter* effect = [[GPUEffectColdWinter alloc] init];
+    effect.imageToProcess = image;
+    image = [effect process];
+    if ([Processor instance].temp != 1.0f) {
+        GPUEffectAutumnToWinter* effect = [[GPUEffectAutumnToWinter alloc] init];
+        effect.imageToProcess = image;
+        image = [effect process];
+    }
+    return image;
+}
 
 @end
