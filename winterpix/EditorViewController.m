@@ -47,14 +47,14 @@
     _sliderOpacity.titlePosition = SliderViewTitlePositionCenter;
     _sliderOpacity.defaultValue = 1.0f;
     _sliderOpacity.value = [Processor instance].opacity;
-    //////// Haze
+    //////// Temp
     _sliderTemp = [[UIEditorSliderView alloc] initWithFrame:CGRectMake(0.0f, 10.0f + _sliderOpacity.frame.size.height, [UIScreen screenSize].width, 42.0f)];
     _sliderTemp.tag = EditorSliderIconTypeTemp;
     _sliderTemp.delegate = self;
     _sliderTemp.title = NSLocalizedString(@"Temperature", nil);
     _sliderTemp.iconType = EditorSliderIconTypeTemp;
     _sliderTemp.titlePosition = SliderViewTitlePositionCenter;
-    _sliderTemp.defaultValue = 0.0f;
+    _sliderTemp.defaultValue = 1.0f;
     _sliderTemp.value = [Processor instance].temp;
     //////// Adjustment
     _adjustmentOpacity = [[UISliderContainer alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [UIScreen screenSize].width, _sliderOpacity.bounds.size.height * 2.0f + 20.0f)];
@@ -65,28 +65,28 @@
     [self.view addSubview:_adjustmentOpacity];
 
     
-    //////// Snowfall
-    //////////// Global
+    //////// Snow
+    //////////// Snowfall
     _sliderSnowfall = [[UIEditorSliderView alloc] initWithFrame:CGRectMake(0.0f, 10.0f, [UIScreen screenSize].width, 42.0f)];
     _sliderSnowfall.tag = EditorSliderIconTypeSnowfall;
     _sliderSnowfall.delegate = self;
-    _sliderSnowfall.title = NSLocalizedString(@"Brightness", nil);
+    _sliderSnowfall.title = NSLocalizedString(@"Snowfall", nil);
     _sliderSnowfall.iconType = EditorSliderIconTypeSnowfall;
-    _sliderSnowfall.titlePosition = SliderViewTitlePositionLeft;
+    _sliderSnowfall.titlePosition = SliderViewTitlePositionCenter;
     _sliderSnowfall.defaultValue = 0.5f;
-    //////////// Levels
-    _sliderSnowRadius = [[UIEditorSliderView alloc] initWithFrame:CGRectMake(0.0f, 10.0f + _sliderSnowfall.frame.size.height, [UIScreen screenSize].width, 42.0f)];
-    _sliderSnowRadius.tag = EditorSliderIconTypeSnowRadius;
-    _sliderSnowRadius.delegate = self;
-    _sliderSnowRadius.title = NSLocalizedString(@"Levels", nil);
-    _sliderSnowRadius.iconType = EditorSliderIconTypeSnowRadius;
-    _sliderSnowRadius.titlePosition = SliderViewTitlePositionLeft;
-    _sliderSnowRadius.defaultValue = 0.5f;
+    //////////// Direction
+    _sliderSnowDirection = [[UIEditorSliderView alloc] initWithFrame:CGRectMake(0.0f, 10.0f + _sliderSnowfall.frame.size.height, [UIScreen screenSize].width, 42.0f)];
+    _sliderSnowDirection.tag = EditorSliderIconTypeSnowDirection;
+    _sliderSnowDirection.delegate = self;
+    _sliderSnowDirection.title = NSLocalizedString(@"Direction", nil);
+    _sliderSnowDirection.iconType = EditorSliderIconTypeSnowDirection;
+    _sliderSnowDirection.titlePosition = SliderViewTitlePositionLeft;
+    _sliderSnowDirection.defaultValue = 0.6f;
     //////// Adjustment
     _adjustmentSnowfall = [[UISliderContainer alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [UIScreen screenSize].width, _sliderSnowfall.bounds.size.height * 2.0f + 20.0f)];
     _adjustmentSnowfall.tag = AdjustmentViewIdSnowfall;
     [_adjustmentSnowfall addSubview:_sliderSnowfall];
-    [_adjustmentSnowfall addSubview:_sliderSnowRadius];
+    [_adjustmentSnowfall addSubview:_sliderSnowDirection];
     _adjustmentSnowfall.hidden = YES;
     [self.view addSubview:_adjustmentSnowfall];
     
@@ -147,6 +147,7 @@
 {
     UIImage* image = [CurrentImage resizedImageForEditor];
     if (image) {
+        image = [Processor addSnowfallWithImage:image WithSnowfallImage:[CurrentImage snowImageForEditor]];
         image = [Processor executeWithImage:image];
         [_previewImageView removeLoadingIndicator];
         _previewImageView.imageOriginal = image;
@@ -162,8 +163,8 @@
     
     UIImage* image = [CurrentImage resizedImageForEditor];
     if (image) {
-        image = [Processor executeWithImage:image];
         image = [Processor addSnowfallWithImage:image WithSnowfallImage:[CurrentImage snowImageForEditor]];
+        image = [Processor executeWithImage:image];
         _previewImageView.imageOriginal = image;
         [_previewImageView toggleOriginalImage:YES];
         [_previewImageView renderImageOriginal];
@@ -237,7 +238,7 @@
     _adjustmentCurrent.locked = YES;
     if(_adjustmentCurrent == _adjustmentSnowfall){
         _sliderSnowfall.locked = YES;
-        _sliderSnowRadius.locked = YES;
+        _sliderSnowDirection.locked = YES;
         return;
     }
     if(_adjustmentCurrent == _adjustmentOpacity){
@@ -253,7 +254,7 @@
     _adjustmentCurrent.locked = NO;
     if(_adjustmentCurrent == _adjustmentSnowfall){
         _sliderSnowfall.locked = NO;
-        _sliderSnowRadius.locked = NO;
+        _sliderSnowDirection.locked = NO;
         return;
     }
     if(_adjustmentCurrent == _adjustmentOpacity){
@@ -274,10 +275,10 @@
             _percentageLabel.text = [NSString stringWithFormat:@"%@: %d", NSLocalizedString(@"Temperature", nil), (int)roundf(slider.value * 100.0f)];
             break;
         case EditorSliderIconTypeSnowfall:
-            _percentageLabel.text = [NSString stringWithFormat:@"%@: %d", NSLocalizedString(@"Saturation", nil), (int)roundf(slider.value * 100.0f)];
+            _percentageLabel.text = [NSString stringWithFormat:@"%@: %d", NSLocalizedString(@"Snowfall", nil), (int)roundf(slider.value * 100.0f)];
             break;
-        case EditorSliderIconTypeSnowRadius:
-            _percentageLabel.text = [NSString stringWithFormat:@"%@: %d", NSLocalizedString(@"Vibrance", nil), (int)roundf(slider.value * 100.0f)];
+        case EditorSliderIconTypeSnowDirection:
+            _percentageLabel.text = [NSString stringWithFormat:@"%@: %d", NSLocalizedString(@"Direction", nil), (int)roundf((slider.value - 0.50f) * 200.0f)];
             break;
     }
     
@@ -293,8 +294,8 @@
         case EditorSliderIconTypeOpacity:
             [Processor instance].opacity = slider.value;
             break;
-        case EditorSliderIconTypeSnowRadius:
-            [Processor instance].snowRadius = slider.value;
+        case EditorSliderIconTypeSnowDirection:
+            [Processor instance].snowDirection = (slider.value - 0.50f) * 2.0f;
             break;
         case EditorSliderIconTypeSnowfall:
             [Processor instance].snowfall = slider.value;

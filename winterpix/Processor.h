@@ -23,9 +23,11 @@
 @property (nonatomic, assign) float opacity;
 @property (nonatomic, assign) float temp;
 @property (nonatomic, assign) float snowfall;
-@property (nonatomic, assign) float snowRadius;
+@property (nonatomic, assign) float snowDirection;
 
 + (Processor*)instance;
++ (void)reset;
+- (void)reset;
 
 + (UIImage*)executeWithImage:(UIImage*)image;
 - (UIImage*)executeWithImage:(UIImage*)image;

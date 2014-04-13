@@ -8,6 +8,13 @@
 
 #import "Processor.h"
 
+float absf(float v){
+    if (v < 0.0f) {
+        return -v;
+    }
+    return v;
+}
+
 @implementation Processor
 
 static Processor* sharedProcessor = nil;
@@ -39,11 +46,22 @@ static Processor* sharedProcessor = nil;
 {
     self = [super init];
     if (self) {
-        _opacity = 1.0f;
-        _temp = 1.0f;
-        
+        [self reset];
     }
     return self;
+}
+
++ (void)reset
+{
+    [[Processor instance] reset];
+}
+
+- (void)reset
+{
+    _opacity = 1.0f;
+    _temp = 1.0f;
+    _snowfall = 0.50f;
+    _snowDirection = 0.20f;
 }
 
 #pragma mark execution
@@ -84,46 +102,68 @@ static Processor* sharedProcessor = nil;
 - (UIImage *)addSnowfallWithImage:(UIImage *)image WithSnowfallImage:(UIImage *)snowImage
 {
     float opacity = _opacity * _snowfall;
-    GPUImageGaussianBlurFilter* blur = [[GPUImageGaussianBlurFilter alloc] init];
-    blur.blurRadiusInPixels = 1.0f;
+    int numberOfRepeat = 0;
     
-    @autoreleasepool {
-        GPUImagePicture* base = [[GPUImagePicture alloc] initWithImage:snowImage];
-        GPUImageMotionBlurFilter* motion = [[GPUImageMotionBlurFilter alloc] init];
-        motion.blurAngle = -50.0f;
-        motion.blurSize = 1.0f;
-        [base addTarget:motion];
-        [base processImage];
-        image = [Processor mergeBaseImage:image overlayImage:[motion imageFromCurrentlyProcessedOutput] opacity:1.0f blendingMode:MergeBlendingModeScreen];
+    float xsign = 1.0f;
+    float ysign = 1.0f;
+    
+    //// Small
+    numberOfRepeat = roundf(MAX(0.0f, opacity) * 8.0f);
+    LOG(@"Small repeats %d times.", numberOfRepeat);
+    for (int i = 0; i < numberOfRepeat; i++) {
+        @autoreleasepool {
+            xsign = (i % 2 == 0) ? 1.0f : -1.0f;
+            ysign = ((i / 2) % 2 == 0) ? 1.0f : -1.0f;
+            LOG(@"%f, %f", ysign, xsign);
+            GPUImagePicture* base = [[GPUImagePicture alloc] initWithImage:snowImage];
+            GPUImageMotionBlurFilter* motion = [[GPUImageMotionBlurFilter alloc] init];
+            GPUImageTransformFilter* transform = [[GPUImageTransformFilter alloc] init];
+            transform.affineTransform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.0f * xsign, 1.0f * ysign), CGAffineTransformMakeRotation(M_PI * (float)(i / 4)));
+            [transform addTarget:motion];
+            motion.blurAngle = _snowDirection * -60.0f - 90.0f;
+            motion.blurSize = 1.0f + 1.0 * absf(_snowDirection);
+            [base addTarget:transform];
+            [base processImage];
+            image = [Processor mergeBaseImage:image overlayImage:[motion imageFromCurrentlyProcessedOutput] opacity:1.0f blendingMode:MergeBlendingModeScreen];
+        }
     }
     
-    @autoreleasepool {
-        GPUImageTransformFilter* transform = [[GPUImageTransformFilter alloc] init];
-        GPUImagePicture* base = [[GPUImagePicture alloc] initWithImage:snowImage];
-        transform.affineTransform = CGAffineTransformMakeScale(2.0f, 2.0f);
-        GPUImageMotionBlurFilter* motion = [[GPUImageMotionBlurFilter alloc] init];
-        motion.blurAngle = -50.0f;
-        motion.blurSize = 2.0f;
-        [transform addTarget:motion];
-        [base addTarget:transform];
-        [base processImage];
-        image = [Processor mergeBaseImage:image overlayImage:[motion imageFromCurrentlyProcessedOutput] opacity:1.0f blendingMode:MergeBlendingModeScreen];
+    //// Medium
+    numberOfRepeat = roundf(MAX(0.0f, opacity - 0.30f) * 2.0f / 0.70f);
+    LOG(@"Medium repeats %d times.", numberOfRepeat);
+    for (int i = 0; i < numberOfRepeat; i++) {
+        @autoreleasepool {
+            GPUImagePicture* base = [[GPUImagePicture alloc] initWithImage:snowImage];
+            GPUImageMotionBlurFilter* motion = [[GPUImageMotionBlurFilter alloc] init];
+            GPUImageTransformFilter* transform = [[GPUImageTransformFilter alloc] init];
+            transform.affineTransform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.0f, 2.0f), CGAffineTransformMakeRotation(M_PI * (float)i));
+            [transform addTarget:motion];
+            motion.blurAngle = _snowDirection * -60.0f - 90.0f;
+            motion.blurSize = 1.0f + 2.0 * absf(_snowDirection);
+            [base addTarget:transform];
+            [base processImage];
+            image = [Processor mergeBaseImage:image overlayImage:[motion imageFromCurrentlyProcessedOutput] opacity:1.0f blendingMode:MergeBlendingModeScreen];
+        }
     }
+
     
-    
-    @autoreleasepool {
-        GPUImageTransformFilter* transform = [[GPUImageTransformFilter alloc] init];
-        GPUImagePicture* base = [[GPUImagePicture alloc] initWithImage:snowImage];
-        transform.affineTransform = CGAffineTransformMakeScale(4.0f, 4.0f);
-        GPUImageMotionBlurFilter* motion = [[GPUImageMotionBlurFilter alloc] init];
-        motion.blurAngle = -70.0f;
-        motion.blurSize = 2.0f;
-        [transform addTarget:motion];
-        [base addTarget:transform];
-        [base processImage];
-        image = [Processor mergeBaseImage:image overlayImage:[motion imageFromCurrentlyProcessedOutput] opacity:1.0f blendingMode:MergeBlendingModeScreen];
+    //// Large
+    numberOfRepeat = roundf(MAX(0.0f, opacity - 0.10f) * 2.0f / 0.90f);
+    LOG(@"Large repeats %d times.", numberOfRepeat);
+    for (int i = 0; i < numberOfRepeat; i++) {
+        @autoreleasepool {
+            GPUImagePicture* base = [[GPUImagePicture alloc] initWithImage:snowImage];
+            GPUImageMotionBlurFilter* motion = [[GPUImageMotionBlurFilter alloc] init];
+            GPUImageTransformFilter* transform = [[GPUImageTransformFilter alloc] init];
+            transform.affineTransform = CGAffineTransformConcat(CGAffineTransformMakeScale(3.0f, 3.0f), CGAffineTransformMakeRotation(M_PI * (float)i));
+            [transform addTarget:motion];
+            motion.blurAngle = _snowDirection * -60.0f - 90.0f;
+            motion.blurSize = 1.0f + 3.0 * absf(_snowDirection);
+            [base addTarget:transform];
+            [base processImage];
+            image = [Processor mergeBaseImage:image overlayImage:[motion imageFromCurrentlyProcessedOutput] opacity:1.0f blendingMode:MergeBlendingModeScreen];
+        }
     }
-    
     
     
     return image;

@@ -19,14 +19,8 @@
     [super viewDidLoad];
     
     //// Background Image
-    UIImage* imageBg;
-    if ([UIDevice resolution] == UIDeviceResolution_iPhoneRetina4) {
-        imageBg = [UIImage imageNamed:@"bg.png"];
-    }else if([UIDevice resolution] == UIDeviceResolution_iPhoneRetina5){
-        imageBg = [UIImage imageNamed:@"bg-568h.png"];
-    }
     _bgView = [[UIHomeBgView alloc] initWithFrame:self.view.bounds];
-    _bgView.bgImage = imageBg;
+    _bgView.type = UIHomeBgViewBgTypeBg;
     [self.view addSubview:_bgView];
     
     //// Button
@@ -42,13 +36,8 @@
     
     
     //// Splash Image
-    if ([UIDevice resolution] == UIDeviceResolution_iPhoneRetina4) {
-        imageBg = [UIImage imageNamed:@"Default.png"];
-    }else if([UIDevice resolution] == UIDeviceResolution_iPhoneRetina5){
-        imageBg = [UIImage imageNamed:@"Default-568h.png"];
-    }
     _splashView = [[UIHomeBgView alloc] initWithFrame:self.view.bounds];
-    _splashView.bgImage = imageBg;
+    _splashView.type = UIHomeBgViewBgTypeSplash;
     [self.view addSubview:_splashView];;
     
     

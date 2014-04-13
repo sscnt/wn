@@ -91,7 +91,7 @@
         case EditorSliderIconTypeTemp:
             _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"kelvin-60.png"]];
             break;
-        case EditorSliderIconTypeSnowRadius:
+        case EditorSliderIconTypeSnowDirection:
             _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"levels-60.png"]];
             break;
 

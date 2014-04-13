@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIHomeBgView : UIView
-{
-    UIImageView* _imageView;
-}
+typedef NS_ENUM(NSInteger, UIHomeBgViewBgType){
+    UIHomeBgViewBgTypeSplash = 1,
+    UIHomeBgViewBgTypeBg
+};
 
-@property (nonatomic, strong) UIImage* bgImage;
+
+@interface UIHomeBgView : UIView
+
+@property (nonatomic, assign) UIHomeBgViewBgType type;
 
 @end
