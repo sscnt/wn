@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "GPUEffectAutumnToWinter.h"
 #import "GPUEffectColdWinter.h"
+#import "GPUImageEffects.h"
 
 @protocol ProcessorDelegate <NSObject>
 @optional
@@ -27,6 +28,10 @@
 + (Processor*)instance;
 
 + (UIImage*)executeWithImage:(UIImage*)image;
+- (UIImage*)executeWithImage:(UIImage*)image;
+
 + (UIImage*)executeWithCurrentOriginalImage;
+
++ (UIImage*)mergeBaseImage:(UIImage*)baseImage overlayImage:(UIImage*)overlayImage opacity:(CGFloat)opacity blendingMode:(MergeBlendingMode)blendingMode;
 
 @end
