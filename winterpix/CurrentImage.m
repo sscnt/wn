@@ -15,6 +15,8 @@ NSString* const pathForOriginalImage = @"tmp/original_image";
 NSString* const pathForEditorImage = @"tmp/editor_image";
 NSString* const pathForLastSavedImage = @"tmp/last_saved_image";
 NSString* const pathForDialogBgImage = @"tmp/dialog_bg_image";
+NSString* const pathForSnowImage = @"tmp/snow_image";
+NSString* const pathForSnowImageForEditor = @"tmp/snow_editor_image";
 
 + (CurrentImage*)instance {
 	@synchronized(self) {
@@ -70,9 +72,22 @@ NSString* const pathForDialogBgImage = @"tmp/dialog_bg_image";
     NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForLastSavedImage];
     return [self imageAtPath:filePath];
 }
+
 + (UIImage*)dialogBgImage
 {
     NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForDialogBgImage];
+    return [self imageAtPath:filePath];
+}
+
++ (UIImage *)snowImage
+{
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForSnowImage];
+    return [self imageAtPath:filePath];
+}
+
++ (UIImage *)snowImageForEditor
+{
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForSnowImageForEditor];
     return [self imageAtPath:filePath];
 }
 
@@ -101,6 +116,20 @@ NSString* const pathForDialogBgImage = @"tmp/dialog_bg_image";
 {
     NSData *imageData = UIImageJPEGRepresentation(image, 0.99f);
     NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForDialogBgImage];
+    return [imageData writeToFile:filePath atomically:YES];
+}
+
++ (BOOL)saveSnowImage:(UIImage *)image
+{
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.99f);
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForSnowImage];
+    return [imageData writeToFile:filePath atomically:YES];
+}
+
++ (BOOL)saveSnowImageForEditor:(UIImage *)image
+{
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.99f);
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForSnowImageForEditor];
     return [imageData writeToFile:filePath atomically:YES];
 }
 
@@ -170,12 +199,26 @@ NSString* const pathForDialogBgImage = @"tmp/dialog_bg_image";
     return [self deleteImageAtPath:filePath];
 }
 
++ (BOOL)deleteSnowImage
+{
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForSnowImage];
+    return [self deleteImageAtPath:filePath];
+}
+
++ (BOOL)deleteSnowImageForEditor
+{
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForSnowImageForEditor];
+    return [self deleteImageAtPath:filePath];
+}
+
 + (void)clean
 {
     [self deleteResizedForEditorImage];
     [self deleteOriginalImage];
     [self deleteLastSavedImage];
     [self deleteDialogBgImage];
+    [self deleteSnowImage];
+    [self deleteSnowImageForEditor];
 }
 
 @end

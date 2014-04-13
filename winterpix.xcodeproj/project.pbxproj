@@ -13,6 +13,9 @@
 		5800C8D618F7EB3C00968165 /* UIScreen+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5800C8D018F7EB3C00968165 /* UIScreen+extend.m */; };
 		5800C8D718F7EB3C00968165 /* UIView+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5800C8D218F7EB3C00968165 /* UIView+extend.m */; };
 		5800C8D818F7EB3C00968165 /* UIScrollView+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5800C8D418F7EB3C00968165 /* UIScrollView+extend.m */; };
+		580913A218FA5B9A0077C3CE /* snow-4096.png in Resources */ = {isa = PBXBuildFile; fileRef = 580913A118FA5B9A0077C3CE /* snow-4096.png */; };
+		580913A418FA665A0077C3CE /* snow-4096-10.png in Resources */ = {isa = PBXBuildFile; fileRef = 580913A318FA665A0077C3CE /* snow-4096-10.png */; };
+		580913A618FA668C0077C3CE /* snow-2400-10.png in Resources */ = {isa = PBXBuildFile; fileRef = 580913A518FA668C0077C3CE /* snow-2400-10.png */; };
 		580EE93518F981F4006983DA /* UIEditorDialogBgImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 580EE93418F981F4006983DA /* UIEditorDialogBgImageView.m */; };
 		580EE93E18F98210006983DA /* UISaveDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 580EE93D18F98210006983DA /* UISaveDialogView.m */; };
 		580EE94218F98506006983DA /* UISaveToButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 580EE94118F98506006983DA /* UISaveToButton.m */; };
@@ -144,6 +147,9 @@
 		5800C8D418F7EB3C00968165 /* UIScrollView+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+extend.m"; sourceTree = "<group>"; };
 		5800C8D918F7EB6100968165 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5800C8DA18F7EB6100968165 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		580913A118FA5B9A0077C3CE /* snow-4096.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snow-4096.png"; sourceTree = "<group>"; };
+		580913A318FA665A0077C3CE /* snow-4096-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snow-4096-10.png"; sourceTree = "<group>"; };
+		580913A518FA668C0077C3CE /* snow-2400-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snow-2400-10.png"; sourceTree = "<group>"; };
 		580EE93318F981F4006983DA /* UIEditorDialogBgImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEditorDialogBgImageView.h; sourceTree = "<group>"; };
 		580EE93418F981F4006983DA /* UIEditorDialogBgImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEditorDialogBgImageView.m; sourceTree = "<group>"; };
 		580EE93C18F98210006983DA /* UISaveDialogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISaveDialogView.h; sourceTree = "<group>"; };
@@ -378,6 +384,16 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		580913A018FA5B800077C3CE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				580913A518FA668C0077C3CE /* snow-2400-10.png */,
+				580913A318FA665A0077C3CE /* snow-4096-10.png */,
+				580913A118FA5B9A0077C3CE /* snow-4096.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		580EE93F18F984D4006983DA /* Share */ = {
 			isa = PBXGroup;
 			children = (
@@ -436,6 +452,7 @@
 				5800C8CC18F7EB1900968165 /* Categories */,
 				5800C8C718F7EA5200968165 /* View */,
 				5800C8C218F7E99100968165 /* ViewController */,
+				580913A018FA5B800077C3CE /* Resources */,
 				58FF4E6118F6F06C000E74C8 /* Images */,
 				58D12A3418F6BFAC006CCE9B /* AppDelegate.h */,
 				58D12A3518F6BFAC006CCE9B /* AppDelegate.m */,
@@ -848,6 +865,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58F6BB5718F9405D000096AC /* photos-36-85@2x.png in Resources */,
+				580913A218FA5B9A0077C3CE /* snow-4096.png in Resources */,
 				58F6FF4318F83C820077D0DD /* sheepsansbold.ttf in Resources */,
 				58F6BB5118F9402C000096AC /* opacity-60@2x.png in Resources */,
 				58F1EA1218F7EF5C00013688 /* splash-568h@2x.png in Resources */,
@@ -857,12 +875,14 @@
 				58D12A3E18F6BFAC006CCE9B /* Images.xcassets in Resources */,
 				58F6BB5018F9402C000096AC /* opacity-button-60@2x.png in Resources */,
 				58F6FF2B18F82D030077D0DD /* home-photos@2x.png in Resources */,
+				580913A618FA668C0077C3CE /* snow-2400-10.png in Resources */,
 				58F6BB5318F94049000096AC /* kelvin-60@2x.png in Resources */,
 				58F6BB5B18F94067000096AC /* save-cloud-60@2x.png in Resources */,
 				58D12A3018F6BFAC006CCE9B /* InfoPlist.strings in Resources */,
 				58F6FF3518F8358A0077D0DD /* Localizable.strings in Resources */,
 				58F6FF2D18F82EBA0077D0DD /* home-camera@2x.png in Resources */,
 				58F6FF4118F83C5B0077D0DD /* mplus-1c-bold.ttf in Resources */,
+				580913A418FA665A0077C3CE /* snow-4096-10.png in Resources */,
 				58F6BB5918F9405D000096AC /* twitter-36-85@2x.png in Resources */,
 				58F6BB5818F9405D000096AC /* camera-36-85@2x.png in Resources */,
 				58D12A3918F6BFAC006CCE9B /* Main.storyboard in Resources */,

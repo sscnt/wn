@@ -19,10 +19,14 @@
 + (UIImage*)originalImage;
 + (UIImage*)lastSavedImage;
 + (UIImage*)dialogBgImage;
++ (UIImage*)snowImage;
++ (UIImage*)snowImageForEditor;
 + (BOOL)saveOriginalImage:(UIImage*)image;
 + (BOOL)saveResizedEditorImage:(UIImage*)image;
 + (BOOL)saveLastSavedImage:(UIImage*)image;
 + (BOOL)saveDialogBgImage:(UIImage*)image;
++ (BOOL)saveSnowImage:(UIImage*)image;
++ (BOOL)saveSnowImageForEditor:(UIImage*)image;
 + (CGSize)originalImageSize;
 + (CGSize)editorImageSize;
 + (BOOL)deleteImageAtPath:(NSString*)path;
@@ -30,6 +34,8 @@
 + (BOOL)deleteOriginalImage;
 + (BOOL)deleteDialogBgImage;
 + (BOOL)deleteResizedForEditorImage;
++ (BOOL)deleteSnowImage;
++ (BOOL)deleteSnowImageForEditor;
 + (void)clean;
 
 @end

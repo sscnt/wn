@@ -76,6 +76,59 @@ static Processor* sharedProcessor = nil;
     
 }
 
++ (UIImage *)addSnowfallWithImage:(UIImage *)image WithSnowfallImage:(UIImage *)snowImage
+{
+    return [[Processor instance] addSnowfallWithImage:image WithSnowfallImage:snowImage];
+}
+
+- (UIImage *)addSnowfallWithImage:(UIImage *)image WithSnowfallImage:(UIImage *)snowImage
+{
+    float opacity = _opacity * _snowfall;
+    GPUImageGaussianBlurFilter* blur = [[GPUImageGaussianBlurFilter alloc] init];
+    blur.blurRadiusInPixels = 1.0f;
+    
+    @autoreleasepool {
+        GPUImagePicture* base = [[GPUImagePicture alloc] initWithImage:snowImage];
+        GPUImageMotionBlurFilter* motion = [[GPUImageMotionBlurFilter alloc] init];
+        motion.blurAngle = -50.0f;
+        motion.blurSize = 1.0f;
+        [base addTarget:motion];
+        [base processImage];
+        image = [Processor mergeBaseImage:image overlayImage:[motion imageFromCurrentlyProcessedOutput] opacity:1.0f blendingMode:MergeBlendingModeScreen];
+    }
+    
+    @autoreleasepool {
+        GPUImageTransformFilter* transform = [[GPUImageTransformFilter alloc] init];
+        GPUImagePicture* base = [[GPUImagePicture alloc] initWithImage:snowImage];
+        transform.affineTransform = CGAffineTransformMakeScale(2.0f, 2.0f);
+        GPUImageMotionBlurFilter* motion = [[GPUImageMotionBlurFilter alloc] init];
+        motion.blurAngle = -50.0f;
+        motion.blurSize = 2.0f;
+        [transform addTarget:motion];
+        [base addTarget:transform];
+        [base processImage];
+        image = [Processor mergeBaseImage:image overlayImage:[motion imageFromCurrentlyProcessedOutput] opacity:1.0f blendingMode:MergeBlendingModeScreen];
+    }
+    
+    
+    @autoreleasepool {
+        GPUImageTransformFilter* transform = [[GPUImageTransformFilter alloc] init];
+        GPUImagePicture* base = [[GPUImagePicture alloc] initWithImage:snowImage];
+        transform.affineTransform = CGAffineTransformMakeScale(4.0f, 4.0f);
+        GPUImageMotionBlurFilter* motion = [[GPUImageMotionBlurFilter alloc] init];
+        motion.blurAngle = -70.0f;
+        motion.blurSize = 2.0f;
+        [transform addTarget:motion];
+        [base addTarget:transform];
+        [base processImage];
+        image = [Processor mergeBaseImage:image overlayImage:[motion imageFromCurrentlyProcessedOutput] opacity:1.0f blendingMode:MergeBlendingModeScreen];
+    }
+    
+    
+    
+    return image;
+}
+
 
 + (UIImage*)mergeBaseImage:(UIImage *)baseImage overlayImage:(UIImage *)overlayImage opacity:(CGFloat)opacity blendingMode:(MergeBlendingMode)blendingMode
 {
@@ -96,4 +149,25 @@ static Processor* sharedProcessor = nil;
     
 }
 
++ (UIImage*)mergeBaseImage:(UIImage *)baseImage overlayFilter:(GPUImageFilter *)overlayFilter opacity:(CGFloat)opacity blendingMode:(MergeBlendingMode)blendingMode
+{
+    GPUImageOpacityFilter* opacityFilter = [[GPUImageOpacityFilter alloc] init];
+    opacityFilter.opacity = opacity;
+    [overlayFilter addTarget:opacityFilter];
+    
+    GPUImagePicture* picture = [[GPUImagePicture alloc] initWithImage:baseImage];
+    [picture addTarget:overlayFilter];
+    
+    id blending = [GPUImageEffects effectByBlendMode:blendingMode];
+    [opacityFilter addTarget:blending atTextureLocation:1];
+    
+    [picture addTarget:blending];
+    [picture processImage];
+    UIImage* mergedImage = [blending imageFromCurrentlyProcessedOutput];
+    [picture removeAllTargets];
+    [overlayFilter removeAllTargets];
+    [opacityFilter removeAllTargets];
+    return mergedImage;
+    
+}
 @end

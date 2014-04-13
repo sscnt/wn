@@ -280,6 +280,13 @@
     dispatch_queue_t q_main = dispatch_get_main_queue();
     dispatch_async(q_global, ^{
         @autoreleasepool {
+            //// Crop snow
+            UIImage* snowImage = [[UIImage imageNamed:@"snow-4096-10.png"] croppedImage:CGRectMake(0.0f, 0.0f, [CurrentImage originalImageSize].width, [CurrentImage originalImageSize].height)];
+            [CurrentImage saveSnowImage:snowImage];
+            
+            //// Resize snow
+            snowImage = [snowImage resizedImage:[CurrentImage editorImageSize] interpolationQuality:kCGInterpolationHigh];
+            [CurrentImage saveSnowImageForEditor:snowImage];
             
             //// Save to home dir
             if([CurrentImage saveOriginalImage:originalImage]){

@@ -30,8 +30,12 @@
 + (UIImage*)executeWithImage:(UIImage*)image;
 - (UIImage*)executeWithImage:(UIImage*)image;
 
++ (UIImage*)addSnowfallWithImage:(UIImage*)image WithSnowfallImage:(UIImage*)snowImage;
+- (UIImage*)addSnowfallWithImage:(UIImage*)image WithSnowfallImage:(UIImage*)snowImage;
+
 + (UIImage*)executeWithCurrentOriginalImage;
 
 + (UIImage*)mergeBaseImage:(UIImage*)baseImage overlayImage:(UIImage*)overlayImage opacity:(CGFloat)opacity blendingMode:(MergeBlendingMode)blendingMode;
++ (UIImage*)mergeBaseImage:(UIImage*)baseImage overlayFilter:(GPUImageFilter*)overlayFilter opacity:(CGFloat)opacity blendingMode:(MergeBlendingMode)blendingMode;
 
 @end

@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface UIRenderImageView : UIView
+{
+    BOOL _draw;
+}
 
 @property (nonatomic, strong) UIImage* image;
 

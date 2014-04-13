@@ -163,6 +163,7 @@
     UIImage* image = [CurrentImage resizedImageForEditor];
     if (image) {
         image = [Processor executeWithImage:image];
+        image = [Processor addSnowfallWithImage:image WithSnowfallImage:[CurrentImage snowImageForEditor]];
         _previewImageView.imageOriginal = image;
         [_previewImageView toggleOriginalImage:YES];
         [_previewImageView renderImageOriginal];
