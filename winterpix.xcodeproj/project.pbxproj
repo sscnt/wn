@@ -20,6 +20,7 @@
 		580EE93E18F98210006983DA /* UISaveDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 580EE93D18F98210006983DA /* UISaveDialogView.m */; };
 		580EE94218F98506006983DA /* UISaveToButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 580EE94118F98506006983DA /* UISaveToButton.m */; };
 		580EE94418F99948006983DA /* loading-48.gif in Resources */ = {isa = PBXBuildFile; fileRef = 580EE94318F99948006983DA /* loading-48.gif */; };
+		58148FB718FAF3440038D9A2 /* GPUImageNormalBlendBasedOnSkinColorFIlter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58148FB618FAF3440038D9A2 /* GPUImageNormalBlendBasedOnSkinColorFIlter.m */; };
 		58D12A2618F6BFAC006CCE9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D12A2518F6BFAC006CCE9B /* Foundation.framework */; };
 		58D12A2818F6BFAC006CCE9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D12A2718F6BFAC006CCE9B /* CoreGraphics.framework */; };
 		58D12A2A18F6BFAC006CCE9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D12A2918F6BFAC006CCE9B /* UIKit.framework */; };
@@ -157,6 +158,8 @@
 		580EE94018F98506006983DA /* UISaveToButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISaveToButton.h; sourceTree = "<group>"; };
 		580EE94118F98506006983DA /* UISaveToButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISaveToButton.m; sourceTree = "<group>"; };
 		580EE94318F99948006983DA /* loading-48.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "loading-48.gif"; sourceTree = "<group>"; };
+		58148FB518FAF3440038D9A2 /* GPUImageNormalBlendBasedOnSkinColorFIlter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageNormalBlendBasedOnSkinColorFIlter.h; sourceTree = "<group>"; };
+		58148FB618FAF3440038D9A2 /* GPUImageNormalBlendBasedOnSkinColorFIlter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageNormalBlendBasedOnSkinColorFIlter.m; sourceTree = "<group>"; };
 		58D12A2218F6BFAC006CCE9B /* winterpix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = winterpix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D12A2518F6BFAC006CCE9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58D12A2718F6BFAC006CCE9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -631,6 +634,8 @@
 				58F6FF8D18F840C30077D0DD /* GPUImageHazyFilter.m */,
 				58F2972818F8F4280043BF93 /* GPUImageReplaceColorFilter.h */,
 				58F2972918F8F4280043BF93 /* GPUImageReplaceColorFilter.m */,
+				58148FB518FAF3440038D9A2 /* GPUImageNormalBlendBasedOnSkinColorFIlter.h */,
+				58148FB618FAF3440038D9A2 /* GPUImageNormalBlendBasedOnSkinColorFIlter.m */,
 			);
 			name = GPUImageFIlter;
 			sourceTree = "<group>";
@@ -947,6 +952,7 @@
 				58F2973018F9054A0043BF93 /* Processor.m in Sources */,
 				58F6FF3B18F8389B0077D0DD /* EditorViewController.m in Sources */,
 				58F6FFAF18F841340077D0DD /* GPUImageSelectiveColorFilter.m in Sources */,
+				58148FB718FAF3440038D9A2 /* GPUImageNormalBlendBasedOnSkinColorFIlter.m in Sources */,
 				58F6FF9618F840C30077D0DD /* GPUImageDarkerColorBlendFilter.m in Sources */,
 				58F6FF9118F840C30077D0DD /* GPUAdjustmentsBrightness.m in Sources */,
 				58F6FFBF18F8419C0077D0DD /* GPUImagePhotoFilter.m in Sources */,

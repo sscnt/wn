@@ -23,6 +23,7 @@
 #import "GPUImageSaturationBlendAltFilter.h"
 #import "GPUImageLinearLightBlendFilter.h"
 #import "GPUImageReplaceColorFilter.h"
+#import "GPUImageNormalBlendBasedOnSkinColorFIlter.h"
 
 
 typedef NS_ENUM(NSInteger, EffectId){
@@ -32,6 +33,7 @@ typedef NS_ENUM(NSInteger, EffectId){
 
 typedef NS_ENUM(NSInteger, MergeBlendingMode){
     MergeBlendingModeNormal = 1,
+    MergeBlendingModeNormalSkin,
     MergeBlendingModeDarken,
     MergeBlendingModeScreen,
     MergeBlendingModeMultiply,

@@ -60,7 +60,7 @@ static Processor* sharedProcessor = nil;
 {
     _opacity = 1.0f;
     _temp = 1.0f;
-    _snowfall = 0.50f;
+    _snowfall = 0.40f;
     _snowDirection = 0.20f;
 }
 
@@ -78,6 +78,11 @@ static Processor* sharedProcessor = nil;
 
 - (UIImage *)executeWithImage:(UIImage *)image
 {
+    MergeBlendingMode blendingMode = MergeBlendingModeNormal;
+    if (_faceDetected) {
+        blendingMode = MergeBlendingModeNormalSkin;
+    }
+    
     GPUEffectColdWinter* effect = [[GPUEffectColdWinter alloc] init];
     effect.imageToProcess = image;
     UIImage* result = [effect process];
@@ -85,10 +90,10 @@ static Processor* sharedProcessor = nil;
         GPUEffectAutumnToWinter* effect = [[GPUEffectAutumnToWinter alloc] init];
         effect.imageToProcess = result;
         UIImage* _image = [effect process];
-        result = [Processor mergeBaseImage:result overlayImage:_image opacity:(1.0 - [Processor instance].temp) blendingMode:MergeBlendingModeNormal];
+        result = [Processor mergeBaseImage:result overlayImage:_image opacity:(1.0 - [Processor instance].temp) blendingMode:blendingMode];
     }
     if (_opacity != 1.0f) {
-        result = [Processor mergeBaseImage:image overlayImage:result opacity:_opacity blendingMode:MergeBlendingModeNormal];
+        result = [Processor mergeBaseImage:image overlayImage:result opacity:_opacity blendingMode:blendingMode];
     }
     return result;
     
@@ -108,7 +113,7 @@ static Processor* sharedProcessor = nil;
     float ysign = 1.0f;
     
     //// Small
-    numberOfRepeat = roundf(MAX(0.0f, opacity) * 8.0f);
+    numberOfRepeat = roundf(MAX(0.0f, powf(opacity, 1.4)) * 8.0f);
     LOG(@"Small repeats %d times.", numberOfRepeat);
     for (int i = 0; i < numberOfRepeat; i++) {
         @autoreleasepool {
@@ -129,14 +134,14 @@ static Processor* sharedProcessor = nil;
     }
     
     //// Medium
-    numberOfRepeat = roundf(MAX(0.0f, opacity - 0.30f) * 2.0f / 0.70f);
+    numberOfRepeat = roundf(MAX(0.0f, opacity - 0.30f) * 2.4f / 0.70f);
     LOG(@"Medium repeats %d times.", numberOfRepeat);
     for (int i = 0; i < numberOfRepeat; i++) {
         @autoreleasepool {
             GPUImagePicture* base = [[GPUImagePicture alloc] initWithImage:snowImage];
             GPUImageMotionBlurFilter* motion = [[GPUImageMotionBlurFilter alloc] init];
             GPUImageTransformFilter* transform = [[GPUImageTransformFilter alloc] init];
-            transform.affineTransform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.0f, 2.0f), CGAffineTransformMakeRotation(M_PI * (float)i));
+            transform.affineTransform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.6, 1.6), CGAffineTransformMakeRotation(M_PI * (float)i));
             [transform addTarget:motion];
             motion.blurAngle = _snowDirection * -60.0f - 90.0f;
             motion.blurSize = 1.0f + 2.0 * absf(_snowDirection);
@@ -148,14 +153,14 @@ static Processor* sharedProcessor = nil;
 
     
     //// Large
-    numberOfRepeat = roundf(MAX(0.0f, opacity - 0.10f) * 2.0f / 0.90f);
+    numberOfRepeat = roundf(MAX(0.0f, opacity - 0.10f) * 2.4f / 0.90f);
     LOG(@"Large repeats %d times.", numberOfRepeat);
     for (int i = 0; i < numberOfRepeat; i++) {
         @autoreleasepool {
             GPUImagePicture* base = [[GPUImagePicture alloc] initWithImage:snowImage];
             GPUImageMotionBlurFilter* motion = [[GPUImageMotionBlurFilter alloc] init];
             GPUImageTransformFilter* transform = [[GPUImageTransformFilter alloc] init];
-            transform.affineTransform = CGAffineTransformConcat(CGAffineTransformMakeScale(3.0f, 3.0f), CGAffineTransformMakeRotation(M_PI * (float)i));
+            transform.affineTransform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.2, 2.2), CGAffineTransformMakeRotation(M_PI * (float)i));
             [transform addTarget:motion];
             motion.blurAngle = _snowDirection * -60.0f - 90.0f;
             motion.blurSize = 1.0f + 3.0 * absf(_snowDirection);

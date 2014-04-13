@@ -150,7 +150,7 @@
 
 - (void)goToEffectsViewControllerWithImage:(UIImage *)image
 {
-    
+    [Processor reset];
     if (image.imageOrientation == UIImageOrientationUp){
         
     }else{

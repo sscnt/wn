@@ -72,6 +72,9 @@
     if(mode == MergeBlendingModeNormal){
         blending = [[GPUImageNormalBlendFilter alloc] init];
     }
+    if(mode == MergeBlendingModeNormalSkin){
+        blending = [[GPUImageNormalBlendBasedOnSkinColorFIlter alloc] init];
+    }
     if(mode == MergeBlendingModeDarken){
         blending = [[GPUImageDarkenBlendFilter alloc] init];
     }

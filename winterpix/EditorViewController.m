@@ -45,7 +45,7 @@
     _sliderOpacity.title = NSLocalizedString(@"Opacity", nil);
     _sliderOpacity.iconType = EditorSliderIconTypeOpacity;
     _sliderOpacity.titlePosition = SliderViewTitlePositionCenter;
-    _sliderOpacity.defaultValue = 1.0f;
+    _sliderOpacity.defaultValue = [Processor instance].opacity;
     _sliderOpacity.value = [Processor instance].opacity;
     //////// Temp
     _sliderTemp = [[UIEditorSliderView alloc] initWithFrame:CGRectMake(0.0f, 10.0f + _sliderOpacity.frame.size.height, [UIScreen screenSize].width, 42.0f)];
@@ -54,7 +54,7 @@
     _sliderTemp.title = NSLocalizedString(@"Temperature", nil);
     _sliderTemp.iconType = EditorSliderIconTypeTemp;
     _sliderTemp.titlePosition = SliderViewTitlePositionCenter;
-    _sliderTemp.defaultValue = 1.0f;
+    _sliderTemp.defaultValue = [Processor instance].temp;
     _sliderTemp.value = [Processor instance].temp;
     //////// Adjustment
     _adjustmentOpacity = [[UISliderContainer alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [UIScreen screenSize].width, _sliderOpacity.bounds.size.height * 2.0f + 20.0f)];
@@ -73,7 +73,7 @@
     _sliderSnowfall.title = NSLocalizedString(@"Snowfall", nil);
     _sliderSnowfall.iconType = EditorSliderIconTypeSnowfall;
     _sliderSnowfall.titlePosition = SliderViewTitlePositionCenter;
-    _sliderSnowfall.defaultValue = 0.5f;
+    _sliderSnowfall.defaultValue = [Processor instance].snowfall;
     //////////// Direction
     _sliderSnowDirection = [[UIEditorSliderView alloc] initWithFrame:CGRectMake(0.0f, 10.0f + _sliderSnowfall.frame.size.height, [UIScreen screenSize].width, 42.0f)];
     _sliderSnowDirection.tag = EditorSliderIconTypeSnowDirection;
@@ -81,7 +81,7 @@
     _sliderSnowDirection.title = NSLocalizedString(@"Direction", nil);
     _sliderSnowDirection.iconType = EditorSliderIconTypeSnowDirection;
     _sliderSnowDirection.titlePosition = SliderViewTitlePositionLeft;
-    _sliderSnowDirection.defaultValue = 0.6f;
+    _sliderSnowDirection.defaultValue = [Processor instance].snowDirection;
     //////// Adjustment
     _adjustmentSnowfall = [[UISliderContainer alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [UIScreen screenSize].width, _sliderSnowfall.bounds.size.height * 2.0f + 20.0f)];
     _adjustmentSnowfall.tag = AdjustmentViewIdSnowfall;
