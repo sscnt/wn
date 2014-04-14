@@ -22,6 +22,7 @@
 typedef NS_ENUM(NSInteger, EditorSliderIconType){
     EditorSliderIconTypeOpacity = 1,
     EditorSliderIconTypeTemp,
+    EditorSliderIconTypeBrightness,
     EditorSliderIconTypeSnowfall,
     EditorSliderIconTypeSnowDirection
 };

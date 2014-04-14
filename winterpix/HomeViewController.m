@@ -28,12 +28,16 @@
     [self.view addSubview:_bgView];
     
     //// Button
+    CGFloat padding = 176.0f;
+    if ([UIDevice resolution] == UIDeviceResolution_iPhoneRetina4) {
+        padding = 132.0f;
+    }
     CGFloat buttonDiam = 100.0f;
-    _photosButton = [[UIHomeSourceButton alloc] initWithFrame:CGRectMake(40.0f, [UIScreen height] - 176.0f, buttonDiam, buttonDiam)];
+    _photosButton = [[UIHomeSourceButton alloc] initWithFrame:CGRectMake(40.0f, [UIScreen height] - padding, buttonDiam, buttonDiam)];
     _photosButton.iconType = UIHomeSourceButtonIconTypePhotos;
     [_photosButton addTarget:self action:@selector(didPressButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_photosButton];
-    _cameraButton = [[UIHomeSourceButton alloc] initWithFrame:CGRectMake([_photosButton right] + 40.0f, [UIScreen height] - 176.0f, buttonDiam, buttonDiam)];
+    _cameraButton = [[UIHomeSourceButton alloc] initWithFrame:CGRectMake([_photosButton right] + 40.0f, [UIScreen height] - padding, buttonDiam, buttonDiam)];
     _cameraButton.iconType = UIHomeSourceButtonIconTypeCamera;
     [_cameraButton addTarget:self action:@selector(didPressButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_cameraButton];
@@ -276,7 +280,7 @@
     dispatch_async(q_global, ^{
         @autoreleasepool {
             //// Crop snow
-            NSString* snowPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"snow-4096-cryst.png"];
+            NSString* snowPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"snow-4096-3.png"];
             UIImage* snowImage = [[[UIImage alloc] initWithContentsOfFile:snowPath] croppedImage:CGRectMake(0.0f, 0.0f, [CurrentImage originalImageSize].width, [CurrentImage originalImageSize].height)];
             [CurrentImage saveSnowImage:snowImage];
             

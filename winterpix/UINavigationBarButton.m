@@ -34,7 +34,7 @@
             iconImage = [UIImage imageNamed:@"opacity-button-60.png"];
             break;
         case NavigationBarButtonTypeSnowfall:
-            iconImage = [UIImage imageNamed:@"test-60.png"];
+            iconImage = [UIImage imageNamed:@"snowfall-button-60.png"];
             break;
         default:
             break;

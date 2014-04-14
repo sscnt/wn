@@ -10,4 +10,6 @@
 
 @interface GPUEffectAutumnToWinter : GPUImageEffects
 
+@property (nonatomic, assign) float lightness;
+
 @end

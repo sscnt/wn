@@ -40,6 +40,12 @@
             }
         } else {
             _titleLabel.font = [UIFont fontWithName:@"SheepSansBold" size:18.0f];
+            if([UIDevice isIOS6]){
+                _titleLabel.center = CGPointMake(_titleLabel.center.x, _titleLabel.center.y + 3.0f);
+            }else{
+                _titleLabel.center = CGPointMake(_titleLabel.center.x, _titleLabel.center.y + 2.0f);
+            }
+
         }
         [self addSubview:_titleLabel];
         [self setOpacity:0.80f];

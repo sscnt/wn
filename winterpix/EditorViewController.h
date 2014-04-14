@@ -39,6 +39,7 @@ typedef NS_ENUM(NSInteger, DialogState){
 {
     UIEditorSliderView* _sliderOpacity;
     UIEditorSliderView* _sliderTemp;
+    UIEditorSliderView* _sliderBrightness;
     UIEditorSliderView* _sliderSnowfall;
     UIEditorSliderView* _sliderSnowDirection;
     UINavigationBarButton* _buttonOpacity;

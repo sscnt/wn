@@ -61,12 +61,22 @@
     _sliderTemp.iconType = EditorSliderIconTypeTemp;
     _sliderTemp.titlePosition = SliderViewTitlePositionCenter;
     _sliderTemp.defaultValue = [Processor instance].temp;
-    _sliderTemp.value = [Processor instance].temp;
+    _sliderTemp.value = _sliderTemp.defaultValue;
+    //////// Brightness
+    _sliderBrightness = [[UIEditorSliderView alloc] initWithFrame:CGRectMake(0.0f, 10.0f + _sliderOpacity.frame.size.height + _sliderTemp.frame.size.height, [UIScreen screenSize].width, 42.0f)];
+    _sliderBrightness.tag = EditorSliderIconTypeBrightness;
+    _sliderBrightness.delegate = self;
+    _sliderBrightness.title = NSLocalizedString(@"Brightness", nil);
+    _sliderBrightness.iconType = EditorSliderIconTypeBrightness;
+    _sliderBrightness.titlePosition = SliderViewTitlePositionCenter;
+    _sliderBrightness.defaultValue = [Processor instance].brightness / 2.0f + 0.50f;
+    _sliderBrightness.value = _sliderBrightness.defaultValue;
     //////// Adjustment
-    _adjustmentOpacity = [[UISliderContainer alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [UIScreen screenSize].width, _sliderOpacity.bounds.size.height * 2.0f + 20.0f)];
+    _adjustmentOpacity = [[UISliderContainer alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [UIScreen screenSize].width, _sliderOpacity.bounds.size.height * 3.0f + 20.0f)];
     _adjustmentOpacity.tag = AdjustmentViewIdOpacity;
     [_adjustmentOpacity addSubview:_sliderOpacity];
     [_adjustmentOpacity addSubview:_sliderTemp];
+    [_adjustmentOpacity addSubview:_sliderBrightness];
     _adjustmentOpacity.hidden = YES;
     [self.view addSubview:_adjustmentOpacity];
 
@@ -280,6 +290,7 @@
     if(_adjustmentCurrent == _adjustmentOpacity){
         _sliderOpacity.locked = YES;
         _sliderTemp.locked = YES;
+        _sliderBrightness.locked = YES;
         return;
     }
 }
@@ -296,6 +307,7 @@
     if(_adjustmentCurrent == _adjustmentOpacity){
         _sliderOpacity.locked = NO;
         _sliderTemp.locked = NO;
+        _sliderBrightness.locked = NO;
         return;
     }
 }
@@ -308,7 +320,10 @@
             _percentageLabel.text = [NSString stringWithFormat:@"%@: %d", NSLocalizedString(@"Opacity", nil), (int)roundf(slider.value * 100.0f)];
             break;
         case EditorSliderIconTypeTemp:
-            _percentageLabel.text = [NSString stringWithFormat:@"%@: %d", NSLocalizedString(@"Temperature", nil), (int)roundf(slider.value * 100.0f)];
+            _percentageLabel.text = [NSString stringWithFormat:@"%@: %d℃", NSLocalizedString(@"Temperature", nil), (int)roundf((slider.value - 1.0f) * 100.0f)];
+            break;
+        case EditorSliderIconTypeBrightness:
+            _percentageLabel.text = [NSString stringWithFormat:@"%@: %d", NSLocalizedString(@"Brightness", nil), (int)roundf((slider.value - 1.0f) * 100.0f)];
             break;
         case EditorSliderIconTypeSnowfall:
             _percentageLabel.text = [NSString stringWithFormat:@"%@: %d", NSLocalizedString(@"Snowfall", nil), (int)roundf(slider.value * 100.0f)];
@@ -335,6 +350,9 @@
             break;
         case EditorSliderIconTypeSnowfall:
             [Processor instance].snowfall = slider.value;
+            break;
+        case EditorSliderIconTypeBrightness:
+            [Processor instance].brightness = (slider.value - 0.50f);
             break;
     }
     

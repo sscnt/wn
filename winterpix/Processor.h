@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "GPUEffectAutumnToWinter.h"
 #import "GPUEffectColdWinter.h"
+#import "GPUEffectSummerToWinter.h"
 #import "GPUImageEffects.h"
+#import "GPUimageTumblinBrightnessFilter.h"
+
 
 @protocol ProcessorDelegate <NSObject>
 @optional
@@ -24,6 +27,7 @@
 @property (nonatomic, assign) float temp;
 @property (nonatomic, assign) float snowfall;
 @property (nonatomic, assign) float snowDirection;
+@property (nonatomic, assign) float brightness;
 
 + (Processor*)instance;
 + (void)reset;

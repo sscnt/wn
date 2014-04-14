@@ -113,8 +113,10 @@ NSString *const kGPUImageReplaceColorFilterFragmentShaderString = SHADER_STRING
      mediump float dist = sqrt(v3.x + v3.y + v3.z);
     
      v3 = rgb2hsv(pixel.rgb);
-     v3.y = saturation;
-     v3.z = lightness;
+     v3.y += saturation;
+     v3.y = max(min(v3.y, 1.0), 0.0);
+     v3.z += lightness;
+     v3.z = max(min(v3.z, 1.0), 0.0);
      v3 = hsv2rgb(v3);
      
      // Save the result
@@ -142,12 +144,12 @@ NSString *const kGPUImageReplaceColorFilterFragmentShaderString = SHADER_STRING
 
 - (void)setSaturation:(float)saturation
 {
-    [self setFloat:saturation forUniformName:@"saturation"];
+    [self setFloat:saturation / 100.0f forUniformName:@"saturation"];
 }
 
 - (void)setLightness:(float)lightness
 {
-    [self setFloat:lightness forUniformName:@"lightness"];
+    [self setFloat:lightness / 100.0f forUniformName:@"lightness"];
 }
 
 @end
