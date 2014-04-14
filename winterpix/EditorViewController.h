@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Social/Social.h>
+#import "SVProgressHUD.h"
 #import "GPUImageEffects.h"
 #import "GPUEffectColdWinter.h"
 #import "GPUEffectAutumnToWinter.h"
@@ -20,6 +21,7 @@
 #import "UIEditorPreviewImageView.h"
 #import "UIEditorDialogBgImageView.h"
 #import "UISaveDialogView.h"
+#import "ShareInstagramViewController.h"
 
 typedef NS_ENUM(NSInteger, AdjustmentViewId){
     AdjustmentViewIdOpacity = 1,
@@ -41,7 +43,7 @@ typedef NS_ENUM(NSInteger, DialogState){
     UIEditorSliderView* _sliderSnowDirection;
     UINavigationBarButton* _buttonOpacity;
     UINavigationBarButton* _buttonSnowfall;
-    
+
     UILabel* _percentageLabel;
     UIDocumentInteractionController* _interactionController;
 }
@@ -59,6 +61,9 @@ typedef NS_ENUM(NSInteger, DialogState){
 @property (nonatomic, strong) UIEditorPreviewImageView* previewImageView;
 @property (nonatomic, strong) UISaveDialogView* saveDialogView;
 @property (nonatomic, strong) UIEditorDialogBgImageView* dialogBgImageView;
+@property (nonatomic, strong) UIImage* editorImage;
+@property (nonatomic, strong) UIImage* editorBlurredImage;
+
 
 - (void)didFinishResizing;
 - (void)processForEditor;

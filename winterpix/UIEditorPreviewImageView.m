@@ -17,24 +17,30 @@
         _isPreviewReady = NO;
         [self setBackgroundColor:[UIColor colorWithWhite:33.0f/255.0f alpha:1.0f]];
         
-        _imageViewBlurred = [[UIRenderImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.frame.size.width, self.frame.size.height)];
-        _imageViewBlurred.hidden = YES;
-        [self addSubview:_imageViewBlurred];
-        _imageViewOriginal = [[UIRenderImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.frame.size.width, self.frame.size.height)];
+        _imageViewPreview = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.frame.size.width, self.frame.size.height)];
+        _imageViewPreview.hidden = NO;
+        [self addSubview:_imageViewPreview];
+        
+        _imageViewOriginal = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.frame.size.width, self.frame.size.height)];
         _imageViewOriginal.hidden = YES;
         [self addSubview:_imageViewOriginal];
         
-        [self addTarget:self action:@selector(didTouchDown) forControlEvents:UIControlEventTouchDown];
-        [self addTarget:self action:@selector(didTouchUp) forControlEvents:UIControlEventTouchUpInside];
-        
+        _imageViewBlurred = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.frame.size.width, self.frame.size.height)];
+        _imageViewBlurred.hidden = YES;
+        [self addSubview:_imageViewBlurred];
         
         //// Loading
         _imageViewLoading = [[UIImageView alloc] initWithImage:[UIImage animatedGIFNamed:@"loading-48"]];
         _imageViewLoading.center = CGPointMake(roundf(frame.size.width / 2.0), roundf(frame.size.height / 2.0));
         [self addSubview:_imageViewLoading];
+        
+        [self addTarget:self action:@selector(didTouchDown) forControlEvents:UIControlEventTouchDown];
+        [self addTarget:self action:@selector(didTouchUp) forControlEvents:UIControlEventTouchUpInside];
+        
     }
     return self;
 }
+
 
 - (void)removeLoadingIndicator
 {
@@ -99,6 +105,11 @@
     }
 }
 
+- (void)setImagePreview:(UIImage *)imagePreview
+{
+    _imageViewPreview.image = imagePreview;
+}
+
 - (void)setImageOriginal:(UIImage *)imageOriginal
 {
     _imageViewOriginal.image = imageOriginal;
@@ -106,12 +117,7 @@
 
 - (void)setImageBlurred:(UIImage *)imageBlurred
 {
-    _imageBlurred = imageBlurred;
-}
-
-- (void)renderImageOriginal
-{
-    [_imageViewOriginal setNeedsDisplay];
+    _imageViewBlurred.image = imageBlurred;
 }
 
 - (void)didTouchUp
@@ -123,11 +129,5 @@
 {
     [self.delegate previewDidTouchDown:self];
 }
-
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-
 
 @end

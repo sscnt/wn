@@ -20,21 +20,20 @@
 @interface UIEditorPreviewImageView : UIButton
 {
     UIImageView* _imageViewLoading;
-    UIRenderImageView* _imageViewOriginal;
-    UIRenderImageView* _imageViewBlurred;
+    UIImageView* _imageViewOriginal;
+    UIImageView* _imageViewPreview;
+    UIImageView* _imageViewBlurred;
 }
 
 @property (nonatomic, assign) CGFloat opacity;
 @property (nonatomic, assign) BOOL isPreviewReady;
 @property (nonatomic, strong) UIImageView* previewImageView;
 @property (nonatomic, weak) UIImage* imageOriginal;
+@property (nonatomic, weak) UIImage* imagePreview;
 @property (nonatomic, weak) UIImage* imageBlurred;
 @property (nonatomic, assign) id<UIEditorPreviewDelegate> delegate;
 
 - (void)removeLoadingIndicator;
-
-- (void)renderImageOriginal;
-- (void)renderImageBlurred;
 
 - (void)toggleBlurredImage:(BOOL)show;
 - (void)toggleBlurredImage:(BOOL)show WithDuration:(CGFloat)duration;

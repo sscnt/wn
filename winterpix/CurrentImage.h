@@ -16,6 +16,8 @@
 + (BOOL)lastSavedImageExists;
 + (UIImage*)imageAtPath:(NSString*)path;
 + (UIImage*)resizedImageForEditor;
++ (UIImage*)resizedProcessedImageForEditor;
++ (UIImage*)resizedBlurredImageForEditor;
 + (UIImage*)originalImage;
 + (UIImage*)lastSavedImage;
 + (UIImage*)dialogBgImage;
@@ -23,6 +25,8 @@
 + (UIImage*)snowImageForEditor;
 + (BOOL)saveOriginalImage:(UIImage*)image;
 + (BOOL)saveResizedEditorImage:(UIImage*)image;
++ (BOOL)saveResizedProcessedEditorImage:(UIImage*)image;
++ (BOOL)saveResizedBlurredEditorImage:(UIImage*)image;
 + (BOOL)saveLastSavedImage:(UIImage*)image;
 + (BOOL)saveDialogBgImage:(UIImage*)image;
 + (BOOL)saveSnowImage:(UIImage*)image;
@@ -34,6 +38,8 @@
 + (BOOL)deleteOriginalImage;
 + (BOOL)deleteDialogBgImage;
 + (BOOL)deleteResizedForEditorImage;
++ (BOOL)deleteResizedProcessedForEditorImage;
++ (BOOL)deleteResizedBlurredForEditorImage;
 + (BOOL)deleteSnowImage;
 + (BOOL)deleteSnowImageForEditor;
 + (void)clean;

@@ -1,10 +1,10 @@
-
 "Temperature" = "温度";
 "Opacity" = "適用量";
 "Snowfall" = "降雪量";
 "Direction" = "方向";
 "OPACITY" = "適用量";
 "SNOWFALL" = "降雪量";
+"EDIT" = "編集";
 
 "no_access_to_your_photos" = "写真およびビデオへのアクセス権がありません。iPhoneの「設定」から、「プライバシー」→「写真」→「Winterpix」をオンにしてください。";
 "no_access_due_to_parental_controls" = "写真およびビデオへのアクセス権がありません。ペアレンタルコントロールによりブロックされている可能性があります。";

@@ -16,11 +16,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
-
-        UIImageView* view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"close-60.png"]];
-        view.alpha = 0.80f;
-        view.center = CGPointMake(frame.size.width / 2.0f, frame.size.height / 2.0f);
-        [self addSubview:view];
     }
     return self;
 }
@@ -34,13 +29,34 @@
     }
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    // Drawing code
+    //// Color Declarations
+    UIColor* color = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0.8];
+    
+    //// Bezier Drawing
+    UIBezierPath* bezierPath = [UIBezierPath bezierPath];
+    [bezierPath moveToPoint: CGPointMake(23.41, 22)];
+    [bezierPath addLineToPoint: CGPointMake(29.07, 27.66)];
+    [bezierPath addLineToPoint: CGPointMake(27.66, 29.07)];
+    [bezierPath addLineToPoint: CGPointMake(22, 23.41)];
+    [bezierPath addLineToPoint: CGPointMake(16.34, 29.07)];
+    [bezierPath addLineToPoint: CGPointMake(14.93, 27.66)];
+    [bezierPath addLineToPoint: CGPointMake(20.59, 22)];
+    [bezierPath addLineToPoint: CGPointMake(14.93, 16.34)];
+    [bezierPath addLineToPoint: CGPointMake(16.34, 14.93)];
+    [bezierPath addLineToPoint: CGPointMake(22, 20.59)];
+    [bezierPath addLineToPoint: CGPointMake(27.66, 14.93)];
+    [bezierPath addLineToPoint: CGPointMake(29.07, 16.34)];
+    [bezierPath addLineToPoint: CGPointMake(23.41, 22)];
+    [bezierPath closePath];
+    [color setFill];
+    [bezierPath fill];
+    
+    
+
+
 }
-*/
+
 
 @end

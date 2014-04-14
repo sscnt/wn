@@ -112,6 +112,9 @@
 		58FF968218FBB75C004A0A1E /* opacity-button-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58FF968118FBB75C004A0A1E /* opacity-button-60@2x.png */; };
 		58FF968718FBBDEE004A0A1E /* snow-4096-test.png in Resources */ = {isa = PBXBuildFile; fileRef = 58FF968618FBBDEE004A0A1E /* snow-4096-test.png */; };
 		58FF968918FBBEEF004A0A1E /* snow-4096-cryst.png in Resources */ = {isa = PBXBuildFile; fileRef = 58FF968818FBBEEF004A0A1E /* snow-4096-cryst.png */; };
+		58FF968F18FBE759004A0A1E /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 58FF968C18FBE759004A0A1E /* SVProgressHUD.bundle */; };
+		58FF969018FBE759004A0A1E /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FF968E18FBE759004A0A1E /* SVProgressHUD.m */; };
+		58FF969318FBE89F004A0A1E /* ShareInstagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FF969218FBE89F004A0A1E /* ShareInstagramViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -309,6 +312,11 @@
 		58FF968118FBB75C004A0A1E /* opacity-button-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "opacity-button-60@2x.png"; sourceTree = "<group>"; };
 		58FF968618FBBDEE004A0A1E /* snow-4096-test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snow-4096-test.png"; sourceTree = "<group>"; };
 		58FF968818FBBEEF004A0A1E /* snow-4096-cryst.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snow-4096-cryst.png"; sourceTree = "<group>"; };
+		58FF968C18FBE759004A0A1E /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		58FF968D18FBE759004A0A1E /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		58FF968E18FBE759004A0A1E /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		58FF969118FBE89F004A0A1E /* ShareInstagramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareInstagramViewController.h; sourceTree = "<group>"; };
+		58FF969218FBE89F004A0A1E /* ShareInstagramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareInstagramViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,6 +354,8 @@
 		5800C8C218F7E99100968165 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				58FF969118FBE89F004A0A1E /* ShareInstagramViewController.h */,
+				58FF969218FBE89F004A0A1E /* ShareInstagramViewController.m */,
 				58D12A3A18F6BFAC006CCE9B /* RootViewController.h */,
 				58D12A3B18F6BFAC006CCE9B /* RootViewController.m */,
 				5800C8C418F7E9EC00968165 /* HomeViewController.h */,
@@ -459,6 +469,7 @@
 		58D12A2B18F6BFAC006CCE9B /* winterpix */ = {
 			isa = PBXGroup;
 			children = (
+				58FF968B18FBE747004A0A1E /* SVProgressHUD */,
 				58F6FFA318F840D10077D0DD /* GPUImageLayer */,
 				58F6FF6018F840AA0077D0DD /* GPUImageFIlter */,
 				58F6FF5C18F840540077D0DD /* Effects */,
@@ -781,6 +792,16 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		58FF968B18FBE747004A0A1E /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				58FF968C18FBE759004A0A1E /* SVProgressHUD.bundle */,
+				58FF968D18FBE759004A0A1E /* SVProgressHUD.h */,
+				58FF968E18FBE759004A0A1E /* SVProgressHUD.m */,
+			);
+			name = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -909,6 +930,7 @@
 				58F6FF4118F83C5B0077D0DD /* mplus-1c-bold.ttf in Resources */,
 				580913A418FA665A0077C3CE /* snow-4096-10.png in Resources */,
 				58F6BB5918F9405D000096AC /* twitter-36-85@2x.png in Resources */,
+				58FF968F18FBE759004A0A1E /* SVProgressHUD.bundle in Resources */,
 				58F6BB5818F9405D000096AC /* camera-36-85@2x.png in Resources */,
 				58D12A3918F6BFAC006CCE9B /* Main.storyboard in Resources */,
 				58F6FFCA18F843980077D0DD /* cw3.acv in Resources */,
@@ -972,9 +994,11 @@
 				58F2973018F9054A0043BF93 /* Processor.m in Sources */,
 				58F6FF3B18F8389B0077D0DD /* EditorViewController.m in Sources */,
 				58F6FFAF18F841340077D0DD /* GPUImageSelectiveColorFilter.m in Sources */,
+				58FF969018FBE759004A0A1E /* SVProgressHUD.m in Sources */,
 				58148FB718FAF3440038D9A2 /* GPUImageNormalBlendBasedOnSkinColorFIlter.m in Sources */,
 				58F6FF9618F840C30077D0DD /* GPUImageDarkerColorBlendFilter.m in Sources */,
 				58F6FF9118F840C30077D0DD /* GPUAdjustmentsBrightness.m in Sources */,
+				58FF969318FBE89F004A0A1E /* ShareInstagramViewController.m in Sources */,
 				58F6FFBF18F8419C0077D0DD /* GPUImagePhotoFilter.m in Sources */,
 				58F6FF9418F840C30077D0DD /* GPUImageLinearDodgeBlendFilter.m in Sources */,
 				58F6BB4D18F93EE7000096AC /* UIRenderImageView.m in Sources */,

@@ -225,7 +225,7 @@
     }
     
     
-    CGFloat maxLength = 4096.0f;
+    CGFloat maxLength = MAX_IMAGE_LENGTH;
     if([UIDevice isiPad]){
         
     }else{
@@ -236,7 +236,9 @@
                 maxLength = MAX_IMAGE_LENGTH_FOR_IPHONE_5;
             }
         }else{
-            
+            if ([UIDevice isIPhone5s]) {
+                maxLength = MAX_IMAGE_LENGTH_FOR_IPHONE_5S;
+            }
         }
     }
     

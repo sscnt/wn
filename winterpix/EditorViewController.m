@@ -22,6 +22,8 @@
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     }
     
+    _dialogState = DialogStateDidHide;
+    
     //// Layout
     [self.view setBackgroundColor:[UIColor colorWithWhite:26.0f/255.0f alpha:1.0]];
     
@@ -30,6 +32,7 @@
     CGFloat width = [CurrentImage editorImageSize].width / [[UIScreen mainScreen] scale];
     CGFloat height = [CurrentImage editorImageSize].height / [[UIScreen mainScreen] scale];
     _previewImageView = [[UIEditorPreviewImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, width, height)];
+    _previewImageView.delegate = self;
     if([UIDevice resolution] == UIDeviceResolution_iPhoneRetina4){
         _previewImageView.center = CGPointMake([UIScreen screenSize].width / 2.0f, [UIScreen screenSize].height / 2.0f - MAX(([UIScreen screenSize].height - 128.0f - height) / 2.0f, 0.0f));
     }else{
@@ -145,32 +148,52 @@
 
 - (void)didFinishResizing
 {
-    UIImage* image = [CurrentImage resizedImageForEditor];
-    if (image) {
-        image = [Processor addSnowfallWithImage:image WithSnowfallImage:[CurrentImage snowImageForEditor]];
-        image = [Processor executeWithImage:image];
-        [_previewImageView removeLoadingIndicator];
-        _previewImageView.imageOriginal = image;
-        _previewImageView.isPreviewReady = YES;
-        [_previewImageView toggleOriginalImage:YES];
-        [_previewImageView renderImageOriginal];
-        [self slideUpAdjustment:self.adjustmentOpacity Completion:nil];
-    }
+    _previewImageView.imageOriginal = [CurrentImage resizedImageForEditor];
+    [self processForEditor];
 }
 
 - (void)processForEditor
 {
-    
-    UIImage* image = [CurrentImage resizedImageForEditor];
-    if (image) {
-        image = [Processor addSnowfallWithImage:image WithSnowfallImage:[CurrentImage snowImageForEditor]];
-        image = [Processor executeWithImage:image];
-        _previewImageView.imageOriginal = image;
-        [_previewImageView toggleOriginalImage:YES];
-        [_previewImageView renderImageOriginal];
-        [self unlockAllSliders];
-    }
+    __block EditorViewController* _self = self;
+    dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_t q_main = dispatch_get_main_queue();
+    dispatch_async(q_global, ^{
+        @autoreleasepool {
+            UIImage* image = [CurrentImage resizedImageForEditor];
+            if (image) {
+                image = [Processor addSnowfallWithImage:image WithSnowfallImage:[CurrentImage snowImageForEditor]];
+                _self.editorImage = [Processor executeWithImage:image];
+                
+                //// Blurring
+                GPUImageGaussianBlurFilter* filter = [[GPUImageGaussianBlurFilter alloc] init];
+                filter.blurRadiusInPixels = 8.0f;
+                GPUImagePicture* base = [[GPUImagePicture alloc] initWithImage:_self.editorImage];
+                [base addTarget:filter];
+                [base processImage];
+                _self.editorBlurredImage = [filter imageFromCurrentlyProcessedOutput];
+                
+                //// Dialog
+                filter.blurRadiusInPixels = 16.0f;
+                [base processImage];
+                [CurrentImage saveDialogBgImage:[filter imageFromCurrentlyProcessedOutput]];
+            }
+        }
+        dispatch_async(q_main, ^{
+            _self.previewImageView.imagePreview = _self.editorImage;
+            _self.previewImageView.imageBlurred = _self.editorBlurredImage;
+            if (_self.previewImageView.isPreviewReady) {
+                
+                [_self.previewImageView toggleBlurredImage:NO WithDuration:0.10f];
+            }else{
+                _self.previewImageView.isPreviewReady = YES;
+                [_self.previewImageView removeLoadingIndicator];
+                [_self slideUpAdjustment:_self.adjustmentOpacity Completion:nil];
+            }
+            [_self unlockAllSliders];
 
+        });
+        
+    });
 }
 
 #pragma mark slider
@@ -380,12 +403,124 @@
         [_self.topNavigationBar setY:0.0f];
         [_self.bottomNavigationBar setY:[UIScreen screenSize].height - 44.0f];
     } completion:^(BOOL finished){
+        [_self slideUpAdjustment:_adjustmentCurrent Completion:nil];
         [UIView animateWithDuration:0.10f animations:^{
             _self.dialogBgImageView.alpha = 0.0f;
         } completion:^(BOOL finished){
             _self.dialogState = DialogStateDidHide;
             [_self.dialogBgImageView removeFromSuperview];
         }];
+    }];
+}
+
+#pragma mark saving
+
+
+- (void)saveImage:(SaveTo)saveTo
+{
+    __block EditorViewController* _self = self;
+    __block NSInteger errorCode = 0;
+    dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_t q_main = dispatch_get_main_queue();
+    dispatch_async(q_global, ^{
+        @autoreleasepool {
+            UIImage* image = [CurrentImage originalImage];
+            if(image){
+                image = [CurrentImage originalImage];
+                image = [Processor addSnowfallWithImage:image WithSnowfallImage:[CurrentImage snowImageForEditor]];
+                image = [Processor executeWithImage:image];
+                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+                [CurrentImage saveLastSavedImage:image];
+            }else{
+                errorCode = 1;
+            }
+        }
+        dispatch_async(q_main, ^{
+            if(errorCode == 1){
+                UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:NSLocalizedString(@"Could not save the image.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Close", nil) otherButtonTitles:nil];
+                [alert show];
+            }
+            [_self didSaveImage:saveTo];
+        });
+        
+    });
+    
+}
+
+- (void)didSaveImage:(SaveTo)saveTo
+{
+    switch (saveTo) {
+        case SaveToCameraRoll:
+            [SVProgressHUD dismiss];
+            [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"Saved successfully", nil)];
+            break;
+        case SaveToInstagram:
+            [self shareOnInstagram];
+            break;
+        case SaveToTwitter:
+            [SVProgressHUD dismiss];
+            [self shareOnTwitter];
+            break;
+        default:
+            break;
+    }
+    __block EditorViewController* _self = self;
+    double delayInSeconds = 1.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [UIView animateWithDuration:0.20f animations:^{
+            _self.saveDialogView.alpha = 1.0f;
+        } completion:^(BOOL finished){
+            _self.isSaving = NO;
+        }];
+    });
+    
+}
+
+- (void)saveToView:(UISaveDialogView *)view DidSelectSaveTo:(SaveTo)saveTo
+{
+    if (_isSaving) {
+        LOG(@"sorry now saving.");
+        return;
+    }
+    switch (saveTo) {
+        case SaveToCameraRoll:
+            
+            break;
+        case SaveToInstagram:
+            if([CurrentImage lastSavedImageExists]){
+                [self shareOnInstagram];
+                return;
+            }
+            if(![UIDevice canOpenInstagram]){
+                [self shareOnInstagram];
+                return;
+            }
+            break;
+        case SaveToTwitter:
+            if([CurrentImage lastSavedImageExists]){
+                [self shareOnTwitter];
+                return;
+            }
+            if(![UIDevice canOpenTwitter]){
+                [self shareOnTwitter];
+                return;
+            }
+            break;
+        default:
+            return;
+            break;
+    }
+    _isSaving = YES;
+    LOG(@"saving...");
+    
+    __block EditorViewController* _self = self;
+    [UIView animateWithDuration:0.20f animations:^{
+        _self.saveDialogView.alpha = 0.30f;
+    } completion:^(BOOL finished){
+        [_self.saveDialogView clearSelected];
+        [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
+        [_self saveImage:saveTo];
     }];
 }
 
@@ -435,6 +570,42 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+#pragma mark preview
+
+- (void)previewIsReady:(UIEditorPreviewImageView *)preview
+{
+    LOG(@"Did apply effect");
+    _isApplying = NO;
+}
+
+- (void)previewDidTouchDown:(UIEditorPreviewImageView *)preview
+{
+    if(_dialogState == DialogStateDidHide){
+        [preview toggleOriginalImage:YES];
+        return;
+    }
+}
+
+- (void)previewDidTouchUp:(UIEditorPreviewImageView *)preview
+{
+    if(_dialogState == DialogStateDidHide){
+        [preview toggleOriginalImage:NO];
+        return;
+    }
+}
+
+
+- (void)touchesBeganWithBackgroundImageView:(UIEditorDialogBgImageView *)slider
+{
+    
+}
+
+- (void)touchesEndedWithBackgroundImageView:(UIEditorDialogBgImageView *)slider
+{
+    [self hideSaveDialog];
+}
+
 
 #pragma mark slider delegate
 
@@ -498,12 +669,9 @@
     [self processForEditor];
 }
 
-
-
 - (void)test
 {
     UIImage* image = [CurrentImage originalImage];
-    
     
     @autoreleasepool {
         GPUEffectColdWinter* effect = [[GPUEffectColdWinter alloc] init];
@@ -524,8 +692,72 @@
     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
 }
 
+#pragma mark share
+
+
+#pragma mark Share
+
+- (void)shareOnTwitter
+{
+    if([UIDevice canOpenTwitter]){
+        if([CurrentImage lastSavedImageExists]){
+            SLComposeViewController *vc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+            [vc setInitialText:@""];
+            [vc addImage:[CurrentImage lastSavedImage]];
+            [self presentViewController:vc animated:YES completion:nil];
+        }else{
+            [SVProgressHUD dismiss];
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:NSLocalizedString(@"Could not save the image.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Close", nil) otherButtonTitles:nil];
+            [alert show];
+        }
+    }else{
+        [SVProgressHUD dismiss];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:NSLocalizedString(@"Twitter not installed.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Close", nil) otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (void)shareOnInstagram
+{
+    if([UIDevice canOpenInstagram]){
+        if([self openInstagram]){
+            return;
+        }
+    }else{
+        [SVProgressHUD dismiss];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:NSLocalizedString(@"Instagram not installed.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Close", nil) otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (BOOL)openInstagram
+{
+    if(![CurrentImage lastSavedImageExists]){
+        return NO;
+    }
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
+    __block EditorViewController* _self = self;
+    __block ShareInstagramViewController *instagramViewController = [[ShareInstagramViewController alloc] init];    dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_t q_main = dispatch_get_main_queue();
+    dispatch_async(q_global, ^{
+        @autoreleasepool {
+            [instagramViewController setImage:[CurrentImage lastSavedImage]];
+        }
+        dispatch_async(q_main, ^{
+            [SVProgressHUD dismiss];
+            [_self.view addSubview:instagramViewController.view];
+            [_self addChildViewController:instagramViewController];
+        });
+        
+    });
+    return YES;
+}
+
+
 - (void)didReceiveMemoryWarning
 {
+    _editorImage = nil;
+    _editorBlurredImage = nil;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

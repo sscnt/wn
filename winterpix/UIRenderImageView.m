@@ -16,6 +16,7 @@
     if (self) {
         _image = nil;
         _draw = NO;
+        self.userInteractionEnabled = NO;
     }
     return self;
 }
