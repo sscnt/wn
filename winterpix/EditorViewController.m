@@ -109,7 +109,7 @@
     [_bottomNavigationBar appendButtonToLeft:_buttonOpacity];
     
     //////// Snowfall
-    _buttonSnowfall = [[UINavigationBarButton alloc] initWithType:NavigationBarButtonTypeBrightness];
+    _buttonSnowfall = [[UINavigationBarButton alloc] initWithType:NavigationBarButtonTypeSnowfall];
     _buttonSnowfall.tag = AdjustmentViewIdSnowfall;
     [_buttonSnowfall addTarget:self action:@selector(didPressAdjustmentButton:) forControlEvents:UIControlEventTouchUpInside];
     [_bottomNavigationBar appendButtonToLeft:_buttonSnowfall];

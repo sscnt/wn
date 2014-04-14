@@ -86,13 +86,13 @@
             _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"opacity-60.png"]];
             break;
         case EditorSliderIconTypeSnowfall:
-            _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"haze-60.png"]];
+            _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"a-60.png"]];
             break;
         case EditorSliderIconTypeTemp:
             _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"kelvin-60.png"]];
             break;
         case EditorSliderIconTypeSnowDirection:
-            _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"levels-60.png"]];
+            _iconImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"unko-60.png"]];
             break;
 
     }

@@ -30,20 +30,12 @@
 {
     UIImage* iconImage;
     switch (_type) {
-        case NavigationBarButtonTypeBrightness:
-            iconImage = [UIImage imageNamed:@"brightness-button-60.png"];
-            break;
-        case NavigationBarButtonTypeColor:
-            iconImage = [UIImage imageNamed:@"color-button-alter-60.png"];
-            break;
-        case NavigationBarButtonTypeContrast:
-            iconImage = [UIImage imageNamed:@"contrast-button-60.png"];
-            break;
         case NavigationBarButtonTypeOpacity:
             iconImage = [UIImage imageNamed:@"opacity-button-60.png"];
             break;
-        case NavigationBarButtonTypeFocus:
-            iconImage = [UIImage imageNamed:@"focus-button-60.png"];
+
+        case NavigationBarButtonTypeSnowfall:
+            iconImage = [UIImage imageNamed:@"test-60.png"];
             break;
         default:
             break;
