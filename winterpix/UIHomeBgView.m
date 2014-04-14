@@ -23,22 +23,25 @@
 - (void)drawRect:(CGRect)rect
 {
     LOG(@"drawRect!");
-    UIImage* imageBg;
+    NSString* filename;
     
     if (_type == UIHomeBgViewBgTypeSplash) {
         if ([UIDevice resolution] == UIDeviceResolution_iPhoneRetina4) {
-            imageBg = [UIImage imageNamed:@"splash.png"];
+            filename = @"Default@2x.png";
         }else if([UIDevice resolution] == UIDeviceResolution_iPhoneRetina5){
-            imageBg = [UIImage imageNamed:@"splash-568h.png"];
+            filename = @"Default-568h@2x.png";
         }
         
     }else if(_type == UIHomeBgViewBgTypeBg){
         if ([UIDevice resolution] == UIDeviceResolution_iPhoneRetina4) {
-            imageBg = [UIImage imageNamed:@"bg.png"];
+            filename = @"bg@2x.png";
         }else if([UIDevice resolution] == UIDeviceResolution_iPhoneRetina5){
-            imageBg = [UIImage imageNamed:@"bg-568h.png"];
+            filename = @"bg-568h@2x.png";
         }
     }
+    NSString* snowPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:filename];
+    
+    UIImage* imageBg = [[UIImage alloc] initWithContentsOfFile:snowPath];
     [imageBg drawInRect:rect];
 }
 

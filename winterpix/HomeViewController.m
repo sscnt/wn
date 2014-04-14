@@ -18,6 +18,10 @@
 {
     [super viewDidLoad];
     
+    
+    CGSize screenSize  = [UIScreen mainScreen].bounds.size;
+    LOG_SIZE(screenSize);
+    
     //// Background Image
     _bgView = [[UIHomeBgView alloc] initWithFrame:self.view.bounds];
     _bgView.type = UIHomeBgViewBgTypeBg;
@@ -272,7 +276,8 @@
     dispatch_async(q_global, ^{
         @autoreleasepool {
             //// Crop snow
-            UIImage* snowImage = [[UIImage imageNamed:@"snow-4096-cryst.png"] croppedImage:CGRectMake(0.0f, 0.0f, [CurrentImage originalImageSize].width, [CurrentImage originalImageSize].height)];
+            NSString* snowPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"snow-4096-cryst.png"];
+            UIImage* snowImage = [[[UIImage alloc] initWithContentsOfFile:snowPath] croppedImage:CGRectMake(0.0f, 0.0f, [CurrentImage originalImageSize].width, [CurrentImage originalImageSize].height)];
             [CurrentImage saveSnowImage:snowImage];
             
             //// Resize snow

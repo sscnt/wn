@@ -38,8 +38,6 @@
 		58D12A4718F6BFAC006CCE9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D12A2918F6BFAC006CCE9B /* UIKit.framework */; };
 		58D12A4F18F6BFAC006CCE9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58D12A4D18F6BFAC006CCE9B /* InfoPlist.strings */; };
 		58D12A5118F6BFAC006CCE9B /* winterpixTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D12A5018F6BFAC006CCE9B /* winterpixTests.m */; };
-		58F1EA1018F7EF5500013688 /* bg-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F1EA0F18F7EF5500013688 /* bg-568h@2x.png */; };
-		58F1EA1218F7EF5C00013688 /* splash-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F1EA1118F7EF5C00013688 /* splash-568h@2x.png */; };
 		58F1EA1618F7F3E900013688 /* UIHomeSourceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F1EA1518F7F3E900013688 /* UIHomeSourceButton.m */; };
 		58F2972A18F8F4280043BF93 /* GPUImageReplaceColorFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F2972918F8F4280043BF93 /* GPUImageReplaceColorFilter.m */; };
 		58F2973018F9054A0043BF93 /* Processor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F2972F18F9054A0043BF93 /* Processor.m */; };
@@ -51,6 +49,11 @@
 		58F2974618F9117A0043BF93 /* UISliderThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F2974418F9117A0043BF93 /* UISliderThumbView.m */; };
 		58F2974918F9118C0043BF93 /* UIEditorSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F2974818F9118C0043BF93 /* UIEditorSliderView.m */; };
 		58F2974C18F911B40043BF93 /* UISliderContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F2974B18F911B40043BF93 /* UISliderContainer.m */; };
+		58F5430E18FC0E4600E5EAF5 /* bg-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F5430C18FC0E4600E5EAF5 /* bg-568h@2x.png */; };
+		58F5430F18FC0E4600E5EAF5 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F5430D18FC0E4600E5EAF5 /* bg@2x.png */; };
+		58F5431518FC0E5200E5EAF5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F5431318FC0E5200E5EAF5 /* Default-568h@2x.png */; };
+		58F5431618FC0E5200E5EAF5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F5431418FC0E5200E5EAF5 /* Default@2x.png */; };
+		58F5431918FC1D3300E5EAF5 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F5431818FC1D3300E5EAF5 /* Crashlytics.framework */; };
 		58F6BB4718F933BC000096AC /* UIEditorPreviewImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6BB4618F933BC000096AC /* UIEditorPreviewImageView.m */; };
 		58F6BB4D18F93EE7000096AC /* UIRenderImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6BB4C18F93EE7000096AC /* UIRenderImageView.m */; };
 		58F6BB5118F9402C000096AC /* opacity-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F6BB4F18F9402C000096AC /* opacity-60@2x.png */; };
@@ -190,8 +193,6 @@
 		58D12A4C18F6BFAC006CCE9B /* winterpixTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "winterpixTests-Info.plist"; sourceTree = "<group>"; };
 		58D12A4E18F6BFAC006CCE9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		58D12A5018F6BFAC006CCE9B /* winterpixTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = winterpixTests.m; sourceTree = "<group>"; };
-		58F1EA0F18F7EF5500013688 /* bg-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-568h@2x.png"; sourceTree = "<group>"; };
-		58F1EA1118F7EF5C00013688 /* splash-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash-568h@2x.png"; sourceTree = "<group>"; };
 		58F1EA1418F7F3E900013688 /* UIHomeSourceButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHomeSourceButton.h; sourceTree = "<group>"; };
 		58F1EA1518F7F3E900013688 /* UIHomeSourceButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHomeSourceButton.m; sourceTree = "<group>"; };
 		58F2972818F8F4280043BF93 /* GPUImageReplaceColorFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageReplaceColorFilter.h; sourceTree = "<group>"; };
@@ -214,6 +215,11 @@
 		58F2974818F9118C0043BF93 /* UIEditorSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEditorSliderView.m; sourceTree = "<group>"; };
 		58F2974A18F911B40043BF93 /* UISliderContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISliderContainer.h; sourceTree = "<group>"; };
 		58F2974B18F911B40043BF93 /* UISliderContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISliderContainer.m; sourceTree = "<group>"; };
+		58F5430C18FC0E4600E5EAF5 /* bg-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-568h@2x.png"; sourceTree = "<group>"; };
+		58F5430D18FC0E4600E5EAF5 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
+		58F5431318FC0E5200E5EAF5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		58F5431418FC0E5200E5EAF5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		58F5431818FC1D3300E5EAF5 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		58F6BB4518F933BC000096AC /* UIEditorPreviewImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEditorPreviewImageView.h; sourceTree = "<group>"; };
 		58F6BB4618F933BC000096AC /* UIEditorPreviewImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEditorPreviewImageView.m; sourceTree = "<group>"; };
 		58F6BB4B18F93EE7000096AC /* UIRenderImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIRenderImageView.h; sourceTree = "<group>"; };
@@ -334,6 +340,7 @@
 				58F6FF5018F83E9F0077D0DD /* CoreMedia.framework in Frameworks */,
 				58D12A2818F6BFAC006CCE9B /* CoreGraphics.framework in Frameworks */,
 				58D12A2A18F6BFAC006CCE9B /* UIKit.framework in Frameworks */,
+				58F5431918FC1D3300E5EAF5 /* Crashlytics.framework in Frameworks */,
 				58D12A2618F6BFAC006CCE9B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,6 +457,7 @@
 		58D12A2418F6BFAC006CCE9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				58F5431818FC1D3300E5EAF5 /* Crashlytics.framework */,
 				58F6FFCB18F8447D0077D0DD /* Social.framework */,
 				58F6FF5918F83EC20077D0DD /* AssetsLibrary.framework */,
 				58F6FF5718F83EBB0077D0DD /* QuartzCore.framework */,
@@ -773,6 +781,10 @@
 		58FF4E6118F6F06C000E74C8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				58F5431318FC0E5200E5EAF5 /* Default-568h@2x.png */,
+				58F5431418FC0E5200E5EAF5 /* Default@2x.png */,
+				58F5430C18FC0E4600E5EAF5 /* bg-568h@2x.png */,
+				58F5430D18FC0E4600E5EAF5 /* bg@2x.png */,
 				5801D56E18FBAE3B0007711C /* a-60@2x.png */,
 				5801D57018FBAE4B0007711C /* unko-60@2x.png */,
 				580EE94318F99948006983DA /* loading-48.gif */,
@@ -782,8 +794,6 @@
 				58FF968118FBB75C004A0A1E /* opacity-button-60@2x.png */,
 				58F6FF2C18F82EBA0077D0DD /* home-camera@2x.png */,
 				58F6FF2A18F82D030077D0DD /* home-photos@2x.png */,
-				58F1EA1118F7EF5C00013688 /* splash-568h@2x.png */,
-				58F1EA0F18F7EF5500013688 /* bg-568h@2x.png */,
 				58F6BB5A18F94067000096AC /* save-cloud-60@2x.png */,
 				58F6BB5418F9405D000096AC /* photos-36-85@2x.png */,
 				58F6BB5518F9405D000096AC /* camera-36-85@2x.png */,
@@ -812,6 +822,7 @@
 				58D12A1E18F6BFAC006CCE9B /* Sources */,
 				58D12A1F18F6BFAC006CCE9B /* Frameworks */,
 				58D12A2018F6BFAC006CCE9B /* Resources */,
+				58F5431718FC1CFD00E5EAF5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -911,22 +922,24 @@
 				580913A218FA5B9A0077C3CE /* snow-4096.png in Resources */,
 				58F6FF4318F83C820077D0DD /* sheepsansbold.ttf in Resources */,
 				58F6BB5118F9402C000096AC /* opacity-60@2x.png in Resources */,
-				58F1EA1218F7EF5C00013688 /* splash-568h@2x.png in Resources */,
-				58F1EA1018F7EF5500013688 /* bg-568h@2x.png in Resources */,
 				58F6FFC918F843980077D0DD /* cw2.acv in Resources */,
 				58F6FFC818F843980077D0DD /* cw1.acv in Resources */,
 				5801D57118FBAE4B0007711C /* unko-60@2x.png in Resources */,
+				58F5430F18FC0E4600E5EAF5 /* bg@2x.png in Resources */,
 				58D12A3E18F6BFAC006CCE9B /* Images.xcassets in Resources */,
 				58F6FF2B18F82D030077D0DD /* home-photos@2x.png in Resources */,
 				580913A618FA668C0077C3CE /* snow-2400-10.png in Resources */,
 				58FF968718FBBDEE004A0A1E /* snow-4096-test.png in Resources */,
+				58F5431518FC0E5200E5EAF5 /* Default-568h@2x.png in Resources */,
 				58F6BB5318F94049000096AC /* kelvin-60@2x.png in Resources */,
 				58F6BB5B18F94067000096AC /* save-cloud-60@2x.png in Resources */,
 				58D12A3018F6BFAC006CCE9B /* InfoPlist.strings in Resources */,
 				58F6FF3518F8358A0077D0DD /* Localizable.strings in Resources */,
 				58F6FF2D18F82EBA0077D0DD /* home-camera@2x.png in Resources */,
 				5801D56A18FBA67A0007711C /* test-60@2x.png in Resources */,
+				58F5431618FC0E5200E5EAF5 /* Default@2x.png in Resources */,
 				5801D56F18FBAE3B0007711C /* a-60@2x.png in Resources */,
+				58F5430E18FC0E4600E5EAF5 /* bg-568h@2x.png in Resources */,
 				58F6FF4118F83C5B0077D0DD /* mplus-1c-bold.ttf in Resources */,
 				580913A418FA665A0077C3CE /* snow-4096-10.png in Resources */,
 				58F6BB5918F9405D000096AC /* twitter-36-85@2x.png in Resources */,
@@ -947,6 +960,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		58F5431718FC1CFD00E5EAF5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run a8f7ec67dfb4ba747a4f4ed2d8a07acd5b1e5bf6 6da32613a4c81e1205b39618c7d17c20f7af78812d8f016a777dcf98ae62ce65";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58D12A1E18F6BFAC006CCE9B /* Sources */ = {
@@ -1152,6 +1181,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "winterpix/winterpix-Prefix.pch";
 				INFOPLIST_FILE = "winterpix/winterpix-Info.plist";
@@ -1171,6 +1204,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "winterpix/winterpix-Prefix.pch";
 				INFOPLIST_FILE = "winterpix/winterpix-Info.plist";

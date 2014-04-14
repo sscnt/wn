@@ -17,6 +17,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _isSaving = NO;
+    _isApplying = NO;
+    _isSliding = NO;
     
     if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
@@ -154,6 +157,10 @@
 
 - (void)processForEditor
 {
+    if (_isApplying) {
+        return;
+    }
+    _isApplying = YES;
     __block EditorViewController* _self = self;
     dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_queue_t q_main = dispatch_get_main_queue();
@@ -179,6 +186,7 @@
             }
         }
         dispatch_async(q_main, ^{
+            _self.isApplying = NO;
             _self.previewImageView.imagePreview = _self.editorImage;
             _self.previewImageView.imageBlurred = _self.editorBlurredImage;
             if (_self.previewImageView.isPreviewReady) {
@@ -187,10 +195,15 @@
             }else{
                 _self.previewImageView.isPreviewReady = YES;
                 [_self.previewImageView removeLoadingIndicator];
-                [_self slideUpAdjustment:_self.adjustmentOpacity Completion:nil];
+                if (_self.adjustmentCurrent) {
+                    [_self slideDownAdjustment:_self.adjustmentCurrent Completion:^(BOOL finished){
+                        [_self slideUpAdjustment:_self.adjustmentOpacity Completion:nil];
+                    }];
+                }else{
+                    [_self slideUpAdjustment:_self.adjustmentOpacity Completion:nil];
+                }
             }
             [_self unlockAllSliders];
-
         });
         
     });
@@ -370,7 +383,7 @@
     _dialogBgImageView.hidden = NO;
     
     CGPoint center = self.view.center;
-    CGFloat saveToViewTop = [UIScreen height] - _saveDialogView.frame.size.height - 40.0f;
+    CGFloat saveToViewTop = [UIScreen height] - _saveDialogView.frame.size.height - 88.0f;
     
     [self slideDownAdjustment:_adjustmentCurrent Completion:nil];
     
