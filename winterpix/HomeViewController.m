@@ -270,7 +270,7 @@
     dispatch_async(q_global, ^{
         @autoreleasepool {
             //// Crop snow
-            UIImage* snowImage = [[UIImage imageNamed:@"snow-4096-10.png"] croppedImage:CGRectMake(0.0f, 0.0f, [CurrentImage originalImageSize].width, [CurrentImage originalImageSize].height)];
+            UIImage* snowImage = [[UIImage imageNamed:@"snow-4096-cryst.png"] croppedImage:CGRectMake(0.0f, 0.0f, [CurrentImage originalImageSize].width, [CurrentImage originalImageSize].height)];
             [CurrentImage saveSnowImage:snowImage];
             
             //// Resize snow

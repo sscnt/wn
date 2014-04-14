@@ -110,6 +110,8 @@
 		58F6FFCF18F8542C0077D0DD /* GPUImageLinearLightBlendFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6FFCE18F8542C0077D0DD /* GPUImageLinearLightBlendFilter.m */; };
 		58FDF7DD18F8DDA400C5A338 /* GPUEffectAutumnToWinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FDF7DC18F8DDA400C5A338 /* GPUEffectAutumnToWinter.m */; };
 		58FF968218FBB75C004A0A1E /* opacity-button-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58FF968118FBB75C004A0A1E /* opacity-button-60@2x.png */; };
+		58FF968718FBBDEE004A0A1E /* snow-4096-test.png in Resources */ = {isa = PBXBuildFile; fileRef = 58FF968618FBBDEE004A0A1E /* snow-4096-test.png */; };
+		58FF968918FBBEEF004A0A1E /* snow-4096-cryst.png in Resources */ = {isa = PBXBuildFile; fileRef = 58FF968818FBBEEF004A0A1E /* snow-4096-cryst.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -305,6 +307,8 @@
 		58FDF7DB18F8DDA400C5A338 /* GPUEffectAutumnToWinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUEffectAutumnToWinter.h; sourceTree = "<group>"; };
 		58FDF7DC18F8DDA400C5A338 /* GPUEffectAutumnToWinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUEffectAutumnToWinter.m; sourceTree = "<group>"; };
 		58FF968118FBB75C004A0A1E /* opacity-button-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "opacity-button-60@2x.png"; sourceTree = "<group>"; };
+		58FF968618FBBDEE004A0A1E /* snow-4096-test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snow-4096-test.png"; sourceTree = "<group>"; };
+		58FF968818FBBEEF004A0A1E /* snow-4096-cryst.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snow-4096-cryst.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -396,6 +400,8 @@
 		580913A018FA5B800077C3CE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				58FF968818FBBEEF004A0A1E /* snow-4096-cryst.png */,
+				58FF968618FBBDEE004A0A1E /* snow-4096-test.png */,
 				580913A518FA668C0077C3CE /* snow-2400-10.png */,
 				580913A318FA665A0077C3CE /* snow-4096-10.png */,
 				580913A118FA5B9A0077C3CE /* snow-4096.png */,
@@ -880,6 +886,7 @@
 			files = (
 				58FF968218FBB75C004A0A1E /* opacity-button-60@2x.png in Resources */,
 				58F6BB5718F9405D000096AC /* photos-36-85@2x.png in Resources */,
+				58FF968918FBBEEF004A0A1E /* snow-4096-cryst.png in Resources */,
 				580913A218FA5B9A0077C3CE /* snow-4096.png in Resources */,
 				58F6FF4318F83C820077D0DD /* sheepsansbold.ttf in Resources */,
 				58F6BB5118F9402C000096AC /* opacity-60@2x.png in Resources */,
@@ -891,6 +898,7 @@
 				58D12A3E18F6BFAC006CCE9B /* Images.xcassets in Resources */,
 				58F6FF2B18F82D030077D0DD /* home-photos@2x.png in Resources */,
 				580913A618FA668C0077C3CE /* snow-2400-10.png in Resources */,
+				58FF968718FBBDEE004A0A1E /* snow-4096-test.png in Resources */,
 				58F6BB5318F94049000096AC /* kelvin-60@2x.png in Resources */,
 				58F6BB5B18F94067000096AC /* save-cloud-60@2x.png in Resources */,
 				58D12A3018F6BFAC006CCE9B /* InfoPlist.strings in Resources */,

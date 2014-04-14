@@ -72,7 +72,7 @@
     _sliderSnowfall.delegate = self;
     _sliderSnowfall.title = NSLocalizedString(@"Snowfall", nil);
     _sliderSnowfall.iconType = EditorSliderIconTypeSnowfall;
-    _sliderSnowfall.titlePosition = SliderViewTitlePositionCenter;
+    _sliderSnowfall.titlePosition = SliderViewTitlePositionRight;
     _sliderSnowfall.defaultValue = [Processor instance].snowfall;
     //////////// Direction
     _sliderSnowDirection = [[UIEditorSliderView alloc] initWithFrame:CGRectMake(0.0f, 10.0f + _sliderSnowfall.frame.size.height, [UIScreen screenSize].width, 42.0f)];
@@ -80,8 +80,8 @@
     _sliderSnowDirection.delegate = self;
     _sliderSnowDirection.title = NSLocalizedString(@"Direction", nil);
     _sliderSnowDirection.iconType = EditorSliderIconTypeSnowDirection;
-    _sliderSnowDirection.titlePosition = SliderViewTitlePositionLeft;
-    _sliderSnowDirection.defaultValue = [Processor instance].snowDirection;
+    _sliderSnowDirection.titlePosition = SliderViewTitlePositionRight;
+    _sliderSnowDirection.defaultValue = [Processor instance].snowDirection / 2.0f + 0.50f;
     //////// Adjustment
     _adjustmentSnowfall = [[UISliderContainer alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [UIScreen screenSize].width, _sliderSnowfall.bounds.size.height * 2.0f + 20.0f)];
     _adjustmentSnowfall.tag = AdjustmentViewIdSnowfall;
