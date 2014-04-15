@@ -26,8 +26,12 @@
             [self setTitleEdgeInsets:UIEdgeInsetsMake(2.0f, 22.0f, 0, 0)];
             [self setImageEdgeInsets:UIEdgeInsetsMake(0.0f, 14.0f, 0.0f, 0.0)];
         } else {
-            self.titleLabel.font = [UIFont fontWithName:@"Aller-Bold" size:19.0f];
-            [self setTitleEdgeInsets:UIEdgeInsetsMake(2.0f, 22.0f, 0, 0)];
+            self.titleLabel.font = [UIFont fontWithName:@"SheepSansBold" size:19.0f];
+            if ([UIDevice isIOS6]) {
+                [self setTitleEdgeInsets:UIEdgeInsetsMake(8.0f, 22.0f, 0, 0)];
+            }else{
+                [self setTitleEdgeInsets:UIEdgeInsetsMake(4.0f, 22.0f, 0, 0)];
+            }
             [self setImageEdgeInsets:UIEdgeInsetsMake(0.0f, 14.0f, 0.0f, 0.0)];
         }
 

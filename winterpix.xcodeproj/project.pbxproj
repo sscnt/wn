@@ -51,9 +51,7 @@
 		58F5431518FC0E5200E5EAF5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F5431318FC0E5200E5EAF5 /* Default-568h@2x.png */; };
 		58F5431618FC0E5200E5EAF5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F5431418FC0E5200E5EAF5 /* Default@2x.png */; };
 		58F5431918FC1D3300E5EAF5 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F5431818FC1D3300E5EAF5 /* Crashlytics.framework */; };
-		58F5431C18FC256400E5EAF5 /* snow-4096-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F5431B18FC256400E5EAF5 /* snow-4096-alt.png */; };
 		58F5432018FC42CD00E5EAF5 /* GPUEffectSummerToWinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F5431F18FC42CD00E5EAF5 /* GPUEffectSummerToWinter.m */; };
-		58F5432518FC562A00E5EAF5 /* snow-4096-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F5432418FC562A00E5EAF5 /* snow-4096-2.png */; };
 		58F5432718FC56D000E5EAF5 /* snow-4096-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F5432618FC56D000E5EAF5 /* snow-4096-3.png */; };
 		58F5432918FC592500E5EAF5 /* levels-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F5432818FC592500E5EAF5 /* levels-60@2x.png */; };
 		58F6BB4718F933BC000096AC /* UIEditorPreviewImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6BB4618F933BC000096AC /* UIEditorPreviewImageView.m */; };
@@ -217,10 +215,8 @@
 		58F5431318FC0E5200E5EAF5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		58F5431418FC0E5200E5EAF5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		58F5431818FC1D3300E5EAF5 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		58F5431B18FC256400E5EAF5 /* snow-4096-alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snow-4096-alt.png"; sourceTree = "<group>"; };
 		58F5431E18FC42CD00E5EAF5 /* GPUEffectSummerToWinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUEffectSummerToWinter.h; sourceTree = "<group>"; };
 		58F5431F18FC42CD00E5EAF5 /* GPUEffectSummerToWinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUEffectSummerToWinter.m; sourceTree = "<group>"; };
-		58F5432418FC562A00E5EAF5 /* snow-4096-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snow-4096-2.png"; sourceTree = "<group>"; };
 		58F5432618FC56D000E5EAF5 /* snow-4096-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snow-4096-3.png"; sourceTree = "<group>"; };
 		58F5432818FC592500E5EAF5 /* levels-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "levels-60@2x.png"; sourceTree = "<group>"; };
 		58F6BB4518F933BC000096AC /* UIEditorPreviewImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEditorPreviewImageView.h; sourceTree = "<group>"; };
@@ -419,8 +415,6 @@
 			isa = PBXGroup;
 			children = (
 				58F5432618FC56D000E5EAF5 /* snow-4096-3.png */,
-				58F5432418FC562A00E5EAF5 /* snow-4096-2.png */,
-				58F5431B18FC256400E5EAF5 /* snow-4096-alt.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -934,7 +928,6 @@
 				58F6FFC818F843980077D0DD /* cw1.acv in Resources */,
 				5801D57118FBAE4B0007711C /* direction-60@2x.png in Resources */,
 				58F5432918FC592500E5EAF5 /* levels-60@2x.png in Resources */,
-				58F5431C18FC256400E5EAF5 /* snow-4096-alt.png in Resources */,
 				58F5430F18FC0E4600E5EAF5 /* bg@2x.png in Resources */,
 				58D12A3E18F6BFAC006CCE9B /* Images.xcassets in Resources */,
 				58F6FF2B18F82D030077D0DD /* home-photos@2x.png in Resources */,
@@ -953,7 +946,6 @@
 				58F6BB5918F9405D000096AC /* twitter-36-85@2x.png in Resources */,
 				58FF968F18FBE759004A0A1E /* SVProgressHUD.bundle in Resources */,
 				58F6BB5818F9405D000096AC /* camera-36-85@2x.png in Resources */,
-				58F5432518FC562A00E5EAF5 /* snow-4096-2.png in Resources */,
 				58D12A3918F6BFAC006CCE9B /* Main.storyboard in Resources */,
 				58F6FFCA18F843980077D0DD /* cw3.acv in Resources */,
 				580EE94418F99948006983DA /* loading-48.gif in Resources */,

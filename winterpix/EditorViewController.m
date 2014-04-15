@@ -323,7 +323,7 @@
             _percentageLabel.text = [NSString stringWithFormat:@"%@: %d℃", NSLocalizedString(@"Temperature", nil), (int)roundf((slider.value - 1.0f) * 100.0f)];
             break;
         case EditorSliderIconTypeBrightness:
-            _percentageLabel.text = [NSString stringWithFormat:@"%@: %d", NSLocalizedString(@"Brightness", nil), (int)roundf((slider.value - 1.0f) * 100.0f)];
+            _percentageLabel.text = [NSString stringWithFormat:@"%@: %d", NSLocalizedString(@"Brightness", nil), (int)roundf((slider.value - 0.50f) * 100.0f)];
             break;
         case EditorSliderIconTypeSnowfall:
             _percentageLabel.text = [NSString stringWithFormat:@"%@: %d", NSLocalizedString(@"Snowfall", nil), (int)roundf(slider.value * 100.0f)];
