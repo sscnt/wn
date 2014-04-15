@@ -302,6 +302,7 @@
                 //// for editor image
                 UIImage* imageForEditor = [originalImage resizedImage:[CurrentImage editorImageSize] interpolationQuality:kCGInterpolationHigh];
                 if([CurrentImage saveResizedEditorImage:imageForEditor]){
+                    /*
                     //// Detect faces
                     NSDictionary *options = [NSDictionary dictionaryWithObject:CIDetectorAccuracyHigh forKey:CIDetectorAccuracy];
                     CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeFace context:nil options:options];
@@ -313,6 +314,7 @@
                         LOG(@"Face detected!");
                         [Processor instance].faceDetected = YES;
                     }
+                     */
                     errorCode = 0;
                 }
             }
