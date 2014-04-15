@@ -280,13 +280,22 @@
     dispatch_async(q_global, ^{
         @autoreleasepool {
             //// Crop snow
-            NSString* snowPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"snow-4096-3.png"];
+            NSString* snowPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"snow-2400-4.png"];
             UIImage* snowImage = [[[UIImage alloc] initWithContentsOfFile:snowPath] croppedImage:CGRectMake(0.0f, 0.0f, [CurrentImage originalImageSize].width, [CurrentImage originalImageSize].height)];
             [CurrentImage saveSnowImage:snowImage];
             
             //// Resize snow
             snowImage = [snowImage resizedImage:[CurrentImage editorImageSize] interpolationQuality:kCGInterpolationHigh];
             [CurrentImage saveSnowImageForEditor:snowImage];
+            
+            //// Crop fog
+            snowPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"fog-2400-2.png"];
+            snowImage = [[[UIImage alloc] initWithContentsOfFile:snowPath] croppedImage:CGRectMake(0.0f, 0.0f, [CurrentImage originalImageSize].width, [CurrentImage originalImageSize].height)];
+            [CurrentImage saveFogImage:snowImage];
+            
+            //// Resize snow
+            snowImage = [snowImage resizedImage:[CurrentImage editorImageSize] interpolationQuality:kCGInterpolationHigh];
+            [CurrentImage saveFogImageForEditor:snowImage];
             
             //// Save to home dir
             if([CurrentImage saveOriginalImage:originalImage]){

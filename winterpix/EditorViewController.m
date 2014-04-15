@@ -68,7 +68,7 @@
     _sliderBrightness.delegate = self;
     _sliderBrightness.title = NSLocalizedString(@"Brightness", nil);
     _sliderBrightness.iconType = EditorSliderIconTypeBrightness;
-    _sliderBrightness.titlePosition = SliderViewTitlePositionCenter;
+    _sliderBrightness.titlePosition = SliderViewTitlePositionLeft;
     _sliderBrightness.defaultValue = [Processor instance].brightness / 2.0f + 0.50f;
     _sliderBrightness.value = _sliderBrightness.defaultValue;
     //////// Adjustment
@@ -178,8 +178,10 @@
         @autoreleasepool {
             UIImage* image = [CurrentImage resizedImageForEditor];
             if (image) {
-                image = [Processor addSnowfallWithImage:image WithSnowfallImage:[CurrentImage snowImageForEditor]];
-                _self.editorImage = [Processor executeWithImage:image];
+                image = [Processor executeWithImage:image];
+                image = [Processor addFogToImage:image WithFogImage:[CurrentImage fogImageForEditor]];
+                image = [Processor addSnowfallToImage:image WithSnowfallImage:[CurrentImage snowImageForEditor]];
+                _self.editorImage = image;
                 
                 //// Blurring
                 GPUImageGaussianBlurFilter* filter = [[GPUImageGaussianBlurFilter alloc] init];
@@ -458,8 +460,9 @@
             UIImage* image = [CurrentImage originalImage];
             if(image){
                 image = [CurrentImage originalImage];
-                image = [Processor addSnowfallWithImage:image WithSnowfallImage:[CurrentImage snowImageForEditor]];
                 image = [Processor executeWithImage:image];
+                image = [Processor addFogToImage:image WithFogImage:[CurrentImage fogImage]];
+                image = [Processor addSnowfallToImage:image WithSnowfallImage:[CurrentImage snowImage]];
                 UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
                 [CurrentImage saveLastSavedImage:image];
             }else{

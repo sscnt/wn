@@ -23,6 +23,8 @@
 + (UIImage*)dialogBgImage;
 + (UIImage*)snowImage;
 + (UIImage*)snowImageForEditor;
++ (UIImage*)fogImage;
++ (UIImage*)fogImageForEditor;
 + (BOOL)saveOriginalImage:(UIImage*)image;
 + (BOOL)saveResizedEditorImage:(UIImage*)image;
 + (BOOL)saveResizedProcessedEditorImage:(UIImage*)image;
@@ -31,6 +33,8 @@
 + (BOOL)saveDialogBgImage:(UIImage*)image;
 + (BOOL)saveSnowImage:(UIImage*)image;
 + (BOOL)saveSnowImageForEditor:(UIImage*)image;
++ (BOOL)saveFogImage:(UIImage*)image;
++ (BOOL)saveFogImageForEditor:(UIImage*)image;
 + (CGSize)originalImageSize;
 + (CGSize)editorImageSize;
 + (BOOL)deleteImageAtPath:(NSString*)path;
@@ -42,6 +46,8 @@
 + (BOOL)deleteResizedBlurredForEditorImage;
 + (BOOL)deleteSnowImage;
 + (BOOL)deleteSnowImageForEditor;
++ (BOOL)deleteFogImage;
++ (BOOL)deleteFogImageForEditor;
 + (void)clean;
 
 @end

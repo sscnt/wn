@@ -12,6 +12,7 @@
 #import "GPUEffectSummerToWinter.h"
 #import "GPUImageEffects.h"
 #import "GPUimageTumblinBrightnessFilter.h"
+#import "GPUImageLensMotionBlurFilter.h"
 
 
 @protocol ProcessorDelegate <NSObject>
@@ -36,8 +37,11 @@
 + (UIImage*)executeWithImage:(UIImage*)image;
 - (UIImage*)executeWithImage:(UIImage*)image;
 
-+ (UIImage*)addSnowfallWithImage:(UIImage*)image WithSnowfallImage:(UIImage*)snowImage;
-- (UIImage*)addSnowfallWithImage:(UIImage*)image WithSnowfallImage:(UIImage*)snowImage;
++ (UIImage*)addSnowfallToImage:(UIImage*)image WithSnowfallImage:(UIImage*)snowImage;
+- (UIImage*)addSnowfallToImage:(UIImage*)image WithSnowfallImage:(UIImage*)snowImage;
+
++ (UIImage*)addFogToImage:(UIImage*)image WithFogImage:(UIImage*)snowImage;
+- (UIImage*)addFogToImage:(UIImage*)image WithFogImage:(UIImage*)snowImage;
 
 + (UIImage*)executeWithCurrentOriginalImage;
 

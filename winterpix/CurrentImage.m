@@ -19,6 +19,8 @@ NSString* const pathForLastSavedImage = @"tmp/last_saved_image";
 NSString* const pathForDialogBgImage = @"tmp/dialog_bg_image";
 NSString* const pathForSnowImage = @"tmp/snow_image";
 NSString* const pathForSnowImageForEditor = @"tmp/snow_editor_image";
+NSString* const pathForFogImage = @"tmp/fog_image";
+NSString* const pathForFogImageForEditor = @"tmp/fog_editor_image";
 
 + (CurrentImage*)instance {
 	@synchronized(self) {
@@ -93,6 +95,18 @@ NSString* const pathForSnowImageForEditor = @"tmp/snow_editor_image";
     return [self imageAtPath:filePath];
 }
 
++ (UIImage *)fogImage
+{
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForFogImage];
+    return [self imageAtPath:filePath];
+}
+
++ (UIImage *)fogImageForEditor
+{
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForFogImageForEditor];
+    return [self imageAtPath:filePath];
+}
+
 + (UIImage *)resizedBlurredImageForEditor
 {
     NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForEditorBlurredImage];
@@ -144,6 +158,19 @@ NSString* const pathForSnowImageForEditor = @"tmp/snow_editor_image";
 {
     NSData *imageData = UIImageJPEGRepresentation(image, 0.99f);
     NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForSnowImageForEditor];
+    return [imageData writeToFile:filePath atomically:YES];
+}
++ (BOOL)saveFogImage:(UIImage *)image
+{
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.99f);
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForFogImage];
+    return [imageData writeToFile:filePath atomically:YES];
+}
+
++ (BOOL)saveFogImageForEditor:(UIImage *)image
+{
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.99f);
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForFogImageForEditor];
     return [imageData writeToFile:filePath atomically:YES];
 }
 
@@ -239,6 +266,18 @@ NSString* const pathForSnowImageForEditor = @"tmp/snow_editor_image";
     return [self deleteImageAtPath:filePath];
 }
 
++ (BOOL)deleteFogImage
+{
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForFogImage];
+    return [self deleteImageAtPath:filePath];
+}
+
++ (BOOL)deleteFogImageForEditor
+{
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForFogImageForEditor];
+    return [self deleteImageAtPath:filePath];
+}
+
 + (BOOL)deleteResizedBlurredForEditorImage
 {
     NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForEditorBlurredImage];
@@ -253,14 +292,16 @@ NSString* const pathForSnowImageForEditor = @"tmp/snow_editor_image";
 
 + (void)clean
 {
-    [self deleteResizedForEditorImage];
-    [self deleteOriginalImage];
-    [self deleteLastSavedImage];
-    [self deleteDialogBgImage];
-    [self deleteSnowImage];
-    [self deleteSnowImageForEditor];
-    [self deleteResizedBlurredForEditorImage];
-    [self deleteResizedProcessedForEditorImage];
+    [CurrentImage deleteResizedForEditorImage];
+    [CurrentImage deleteOriginalImage];
+    [CurrentImage deleteLastSavedImage];
+    [CurrentImage deleteDialogBgImage];
+    [CurrentImage deleteSnowImage];
+    [CurrentImage deleteSnowImageForEditor];
+    [CurrentImage deleteResizedBlurredForEditorImage];
+    [CurrentImage deleteResizedProcessedForEditorImage];
+    [CurrentImage deleteFogImage];
+    [CurrentImage deleteFogImageForEditor];
 }
 
 @end

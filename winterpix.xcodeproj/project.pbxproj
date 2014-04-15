@@ -21,6 +21,7 @@
 		580EE94218F98506006983DA /* UISaveToButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 580EE94118F98506006983DA /* UISaveToButton.m */; };
 		580EE94418F99948006983DA /* loading-48.gif in Resources */ = {isa = PBXBuildFile; fileRef = 580EE94318F99948006983DA /* loading-48.gif */; };
 		58148FB718FAF3440038D9A2 /* GPUImageNormalBlendBasedOnSkinColorFIlter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58148FB618FAF3440038D9A2 /* GPUImageNormalBlendBasedOnSkinColorFIlter.m */; };
+		581F117418FD1F6E00A49C18 /* GPUImageLensMotionBlurFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 581F117318FD1F6E00A49C18 /* GPUImageLensMotionBlurFilter.m */; };
 		58D12A2618F6BFAC006CCE9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D12A2518F6BFAC006CCE9B /* Foundation.framework */; };
 		58D12A2818F6BFAC006CCE9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D12A2718F6BFAC006CCE9B /* CoreGraphics.framework */; };
 		58D12A2A18F6BFAC006CCE9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D12A2918F6BFAC006CCE9B /* UIKit.framework */; };
@@ -52,7 +53,6 @@
 		58F5431618FC0E5200E5EAF5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F5431418FC0E5200E5EAF5 /* Default@2x.png */; };
 		58F5431918FC1D3300E5EAF5 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F5431818FC1D3300E5EAF5 /* Crashlytics.framework */; };
 		58F5432018FC42CD00E5EAF5 /* GPUEffectSummerToWinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F5431F18FC42CD00E5EAF5 /* GPUEffectSummerToWinter.m */; };
-		58F5432718FC56D000E5EAF5 /* snow-4096-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F5432618FC56D000E5EAF5 /* snow-4096-3.png */; };
 		58F5432918FC592500E5EAF5 /* levels-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F5432818FC592500E5EAF5 /* levels-60@2x.png */; };
 		58F6BB4718F933BC000096AC /* UIEditorPreviewImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6BB4618F933BC000096AC /* UIEditorPreviewImageView.m */; };
 		58F6BB4D18F93EE7000096AC /* UIRenderImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6BB4C18F93EE7000096AC /* UIRenderImageView.m */; };
@@ -111,6 +111,9 @@
 		58F6FFCA18F843980077D0DD /* cw3.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F6FFC718F843980077D0DD /* cw3.acv */; };
 		58F6FFCC18F8447D0077D0DD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F6FFCB18F8447D0077D0DD /* Social.framework */; };
 		58F6FFCF18F8542C0077D0DD /* GPUImageLinearLightBlendFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6FFCE18F8542C0077D0DD /* GPUImageLinearLightBlendFilter.m */; };
+		58F8543E18FD5AD500523332 /* snow-2400-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F8543D18FD5AD500523332 /* snow-2400-3.png */; };
+		58F8544018FD5B3500523332 /* fog-2400-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F8543F18FD5B3500523332 /* fog-2400-2.png */; };
+		58F8544218FD5CB200523332 /* snow-2400-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F8544118FD5CB200523332 /* snow-2400-4.png */; };
 		58FDF7DD18F8DDA400C5A338 /* GPUEffectAutumnToWinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FDF7DC18F8DDA400C5A338 /* GPUEffectAutumnToWinter.m */; };
 		58FF968218FBB75C004A0A1E /* opacity-button-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58FF968118FBB75C004A0A1E /* opacity-button-60@2x.png */; };
 		58FF968F18FBE759004A0A1E /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 58FF968C18FBE759004A0A1E /* SVProgressHUD.bundle */; };
@@ -169,6 +172,8 @@
 		580EE94318F99948006983DA /* loading-48.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "loading-48.gif"; sourceTree = "<group>"; };
 		58148FB518FAF3440038D9A2 /* GPUImageNormalBlendBasedOnSkinColorFIlter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageNormalBlendBasedOnSkinColorFIlter.h; sourceTree = "<group>"; };
 		58148FB618FAF3440038D9A2 /* GPUImageNormalBlendBasedOnSkinColorFIlter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageNormalBlendBasedOnSkinColorFIlter.m; sourceTree = "<group>"; };
+		581F117218FD1F6E00A49C18 /* GPUImageLensMotionBlurFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageLensMotionBlurFilter.h; sourceTree = "<group>"; };
+		581F117318FD1F6E00A49C18 /* GPUImageLensMotionBlurFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageLensMotionBlurFilter.m; sourceTree = "<group>"; };
 		58D12A2218F6BFAC006CCE9B /* winterpix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = winterpix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D12A2518F6BFAC006CCE9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58D12A2718F6BFAC006CCE9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -217,7 +222,6 @@
 		58F5431818FC1D3300E5EAF5 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		58F5431E18FC42CD00E5EAF5 /* GPUEffectSummerToWinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUEffectSummerToWinter.h; sourceTree = "<group>"; };
 		58F5431F18FC42CD00E5EAF5 /* GPUEffectSummerToWinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUEffectSummerToWinter.m; sourceTree = "<group>"; };
-		58F5432618FC56D000E5EAF5 /* snow-4096-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snow-4096-3.png"; sourceTree = "<group>"; };
 		58F5432818FC592500E5EAF5 /* levels-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "levels-60@2x.png"; sourceTree = "<group>"; };
 		58F6BB4518F933BC000096AC /* UIEditorPreviewImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEditorPreviewImageView.h; sourceTree = "<group>"; };
 		58F6BB4618F933BC000096AC /* UIEditorPreviewImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEditorPreviewImageView.m; sourceTree = "<group>"; };
@@ -312,6 +316,9 @@
 		58F6FFCB18F8447D0077D0DD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		58F6FFCD18F8542C0077D0DD /* GPUImageLinearLightBlendFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageLinearLightBlendFilter.h; sourceTree = "<group>"; };
 		58F6FFCE18F8542C0077D0DD /* GPUImageLinearLightBlendFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageLinearLightBlendFilter.m; sourceTree = "<group>"; };
+		58F8543D18FD5AD500523332 /* snow-2400-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snow-2400-3.png"; sourceTree = "<group>"; };
+		58F8543F18FD5B3500523332 /* fog-2400-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fog-2400-2.png"; sourceTree = "<group>"; };
+		58F8544118FD5CB200523332 /* snow-2400-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snow-2400-4.png"; sourceTree = "<group>"; };
 		58FDF7DB18F8DDA400C5A338 /* GPUEffectAutumnToWinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUEffectAutumnToWinter.h; sourceTree = "<group>"; };
 		58FDF7DC18F8DDA400C5A338 /* GPUEffectAutumnToWinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUEffectAutumnToWinter.m; sourceTree = "<group>"; };
 		58FF968118FBB75C004A0A1E /* opacity-button-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "opacity-button-60@2x.png"; sourceTree = "<group>"; };
@@ -414,7 +421,9 @@
 		580913A018FA5B800077C3CE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				58F5432618FC56D000E5EAF5 /* snow-4096-3.png */,
+				58F8544118FD5CB200523332 /* snow-2400-4.png */,
+				58F8543F18FD5B3500523332 /* fog-2400-2.png */,
+				58F8543D18FD5AD500523332 /* snow-2400-3.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -671,6 +680,8 @@
 				58F2972918F8F4280043BF93 /* GPUImageReplaceColorFilter.m */,
 				58148FB518FAF3440038D9A2 /* GPUImageNormalBlendBasedOnSkinColorFIlter.h */,
 				58148FB618FAF3440038D9A2 /* GPUImageNormalBlendBasedOnSkinColorFIlter.m */,
+				581F117218FD1F6E00A49C18 /* GPUImageLensMotionBlurFilter.h */,
+				581F117318FD1F6E00A49C18 /* GPUImageLensMotionBlurFilter.m */,
 			);
 			name = GPUImageFIlter;
 			sourceTree = "<group>";
@@ -928,20 +939,22 @@
 				58F6FFC818F843980077D0DD /* cw1.acv in Resources */,
 				5801D57118FBAE4B0007711C /* direction-60@2x.png in Resources */,
 				58F5432918FC592500E5EAF5 /* levels-60@2x.png in Resources */,
+				58F8543E18FD5AD500523332 /* snow-2400-3.png in Resources */,
 				58F5430F18FC0E4600E5EAF5 /* bg@2x.png in Resources */,
 				58D12A3E18F6BFAC006CCE9B /* Images.xcassets in Resources */,
 				58F6FF2B18F82D030077D0DD /* home-photos@2x.png in Resources */,
 				58F5431518FC0E5200E5EAF5 /* Default-568h@2x.png in Resources */,
+				58F8544018FD5B3500523332 /* fog-2400-2.png in Resources */,
 				58F6BB5318F94049000096AC /* kelvin-60@2x.png in Resources */,
 				58F6BB5B18F94067000096AC /* save-cloud-60@2x.png in Resources */,
 				58D12A3018F6BFAC006CCE9B /* InfoPlist.strings in Resources */,
 				58F6FF3518F8358A0077D0DD /* Localizable.strings in Resources */,
+				58F8544218FD5CB200523332 /* snow-2400-4.png in Resources */,
 				58F6FF2D18F82EBA0077D0DD /* home-camera@2x.png in Resources */,
 				5801D56A18FBA67A0007711C /* snowfall-button-60@2x.png in Resources */,
 				58F5431618FC0E5200E5EAF5 /* Default@2x.png in Resources */,
 				5801D56F18FBAE3B0007711C /* snowfall-60@2x.png in Resources */,
 				58F5430E18FC0E4600E5EAF5 /* bg-568h@2x.png in Resources */,
-				58F5432718FC56D000E5EAF5 /* snow-4096-3.png in Resources */,
 				58F6FF4118F83C5B0077D0DD /* mplus-1c-bold.ttf in Resources */,
 				58F6BB5918F9405D000096AC /* twitter-36-85@2x.png in Resources */,
 				58FF968F18FBE759004A0A1E /* SVProgressHUD.bundle in Resources */,
@@ -1019,6 +1032,7 @@
 				58F6FF9218F840C30077D0DD /* GPUKelvinFilter.m in Sources */,
 				58F6FF9B18F840C30077D0DD /* GPUImageNaturalSaturationFilter.m in Sources */,
 				5800C8CB18F7EA7000968165 /* UIHomeBgView.m in Sources */,
+				581F117418FD1F6E00A49C18 /* GPUImageLensMotionBlurFilter.m in Sources */,
 				58F6FF9318F840C30077D0DD /* GPUImageVividLightBlendFilter.m in Sources */,
 				58F6FFB718F841620077D0DD /* GPUImageHueSaturationFilter.m in Sources */,
 				58F2973018F9054A0043BF93 /* Processor.m in Sources */,

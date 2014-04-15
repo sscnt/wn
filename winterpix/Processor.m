@@ -66,7 +66,7 @@ static Processor* sharedProcessor = nil;
 {
     _opacity = 1.0f;
     _temp = 1.0f;
-    _snowfall = 0.45f;
+    _snowfall = 0.30f;
     _snowDirection = -0.50f;
 }
 
@@ -117,12 +117,23 @@ static Processor* sharedProcessor = nil;
     
 }
 
-+ (UIImage *)addSnowfallWithImage:(UIImage *)image WithSnowfallImage:(UIImage *)snowImage
++ (UIImage *)addFogToImage:(UIImage *)image WithFogImage:(UIImage *)snowImage
 {
-    return [[Processor instance] addSnowfallWithImage:image WithSnowfallImage:snowImage];
+    return [[Processor instance] addFogToImage:image WithFogImage:snowImage];
 }
 
-- (UIImage *)addSnowfallWithImage:(UIImage *)image WithSnowfallImage:(UIImage *)snowImage
+- (UIImage *)addFogToImage:(UIImage *)image WithFogImage:(UIImage *)snowImage
+{
+    image = [Processor mergeBaseImage:image overlayImage:snowImage opacity:_snowfall / 2.0f blendingMode:MergeBlendingModeNormal];
+    return image;
+}
+
++ (UIImage *)addSnowfallToImage:(UIImage *)image WithSnowfallImage:(UIImage *)snowImage
+{
+    return [[Processor instance] addSnowfallToImage:image WithSnowfallImage:snowImage];
+}
+
+- (UIImage *)addSnowfallToImage:(UIImage *)image WithSnowfallImage:(UIImage *)snowImage
 {
     float opacity = _snowfall;
     int numberOfRepeat = 0;
@@ -132,19 +143,19 @@ static Processor* sharedProcessor = nil;
 
     srand((unsigned)time(NULL));
     //// Small
-    numberOfRepeat = roundf(MAX(0.0f, opacity) * 6.0f);
+    numberOfRepeat = roundf(MAX(0.0f, opacity) * 8.4f);
     LOG(@"Small repeats %d times.", numberOfRepeat);
     for (int i = 0; i < numberOfRepeat; i++) {
         @autoreleasepool {
             xsign = (i % 2 == 0) ? 1.0f : -1.0f;
             ysign = ((i / 2) % 2 == 0) ? 1.0f : -1.0f;
             GPUImagePicture* base = [[GPUImagePicture alloc] initWithImage:snowImage];
-            GPUImageMotionBlurFilter* motion = [[GPUImageMotionBlurFilter alloc] init];
+            GPUImageLensMotionBlurFilter* motion = [[GPUImageLensMotionBlurFilter alloc] init];
             GPUImageTransformFilter* transform = [[GPUImageTransformFilter alloc] init];
             transform.affineTransform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.0f * xsign, 1.0f * ysign), CGAffineTransformMakeRotation(M_PI * (float)(i / 4)));
             [transform addTarget:motion];
             motion.blurAngle = _snowDirection * (1.0f + randFloat(0.0f, 0.30f)) * -60.0f - 90.0f;
-            motion.blurSize = 1.0 * absf(_snowDirection);
+            motion.blurSize = 1.5 * absf(_snowDirection);
             [base addTarget:transform];
             [base processImage];
             image = [Processor mergeBaseImage:image overlayImage:[motion imageFromCurrentlyProcessedOutput] opacity:1.0f blendingMode:MergeBlendingModeScreen];
@@ -157,13 +168,13 @@ static Processor* sharedProcessor = nil;
     for (int i = 0; i < numberOfRepeat; i++) {
         @autoreleasepool {
             GPUImagePicture* base = [[GPUImagePicture alloc] initWithImage:snowImage];
-            GPUImageMotionBlurFilter* motion = [[GPUImageMotionBlurFilter alloc] init];
+            GPUImageLensMotionBlurFilter* motion = [[GPUImageLensMotionBlurFilter alloc] init];
             GPUImageTransformFilter* transform = [[GPUImageTransformFilter alloc] init];
             transform.affineTransform = CGAffineTransformConcat(CGAffineTransformMakeScale(2.0f, 2.0f), CGAffineTransformMakeRotation(M_PI * (float)i));
             [transform addTarget:motion];
             motion.blurAngle = _snowDirection * (1.0f + randFloat(0.0f, 0.30f)) * -60.0f - 90.0f;
             LOG(@"angle: %f", motion.blurAngle);
-            motion.blurSize = 1.50f * absf(_snowDirection);
+            motion.blurSize = 2.5f * absf(_snowDirection);
             [base addTarget:transform];
             [base processImage];
             image = [Processor mergeBaseImage:image overlayImage:[motion imageFromCurrentlyProcessedOutput] opacity:1.0f blendingMode:MergeBlendingModeScreen];
@@ -177,12 +188,12 @@ static Processor* sharedProcessor = nil;
     for (int i = 0; i < numberOfRepeat; i++) {
         @autoreleasepool {
             GPUImagePicture* base = [[GPUImagePicture alloc] initWithImage:snowImage];
-            GPUImageMotionBlurFilter* motion = [[GPUImageMotionBlurFilter alloc] init];
+            GPUImageLensMotionBlurFilter* motion = [[GPUImageLensMotionBlurFilter alloc] init];
             GPUImageTransformFilter* transform = [[GPUImageTransformFilter alloc] init];
             transform.affineTransform = CGAffineTransformConcat(CGAffineTransformMakeScale(3.0, 3.0), CGAffineTransformMakeRotation(M_PI * (float)i));
             [transform addTarget:motion];
             motion.blurAngle = _snowDirection * (1.0f + randFloat(0.0f, 0.30f)) * -60.0f - 90.0f;
-            motion.blurSize = 2.0f * absf(_snowDirection);
+            motion.blurSize = 3.5f * absf(_snowDirection);
             [base addTarget:transform];
             [base processImage];
             image = [Processor mergeBaseImage:image overlayImage:[motion imageFromCurrentlyProcessedOutput] opacity:1.0f blendingMode:MergeBlendingModeScreen];
