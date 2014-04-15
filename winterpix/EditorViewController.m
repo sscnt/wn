@@ -457,14 +457,23 @@
     dispatch_queue_t q_main = dispatch_get_main_queue();
     dispatch_async(q_global, ^{
         @autoreleasepool {
-            UIImage* image = [CurrentImage originalImage];
-            if(image){
-                image = [CurrentImage originalImage];
-                image = [Processor executeWithImage:image];
-                image = [Processor addFogToImage:image WithFogImage:[CurrentImage fogImage]];
-                image = [Processor addSnowfallToImage:image WithSnowfallImage:[CurrentImage snowImage]];
-                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
-                [CurrentImage saveLastSavedImage:image];
+            if([CurrentImage originalImageExists]){
+                @autoreleasepool {
+                    UIImage* image = [Processor executeWithImage:[CurrentImage originalImage]];
+                    [CurrentImage saveLastSavedImage:image];
+                    image = nil;
+                }
+                @autoreleasepool {
+                    UIImage* image = [Processor addFogToImage:[CurrentImage lastSavedImage] WithFogImage:[CurrentImage fogImage]];
+                    [CurrentImage saveLastSavedImage:image];
+                    image = nil;
+                }
+                @autoreleasepool {
+                    UIImage* image = [Processor addSnowfallToImage:[CurrentImage lastSavedImage] WithSnowfallImage:[CurrentImage snowImage]];
+                    [CurrentImage saveLastSavedImage:image];
+                    image = nil;
+                }
+                UIImageWriteToSavedPhotosAlbum([CurrentImage lastSavedImage], nil, nil, nil);
             }else{
                 errorCode = 1;
             }

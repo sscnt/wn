@@ -124,7 +124,7 @@ static Processor* sharedProcessor = nil;
 
 - (UIImage *)addFogToImage:(UIImage *)image WithFogImage:(UIImage *)snowImage
 {
-    image = [Processor mergeBaseImage:image overlayImage:snowImage opacity:_snowfall / 2.0f blendingMode:MergeBlendingModeNormal];
+    image = [Processor mergeBaseImage:image overlayImage:snowImage opacity:_snowfall / 1.60f blendingMode:MergeBlendingModeNormal];
     return image;
 }
 
@@ -137,6 +137,9 @@ static Processor* sharedProcessor = nil;
 {
     float opacity = _snowfall;
     int numberOfRepeat = 0;
+    
+    CGFloat scale = snowImage.size.width / [CurrentImage originalImageSize].width;
+    LOG_SIZE(snowImage.size);
     
     float xsign = 1.0f;
     float ysign = 1.0f;
@@ -155,7 +158,7 @@ static Processor* sharedProcessor = nil;
             transform.affineTransform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.0f * xsign, 1.0f * ysign), CGAffineTransformMakeRotation(M_PI * (float)(i / 4)));
             [transform addTarget:motion];
             motion.blurAngle = _snowDirection * (1.0f + randFloat(0.0f, 0.30f)) * -60.0f - 90.0f;
-            motion.blurSize = 1.5 * absf(_snowDirection);
+            motion.blurSize = 2.0f * absf(_snowDirection) * scale;
             [base addTarget:transform];
             [base processImage];
             image = [Processor mergeBaseImage:image overlayImage:[motion imageFromCurrentlyProcessedOutput] opacity:1.0f blendingMode:MergeBlendingModeScreen];
@@ -174,7 +177,7 @@ static Processor* sharedProcessor = nil;
             [transform addTarget:motion];
             motion.blurAngle = _snowDirection * (1.0f + randFloat(0.0f, 0.30f)) * -60.0f - 90.0f;
             LOG(@"angle: %f", motion.blurAngle);
-            motion.blurSize = 2.5f * absf(_snowDirection);
+            motion.blurSize = 3.0f * absf(_snowDirection) * scale;
             [base addTarget:transform];
             [base processImage];
             image = [Processor mergeBaseImage:image overlayImage:[motion imageFromCurrentlyProcessedOutput] opacity:1.0f blendingMode:MergeBlendingModeScreen];
@@ -193,7 +196,7 @@ static Processor* sharedProcessor = nil;
             transform.affineTransform = CGAffineTransformConcat(CGAffineTransformMakeScale(3.0, 3.0), CGAffineTransformMakeRotation(M_PI * (float)i));
             [transform addTarget:motion];
             motion.blurAngle = _snowDirection * (1.0f + randFloat(0.0f, 0.30f)) * -60.0f - 90.0f;
-            motion.blurSize = 3.5f * absf(_snowDirection);
+            motion.blurSize = 4.0f * absf(_snowDirection) * scale;
             [base addTarget:transform];
             [base processImage];
             image = [Processor mergeBaseImage:image overlayImage:[motion imageFromCurrentlyProcessedOutput] opacity:1.0f blendingMode:MergeBlendingModeScreen];

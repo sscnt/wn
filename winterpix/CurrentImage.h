@@ -14,6 +14,7 @@
 
 + (CurrentImage*)instance;
 + (BOOL)lastSavedImageExists;
++ (BOOL)originalImageExists;
 + (UIImage*)imageAtPath:(NSString*)path;
 + (UIImage*)resizedImageForEditor;
 + (UIImage*)resizedProcessedImageForEditor;

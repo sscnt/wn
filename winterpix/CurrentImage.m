@@ -217,6 +217,17 @@ NSString* const pathForFogImageForEditor = @"tmp/fog_editor_image";
     return NO;
 }
 
++ (BOOL)originalImageExists
+{
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForOriginalImage];
+    NSFileManager *filemgr = [NSFileManager defaultManager];
+    
+    if( [filemgr fileExistsAtPath:filePath] ){
+        return YES;
+    }
+    return NO;
+}
+
 + (BOOL)deleteImageAtPath:(NSString *)path
 {
     NSFileManager *filemgr = [NSFileManager defaultManager];
